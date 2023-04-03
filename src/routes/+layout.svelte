@@ -20,7 +20,9 @@
 	class="os-wrapper"
 	options={{
 		scrollbars: {
-			theme: 'os-theme-light'
+			theme: 'os-theme-dark',
+			autoHide: 'move',
+			autoHideDelay: 1000
 		}
 	}}
 >
