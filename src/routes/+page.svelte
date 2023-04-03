@@ -15,12 +15,12 @@
 </div>
 
 <section>
-	<ul>
+	<ul class="albums">
 		{#each data.photosets.photoset as album}
-			<li>
+			<li class="album">
 				<a class="album-link" href={`/albums/${album.id}`}>
 					<img
-						class="album"
+						class="album-cover"
 						src={album.primary_photo_extras.url_m}
 						alt={album.title._content}
 						loading="lazy"
@@ -40,9 +40,11 @@
 		justify-content: center;
 		flex-direction: column;
 		width: 100%;
+		padding: 2rem;
+		text-align: center;
 	}
 	.container h1 {
-		margin: 0
+		margin: 0;
 	}
 	.container p {
 		margin: 10px 0 0 0;
@@ -50,24 +52,32 @@
 	section {
 		padding: 2rem;
 	}
-	h1 {
-		text-align: center;
-	}
-	ul {
+	.albums {
 		padding: 0;
 		margin: 0 auto;
-		max-width: 1200px;
+		max-width: 900px;
 
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		grid-gap: 2rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
 		list-style: none;
 	}
+
+	.album {
+		flex: 1 1 calc((100% - 2rem) / 2);
+	}
+
+	@media (max-width: 767px) {
+		.album {
+			flex: 1 1 100%;
+		}
+	}
+
 	.album-link {
 		display: flex;
 		position: relative;
 	}
-	.album {
+	.album-cover {
 		width: 100%;
 		height: 100%;
 		object-fit: contain;

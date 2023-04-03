@@ -22,7 +22,7 @@
 	</p>
 </div>
 <section>
-	<ul in:fade={{ delay: 300, duration: 300 }}>
+	<ul class="photos" in:fade={{ delay: 300, duration: 300 }}>
 		{#each data.album.photoset.photo as photo}
 			<li class="photo-link">
 				<a href={`/photos/${photo.id}`}>
@@ -80,13 +80,20 @@
 			display: none;
 		}
 	}
-	ul {
+	.photos {
 		display: grid;
 		gap: 20px;
 		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 		padding: 2rem;
 		margin: 0;
 		list-style: none;
+	}
+
+
+	@media (max-width: 767px) {
+		.photos {
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		}
 	}
 
 	.photo-link {
