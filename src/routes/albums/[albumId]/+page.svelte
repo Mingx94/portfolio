@@ -5,12 +5,15 @@
 	export let data: PageData;
 
 	$: primaryPhoto = data.album.photoset.photo[0];
+
+	$: title = `${data.albumInfo.photoset.title._content} - Album | Coding Shutter`;
+	$: description = data.albumInfo.photoset.description._content;
 </script>
 
 <svelte:head>
 	<!-- HTML Meta Tags -->
-	<title>{data.albumInfo.photoset.title._content} - Album</title>
-	<meta name="description" content={data.albumInfo.photoset.description._content} />
+	<title>{title}</title>
+	<meta name="description" content={description} />
 
 	<!-- Facebook Meta Tags -->
 	<meta
@@ -19,7 +22,7 @@
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="{data.albumInfo.photoset.title._content} - Album" />
-	<meta property="og:description" content={data.albumInfo.photoset.description._content} />
+	<meta property="og:description" content={description} />
 	<meta property="og:image" content={primaryPhoto.url_m} />
 
 	<!-- Twitter Meta Tags -->
@@ -30,7 +33,7 @@
 		content="https://capture-life.vercel.app/albums/{data.albumInfo.photoset.id}"
 	/>
 	<meta name="twitter:title" content="{data.albumInfo.photoset.title._content} - Album" />
-	<meta name="twitter:description" content={data.albumInfo.photoset.description._content} />
+	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content={primaryPhoto.url_m} />
 </svelte:head>
 
