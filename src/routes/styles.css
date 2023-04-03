@@ -1,5 +1,4 @@
 @import './normalize.css';
-@import 'overlayscrollbars/overlayscrollbars.css';
 
 :root {
 	--font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
@@ -15,6 +14,15 @@ body {
 	font-family: var(--font-body);
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
+}
+
+.root {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
 }

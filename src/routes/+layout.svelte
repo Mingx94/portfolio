@@ -1,18 +1,10 @@
 <script lang="ts">
 	import type { LayoutServerData } from './$types';
 	import './styles.css';
-	import { OverlayScrollbars } from 'overlayscrollbars';
-	import { onMount } from 'svelte';
+	import 'overlayscrollbars/overlayscrollbars.css';
+	import { OverlayScrollbarsComponent } from 'overlayscrollbars-svelte';
 
 	export let data: LayoutServerData;
-
-	onMount(() => {
-		OverlayScrollbars(document.body, {
-			scrollbars: {
-				theme: 'os-theme-custom'
-			}
-		});
-	});
 </script>
 
 <header>
@@ -24,13 +16,22 @@
 	</nav>
 </header>
 
-<div class="page-container">
-	{#key data.pathname}
-		<main class="page-wrapper">
-			<slot />
-		</main>
-	{/key}
-</div>
+<OverlayScrollbarsComponent
+	class="os-wrapper"
+	options={{
+		scrollbars: {
+			theme: 'os-theme-light'
+		}
+	}}
+>
+	<div class="page-container">
+		{#key data.pathname}
+			<main class="page-wrapper">
+				<slot />
+			</main>
+		{/key}
+	</div>
+</OverlayScrollbarsComponent>
 
 <style>
 	header {
@@ -66,5 +67,9 @@
 	.page-wrapper {
 		grid-row-start: 1;
 		grid-column-start: 1;
+	}
+	:global(.os-wrapper) {
+		width: 100%;
+		flex: 1 1 0;
 	}
 </style>
