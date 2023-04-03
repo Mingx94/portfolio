@@ -8,8 +8,30 @@
 </script>
 
 <svelte:head>
+	<!-- HTML Meta Tags -->
 	<title>{data.albumInfo.photoset.title._content} - Album</title>
 	<meta name="description" content={data.albumInfo.photoset.description._content} />
+
+	<!-- Facebook Meta Tags -->
+	<meta
+		property="og:url"
+		content="https://capture-life.vercel.app/albums/{data.albumInfo.photoset.id}"
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{data.albumInfo.photoset.title._content} - Album" />
+	<meta property="og:description" content={data.albumInfo.photoset.description._content} />
+	<meta property="og:image" content={primaryPhoto.url_m} />
+
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="twitter:domain" content="capture-life.vercel.app" />
+	<meta
+		property="twitter:url"
+		content="https://capture-life.vercel.app/albums/{data.albumInfo.photoset.id}"
+	/>
+	<meta name="twitter:title" content="{data.albumInfo.photoset.title._content} - Album" />
+	<meta name="twitter:description" content={data.albumInfo.photoset.description._content} />
+	<meta name="twitter:image" content={primaryPhoto.url_m} />
 </svelte:head>
 
 <div class="container">
@@ -88,7 +110,6 @@
 		margin: 0;
 		list-style: none;
 	}
-
 
 	@media (max-width: 767px) {
 		.photos {

@@ -5,8 +5,24 @@
 </script>
 
 <svelte:head>
-	<title>Michael Photo</title>
-	<meta name="description" content="Svelte demo app" />
+  <!-- HTML Meta Tags -->
+  <title>Capture Life</title>
+  <meta name="description" content="Capturing the beautiful moments of life through the lens">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://capture-life.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Capture Life">
+  <meta property="og:description" content="Capturing the beautiful moments of life through the lens">
+  <meta property="og:image" content="">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="capture-life.vercel.app">
+  <meta property="twitter:url" content="https://capture-life.vercel.app/">
+  <meta name="twitter:title" content="Capture Life">
+  <meta name="twitter:description" content="Capturing the beautiful moments of life through the lens">
+  <meta name="twitter:image" content="">
 </svelte:head>
 
 <div class="container">
