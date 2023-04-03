@@ -26,7 +26,7 @@ export const extras = [
 	'url_o'
 ].join(',');
 
-const getPhotosets = async (userId: string) => {
+const getAlbums = async (userId: string) => {
 	const url = new URL(baseUrl);
 	url.searchParams.append('method', 'flickr.photosets.getList');
 	url.searchParams.append('api_key', FLICKR_API_KEY);
@@ -46,6 +46,24 @@ const getPhotosets = async (userId: string) => {
 			total: number;
 			photoset: Photoset[];
 		};
+		stat: string;
+	};
+};
+
+const getAlbumInfo = async (albumId: string, userId: string) => {
+	const url = new URL(baseUrl);
+	url.searchParams.append('method', 'flickr.photosets.getInfo');
+	url.searchParams.append('api_key', FLICKR_API_KEY);
+	url.searchParams.append('photoset_id', albumId);
+	url.searchParams.append('user_id', userId);
+	url.searchParams.append('format', 'json');
+	url.searchParams.append('nojsoncallback', '1');
+
+	const response = await fetch(url);
+	const data = await response.json();
+
+	return data as {
+		photoset: Photoset;
 		stat: string;
 	};
 };
@@ -80,7 +98,8 @@ const getPhotos = async (photosetId: string) => {
 };
 
 const FlickrApi = {
-	getPhotosets,
+	getAlbums,
+	getAlbumInfo,
 	getPhotos
 };
 

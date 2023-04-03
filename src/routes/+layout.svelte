@@ -35,7 +35,7 @@
 
 <style>
 	header {
-		background-color: #000;
+		background-color: #fff;
 		flex-shrink: 0;
 		position: sticky;
 		top: 0;
@@ -55,7 +55,7 @@
 	}
 
 	a {
-		color: #fff;
+		color: #18181b;
 	}
 	.page-container {
 		display: grid;
