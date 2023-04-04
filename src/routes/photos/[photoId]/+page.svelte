@@ -16,6 +16,8 @@
 		.filter((exif) => exif.tagspace === 'ExifIFD')
 		.filter((exif) => exifInfoTags.includes(exif.tag))
 		.sort((a, b) => exifInfoTags.indexOf(a.tag) - exifInfoTags.indexOf(b.tag));
+
+	$: smallImageSrc = `https://live.staticflickr.com/${photoServerId}/${photoId}_${photoSecret}_n.${photoFormat}`;
 </script>
 
 <svelte:head>
@@ -28,7 +30,7 @@
 	<meta property="og:url" content="https://coding-shutter.live/" />
 	<meta property="og:title" content={data.photoInfo.photo.title._content} />
 	<meta property="og:description" content={data.photoInfo.photo.description._content} />
-	<meta property="og:image" content={imageSrc} />
+	<meta property="og:image" content={smallImageSrc} />
 
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
@@ -36,7 +38,7 @@
 	<meta property="twitter:url" content="https://coding-shutter.live/" />
 	<meta name="twitter:title" content={data.photoInfo.photo.title._content} />
 	<meta name="twitter:description" content={data.photoInfo.photo.description._content} />
-	<meta name="twitter:image" content={imageSrc} />
+	<meta name="twitter:image" content={smallImageSrc} />
 </svelte:head>
 
 <div class="container">
