@@ -18,7 +18,7 @@
 	<!-- Facebook Meta Tags -->
 	<meta
 		property="og:url"
-		content="https://capture-life.vercel.app/albums/{data.albumInfo.photoset.id}"
+		content="https://coding-shutter.live/albums/{data.albumInfo.photoset.id}"
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="{data.albumInfo.photoset.title._content} - Album" />
@@ -27,10 +27,10 @@
 
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta property="twitter:domain" content="capture-life.vercel.app" />
+	<meta property="twitter:domain" content="coding-shutter.live" />
 	<meta
 		property="twitter:url"
-		content="https://capture-life.vercel.app/albums/{data.albumInfo.photoset.id}"
+		content="https://coding-shutter.live/albums/{data.albumInfo.photoset.id}"
 	/>
 	<meta name="twitter:title" content="{data.albumInfo.photoset.title._content} - Album" />
 	<meta name="twitter:description" content={description} />

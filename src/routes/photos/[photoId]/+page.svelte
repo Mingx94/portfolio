@@ -18,7 +18,26 @@
 		.sort((a, b) => exifInfoTags.indexOf(a.tag) - exifInfoTags.indexOf(b.tag));
 </script>
 
-<svelte:head />
+<svelte:head>
+	<!-- HTML Meta Tags -->
+	<title>{data.photoInfo.photo.title._content}</title>
+	<meta name="description" content={data.photoInfo.photo.description._content} />
+
+	<!-- Facebook Meta Tags -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://coding-shutter.live/" />
+	<meta property="og:title" content={data.photoInfo.photo.title._content} />
+	<meta property="og:description" content={data.photoInfo.photo.description._content} />
+	<meta property="og:image" content={imageSrc} />
+
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="twitter:domain" content="coding-shutter.live" />
+	<meta property="twitter:url" content="https://coding-shutter.live/" />
+	<meta name="twitter:title" content={data.photoInfo.photo.title._content} />
+	<meta name="twitter:description" content={data.photoInfo.photo.description._content} />
+	<meta name="twitter:image" content={imageSrc} />
+</svelte:head>
 
 <div class="container">
 	<h1>{data.photoInfo.photo.title._content}</h1>
