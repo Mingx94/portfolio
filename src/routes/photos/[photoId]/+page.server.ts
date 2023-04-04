@@ -9,8 +9,6 @@ export const load: PageServerLoad = async ({ params }) => {
 		FlickrApi.getPhotoExif(photoId)
 	]);
 
-	console.log(photoInfo, photoExif);
-
 	return {
 		photoInfo,
 		photoExif
