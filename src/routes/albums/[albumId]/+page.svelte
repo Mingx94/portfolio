@@ -105,12 +105,17 @@
 			display: none;
 		}
 	}
+
+	section {
+		padding: 4rem;
+	}
+	
 	.photos {
+		max-width: 1600px;
+		margin: 0 auto;
 		display: grid;
 		gap: 20px;
 		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-		padding: 2rem;
-		margin: 0;
 		list-style: none;
 	}
 
