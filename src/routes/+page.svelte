@@ -83,7 +83,7 @@
 	}
 
 	.album {
-		flex: 1 1 calc((100% - 2rem) / 2);
+		flex: 0 1 calc((100% - 2rem) / 2);
 	}
 
 	@media (max-width: 767px) {
