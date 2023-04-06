@@ -15,6 +15,7 @@
 	"devDependencies": {
 		"@playwright/test": "^1.32.2",
 		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/adapter-vercel": "^2.4.1",
 		"@sveltejs/kit": "^1.15.1",
 		"@types/cookie": "^0.5.1",
 		"@typescript-eslint/eslint-plugin": "^5.57.1",
