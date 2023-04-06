@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import type { PageData } from './$types';
+	import PhotoSwipeGallery from '$lib/components/PhotoSwipeGallery.svelte';
+	import type { GalleryItem } from '$lib/components/PhotoSwipeGallery.svelte';
 
 	export let data: PageData;
 
@@ -8,6 +10,22 @@
 
 	$: title = `${data.albumInfo.photoset.title._content} - Album | Coding Shutter`;
 	$: description = data.albumInfo.photoset.description._content;
+
+	const images: GalleryItem[] = [];
+
+	data.album.photoset.photo.forEach((photo) => {
+		images.push({
+			src: photo.url_o,
+			width: photo.width_o,
+			height: photo.height_o,
+			alt: photo.title,
+			thumbnail: {
+				src: photo.url_w,
+				width: photo.width_w,
+				height: photo.height_w
+			}
+		});
+	});
 </script>
 
 <svelte:head>
@@ -46,16 +64,8 @@
 		{data.albumInfo.photoset.description._content}
 	</p>
 </div>
-<section>
-	<ul class="photos" in:fade={{ delay: 300, duration: 300 }}>
-		{#each data.album.photoset.photo as photo}
-			<li class="photo-link">
-				<a href={`/photos/${photo.id}`}>
-					<img src={photo.url_m} alt={photo.title} loading="lazy" />
-				</a>
-			</li>
-		{/each}
-	</ul>
+<section in:fade={{ duration: 300 }}>
+	<PhotoSwipeGallery {images} styling="grid" />
 </section>
 
 <style>
@@ -91,6 +101,12 @@
 		object-fit: contain;
 	}
 
+	section {
+		padding: 4rem;
+		max-width: 1600px;
+		margin: 0 auto;
+	}
+
 	@media (max-width: 767px) {
 		.container {
 			display: grid;
@@ -104,35 +120,9 @@
 		.title-img {
 			display: none;
 		}
-	}
 
-	section {
-		padding: 4rem;
-	}
-	
-	.photos {
-		max-width: 1600px;
-		margin: 0 auto;
-		display: grid;
-		gap: 20px;
-		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-		list-style: none;
-	}
-
-	@media (max-width: 767px) {
-		.photos {
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		section {
+			padding: 2rem;
 		}
-	}
-
-	.photo-link {
-		display: flex;
-		justify-content: center;
-		align-self: center;
-		min-width: 0;
-	}
-	.photo-link img {
-		max-width: 100%;
-		height: auto;
 	}
 </style>

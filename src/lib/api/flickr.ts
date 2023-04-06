@@ -19,12 +19,13 @@ export const extras = [
 	'o_dims',
 	'views',
 	'media',
-	'path_alias',
-	'url_sq',
-	'url_t',
-	'url_s',
+	// 'path_alias',
+	// 'url_sq',
+	// 'url_t',
+	// 'url_s',
 	'url_m',
-	'url_o'
+	'url_o',
+	'url_w'
 ].join(',');
 
 const getAlbums = async (userId: string) => {

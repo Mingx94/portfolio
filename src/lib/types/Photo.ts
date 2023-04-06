@@ -49,7 +49,7 @@ export interface Editability {
 }
 
 export interface Notes {
-	note: any[];
+	note: string[];
 }
 
 export interface Owner {
@@ -138,20 +138,23 @@ export interface Photo {
 	context: number;
 	media: string;
 	media_status: string;
-	url_sq: string;
-	height_sq: number;
-	width_sq: number;
+	// url_sq: string;
+	// height_sq: number;
+	// width_sq: number;
 	url_t: string;
 	height_t: number;
 	width_t: number;
-	url_s: string;
-	height_s: number;
-	width_s: number;
+	// url_s: string;
+	// height_s: number;
+	// width_s: number;
 	url_m: string;
 	height_m: number;
 	width_m: number;
 	url_o: string;
 	height_o: number;
 	width_o: number;
-	pathalias: null;
+	// pathalias: null;
+	url_w: string;
+	height_w: number;
+	width_w: number;
 }
