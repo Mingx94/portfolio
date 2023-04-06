@@ -6,7 +6,7 @@
 
 	export let data: PageData;
 
-	$: primaryPhoto = data.album.photoset.photo[0];
+	$: primaryPhoto = data.album.photoset.photo.find((photo) => photo.id === data.albumInfo.photoset.primary)!;
 
 	$: title = `${data.albumInfo.photoset.title._content} - Album | Coding Shutter`;
 	$: description = data.albumInfo.photoset.description._content;
