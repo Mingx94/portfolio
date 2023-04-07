@@ -65,7 +65,7 @@
 	</p>
 </div>
 <section in:fade={{ duration: 300 }}>
-	<PhotoSwipeGallery {images} styling="grid" />
+	<PhotoSwipeGallery {images} />
 </section>
 
 <style>
