@@ -6,15 +6,15 @@
 
 	export let data: PageData;
 
-	$: primaryPhoto = data.album.photoset.photo.find((photo) => photo.id === data.albumInfo.photoset.primary)!;
+	$: primaryPhoto = data.album.photoset.photo.find(
+		(photo) => photo.id === data.albumInfo.photoset.primary
+	)!;
 
 	$: title = `${data.albumInfo.photoset.title._content} - Album | Coding Shutter`;
 	$: description = data.albumInfo.photoset.description._content;
 
-	const images: GalleryItem[] = [];
-
-	data.album.photoset.photo.forEach((photo) => {
-		images.push({
+	$: images = data.album.photoset.photo.map((photo) => {
+		return {
 			src: photo.url_o,
 			width: photo.width_o,
 			height: photo.height_o,
@@ -24,7 +24,7 @@
 				width: photo.width_w,
 				height: photo.height_w
 			}
-		});
+		} as GalleryItem;
 	});
 </script>
 
@@ -122,7 +122,7 @@
 		}
 
 		section {
-			padding: 2rem;
+			padding: 1rem;
 		}
 	}
 </style>

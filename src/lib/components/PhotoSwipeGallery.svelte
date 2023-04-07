@@ -16,17 +16,19 @@
 
 <script>
 	// @ts-nocheck
-	import 'photoswipe/style.css';
+	import justifiedLayout from 'justified-layout';
 	import PhotoSwipe from 'photoswipe';
 	import PhotoSwipeLightbox from 'photoswipe/lightbox';
+	import 'photoswipe/style.css';
 	import { onMount } from 'svelte';
 	import { writable } from 'svelte/store';
-	import justifiedLayout from 'justified-layout';
 
 	export let images;
 	export let individual = false;
 
+	const boxSpacing = 10;
 	let element;
+	let containerWidth = element?.clientWidth ?? 0;
 
 	const options = writable(undefined);
 	$: {
@@ -45,6 +47,29 @@
 		$options = opts;
 	}
 
+	$: layout = justifiedLayout(
+		images.map((img) => ({
+			width: img.width,
+			height: img.height
+		})),
+		{
+			containerPadding: boxSpacing,
+			containerWidth,
+			boxSpacing
+		}
+	);
+
+	onMount(() => {
+		const resizeObserver = new ResizeObserver(() => {
+			containerWidth = element.clientWidth;
+		});
+		resizeObserver.observe(element);
+
+		return () => {
+			resizeObserver.disconnect();
+		};
+	});
+
 	onMount(() => {
 		let lightbox;
 		// on each update, destroy any previous lightbox (to avoid weird bugs) and init new lightbox with new opts
@@ -55,25 +80,15 @@
 			lightbox = new PhotoSwipeLightbox(opts);
 			lightbox.init();
 		});
+
 		return () => {
 			unsub();
 			lightbox?.destroy?.();
 		};
 	});
-
-	$: layout = justifiedLayout(
-		images.map((img) => ({
-			width: img.width,
-			height: img.height
-		})),
-		{
-			containerWidth: element?.clientWidth ?? 0,
-			boxSpacing: 10
-		}
-	);
 </script>
 
-<div class="gallery" bind:this={element}>
+<div class="gallery" bind:this={element} style:--gap={boxSpacing}>
 	{#each images as img, i}
 		{@const thumb = img.thumbnail ?? img}
 		<a
@@ -93,7 +108,8 @@
 	.gallery {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 10px;
+		padding-left: calc(var(--gap) * 1px);
+		gap: calc(var(--gap) * 1px);
 	}
 	a {
 		display: inline-block;
