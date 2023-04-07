@@ -9,9 +9,28 @@
 
 <header>
 	<nav>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<!-- <li><a href="/albums">Albums</a></li> -->
+		<ul class="main-nav">
+			<li>
+				<a href="/" title="Home">
+					<img src="/favicon.svg" alt="Home" width="28" height="28" />
+					Home
+				</a>
+			</li>
+		</ul>
+
+		<ul class="external-nav">
+			<li>
+				<a href="https://www.instagram.com/michael.tsai_94/" target="_blank" title="Instagram">
+					<img src="/instagram.svg" alt="Instagram" width="28" height="28" />
+					Instagram
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/Mingx94/photo-gallery" target="_blank" title="GitHub">
+					<img src="/github.svg" alt="GitHub" width="28" height="28" />
+					GitHub
+				</a>
+			</li>
 		</ul>
 	</nav>
 </header>
@@ -45,6 +64,7 @@
 	}
 	nav {
 		padding: 16px 20px;
+		display: flex;
 	}
 	ul {
 		display: flex;
@@ -52,12 +72,21 @@
 		margin: 0;
 		padding: 0;
 	}
-	li {
-		margin-right: 16px;
+
+	.external-nav {
+		margin-left: auto;
 	}
 
-	a {
+	li:not(:last-child) {
+		margin-right: 0.5rem;
+	}
+
+	li a {
 		color: #18181b;
+		display: flex;
+		align-items: center;
+		gap: 0.3rem;
+		text-decoration: none;
 	}
 	.page-container {
 		display: grid;
