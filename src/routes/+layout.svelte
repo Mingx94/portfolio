@@ -3,6 +3,9 @@
 	import './styles.css';
 	import 'overlayscrollbars/overlayscrollbars.css';
 	import { OverlayScrollbarsComponent } from 'overlayscrollbars-svelte';
+	import logo from '$lib/assets/logo.svg';
+	import instagram from '$lib/assets/instagram.svg';
+	import github from '$lib/assets/github.svg';
 
 	export let data: LayoutServerData;
 </script>
@@ -12,7 +15,7 @@
 		<ul class="main-nav">
 			<li>
 				<a href="/" title="Home">
-					<img src="/favicon.svg" alt="Home" width="28" height="28" />
+					<img src={logo} alt="Logo" width="28" height="28" />
 					Home
 				</a>
 			</li>
@@ -21,13 +24,13 @@
 		<ul class="external-nav">
 			<li>
 				<a href="https://www.instagram.com/michael.tsai_94/" target="_blank" title="Instagram">
-					<img src="/instagram.svg" alt="Instagram" width="28" height="28" />
+					<img src={instagram} alt="Instagram" width="28" height="28" />
 					Instagram
 				</a>
 			</li>
 			<li>
 				<a href="https://github.com/Mingx94/photo-gallery" target="_blank" title="GitHub">
-					<img src="/github.svg" alt="GitHub" width="28" height="28" />
+					<img src={github} alt="GitHub" width="28" height="28" />
 					GitHub
 				</a>
 			</li>

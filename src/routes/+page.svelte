@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import home from '$lib/assets/home.jpg';
 
 	export let data: PageData;
 
@@ -17,7 +18,7 @@
 	<meta property="og:url" content="https://coding-shutter.live/" />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
-	<meta property="og:image" content="/home.jpg" />
+	<meta property="og:image" content={home} />
 
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
@@ -25,7 +26,7 @@
 	<meta property="twitter:url" content="https://coding-shutter.live/" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content="/home.jpg" />
+	<meta name="twitter:image" content={home} />
 </svelte:head>
 
 <div class="container">
