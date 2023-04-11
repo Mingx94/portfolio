@@ -9,6 +9,7 @@
 	import { OverlayScrollbarsComponent } from 'overlayscrollbars-svelte';
 	import 'overlayscrollbars/overlayscrollbars.css';
 	import type { LayoutServerData } from './$types';
+  import Analytics from '$lib/analytics.svelte'
 	import './styles.css';
 
 	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
@@ -26,6 +27,7 @@
 	export let data: LayoutServerData;
 </script>
 
+<Analytics />
 <header>
 	<nav>
 		<ul class="main-nav">
