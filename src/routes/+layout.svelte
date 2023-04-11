@@ -1,11 +1,15 @@
 <script lang="ts">
+	import { dev } from '$app/environment';
+	import github from '$lib/assets/github.svg';
+	import instagram from '$lib/assets/instagram.svg';
+	import logo from '$lib/assets/logo.svg';
+	import { inject } from '@vercel/analytics';
+	import { OverlayScrollbarsComponent } from 'overlayscrollbars-svelte';
+	import 'overlayscrollbars/overlayscrollbars.css';
 	import type { LayoutServerData } from './$types';
 	import './styles.css';
-	import 'overlayscrollbars/overlayscrollbars.css';
-	import { OverlayScrollbarsComponent } from 'overlayscrollbars-svelte';
-	import logo from '$lib/assets/logo.svg';
-	import instagram from '$lib/assets/instagram.svg';
-	import github from '$lib/assets/github.svg';
+
+	inject({ mode: dev ? 'development' : 'production' });
 
 	export let data: LayoutServerData;
 </script>
