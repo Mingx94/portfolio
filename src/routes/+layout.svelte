@@ -1,13 +1,25 @@
 <script lang="ts">
-	import { dev } from '$app/environment';
+	import { browser, dev } from '$app/environment';
+	import { page } from '$app/stores';
 	import github from '$lib/assets/github.svg';
 	import instagram from '$lib/assets/instagram.svg';
 	import logo from '$lib/assets/logo.svg';
+	import { webVitals } from '$lib/vitals';
 	import { inject } from '@vercel/analytics';
 	import { OverlayScrollbarsComponent } from 'overlayscrollbars-svelte';
 	import 'overlayscrollbars/overlayscrollbars.css';
 	import type { LayoutServerData } from './$types';
 	import './styles.css';
+
+	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+
+	$: if (browser && analyticsId) {
+		webVitals({
+			path: $page.url.pathname,
+			params: $page.params,
+			analyticsId
+		});
+	}
 
 	inject({ mode: dev ? 'development' : 'production' });
 
