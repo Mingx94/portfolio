@@ -14,3 +14,4 @@ vite.config.ts.timestamp-*
 /playwright-report/
 /playwright/.cache/
 /.idea
+.vercel

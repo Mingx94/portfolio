@@ -38,15 +38,17 @@
 	<ul class="albums">
 		{#each data.photosets.photoset as album}
 			<li class="album">
-				<a class="album-link" href={`/albums/${album.id}`}>
-					<img
-						class="album-cover"
-						src={album.primary_photo_extras.url_m}
-						alt={album.title._content}
-						loading="lazy"
-					/>
-					<span class="img-title">{album.title._content}</span>
-				</a>
+				<figure class="figure">
+					<a class="album-link" href={`/albums/${album.id}`}>
+						<img
+							class="album-cover"
+							src={album.primary_photo_extras.url_m}
+							alt={album.title._content}
+							loading="lazy"
+						/>
+					</a>
+					<figcaption class="img-title">{album.title._content}</figcaption>
+				</figure>
 			</li>
 		{/each}
 	</ul>
@@ -79,7 +81,7 @@
 
 		display: flex;
 		flex-wrap: wrap;
-		gap: 2rem;
+		gap: 15px;
 		list-style: none;
 	}
 
@@ -95,24 +97,41 @@
 
 	.album-link {
 		display: flex;
+	}
+	.figure {
 		position: relative;
+		margin: 0;
+		overflow: hidden;
+		--img-scale: 1;
+	}
+	.figure:hover {
+		--img-scale: 1.1;
 	}
 	.album-cover {
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
+		transform: scale(var(--img-scale));
+		transition: transform 0.4s ease-in-out;
 	}
 	.img-title {
-		background-color: #000;
+		background: linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0.8) 0%,
+			rgba(0, 0, 0, 0.5) 50%,
+			rgba(0, 0, 0, 0.1) 80%,
+			rgba(0, 0, 0, 0) 100%
+		);
 		width: 100%;
 		text-align: center;
-		padding: 16px 20px;
+		padding: 20px 20px 20px 20px;
 		color: #fff;
 		position: absolute;
+		font-weight: 500;
+		font-size: 1.1rem;
 		bottom: 0;
-		opacity: 0;
-		transition: opacity 0.3s ease;
 		z-index: 1;
+		pointer-events: none;
 
 		/* ellipsis */
 		overflow: hidden;
@@ -120,7 +139,4 @@
 		white-space: nowrap;
 	}
 
-	.album-link:hover .img-title {
-		opacity: 1;
-	}
 </style>
