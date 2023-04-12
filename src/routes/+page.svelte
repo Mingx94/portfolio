@@ -117,17 +117,15 @@
 	.img-title {
 		background: linear-gradient(
 			0deg,
-			rgba(0, 0, 0, 0.8) 0%,
-			rgba(0, 0, 0, 0.5) 50%,
-			rgba(0, 0, 0, 0.1) 80%,
+			rgba(0, 0, 0, 1) 0%,
 			rgba(0, 0, 0, 0) 100%
 		);
 		width: 100%;
 		text-align: center;
-		padding: 20px 20px 20px 20px;
+		padding: 25px 20px 20px 20px;
 		color: #fff;
 		position: absolute;
-		font-weight: 500;
+		font-weight: 600;
 		font-size: 1.1rem;
 		bottom: 0;
 		z-index: 1;
