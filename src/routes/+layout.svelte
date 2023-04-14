@@ -70,9 +70,6 @@
 		{#key data.pathname}
 			<main class="page-wrapper">
 				<slot />
-				<footer>
-					<p>Copyright &copy; 2023 Michael Tsai</p>
-				</footer>
 			</main>
 		{/key}
 	</div>
@@ -126,12 +123,5 @@
 	:global(.os-wrapper) {
 		width: 100%;
 		flex: 1 1 0;
-	}
-
-	footer {
-		background-color: #fff;
-		flex-shrink: 0;
-		padding: 16px 20px;
-		text-align: center;
 	}
 </style>
