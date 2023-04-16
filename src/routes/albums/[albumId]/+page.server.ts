@@ -8,6 +8,6 @@ export const load: PageServerLoad = async ({ params }) => {
 		FlickrApi.getPhotos(albumId),
 		FlickrApi.getAlbumInfo(albumId, FLICKR_USER_ID)
 	]);
-	
+
 	return { album, albumInfo };
 };

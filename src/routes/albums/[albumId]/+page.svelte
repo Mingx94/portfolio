@@ -1,8 +1,8 @@
 <script lang="ts">
+	import type { GalleryItem } from '$lib/components/PhotoSwipeGallery.svelte';
+	import PhotoSwipeGallery from '$lib/components/PhotoSwipeGallery.svelte';
 	import { fade } from 'svelte/transition';
 	import type { PageData } from './$types';
-	import PhotoSwipeGallery from '$lib/components/PhotoSwipeGallery.svelte';
-	import type { GalleryItem } from '$lib/components/PhotoSwipeGallery.svelte';
 
 	export let data: PageData;
 

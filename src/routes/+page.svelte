@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { PageData } from './$types';
 	import home from '$lib/assets/home.jpg';
+	import type { PageData } from './$types';
 
 	export let data: PageData;
 
@@ -115,11 +115,7 @@
 		transition: transform 0.4s ease-in-out;
 	}
 	.img-title {
-		background: linear-gradient(
-			0deg,
-			rgba(0, 0, 0, 1) 0%,
-			rgba(0, 0, 0, 0) 100%
-		);
+		background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
 		width: 100%;
 		text-align: center;
 		padding: 25px 20px 20px 20px;
@@ -136,5 +132,4 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
-
 </style>

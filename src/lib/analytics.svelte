@@ -3,8 +3,8 @@
 	import { PUBLIC_GA_ID } from '$env/static/public';
 
 	$: {
-		if (typeof gtag !== 'undefined') {
-			gtag('config', 'MEASUREMENT_ID', {
+		if (typeof window !== 'undefined' && typeof window.gtag !== 'undefined') {
+			window.gtag('config', 'MEASUREMENT_ID', {
 				page_title: document.title,
 				page_path: $page.url.pathname
 			});

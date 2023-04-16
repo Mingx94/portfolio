@@ -1,28 +1,27 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-import { getCLS, getFCP, getFID, getLCP, getTTFB, Metric,  } from 'web-vitals';
+import { getCLS, getFCP, getFID, getLCP, getTTFB } from 'web-vitals';
+import type { Metric } from 'web-vitals';
 
 const vitalsUrl = 'https://vitals.vercel-analytics.com/v1/vitals';
 
 interface Options {
-	params: { [s: string]: unknown } | ArrayLike<unknown>;
+	params: { [s: string]: string } | ArrayLike<string>;
 	path: string;
 	analyticsId: string;
 	debug?: boolean;
 }
 
 function getConnectionSpeed() {
-	return 'connection' in navigator &&
-		navigator['connection'] &&
-		'effectiveType' in navigator['connection']
-		? navigator['connection']['effectiveType']
-		: '';
+	const connection =
+		'connection' in navigator && (navigator['connection'] as { effectiveType: string });
+	if (!connection) return '';
+
+	const effectiveType = 'effectiveType' in connection && connection['effectiveType'];
+	if (!effectiveType) return '';
+
+	return effectiveType;
 }
 
-function sendToAnalytics(
-	metric: Metric,
-	options: Options
-) {
+function sendToAnalytics(metric: Metric, options: Options) {
 	const page = Object.entries(options.params).reduce(
 		(acc, [key, value]) => acc.replace(value, `[${key}]`),
 		options.path

@@ -10,7 +10,8 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"prepare": "husky install"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.32.2",
@@ -25,6 +26,7 @@
 		"eslint": "^8.38.0",
 		"eslint-config-prettier": "^8.8.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"husky": "^8.0.0",
 		"justified-layout": "^4.1.0",
 		"overlayscrollbars-svelte": "^0.4.0",
 		"photoswipe": "^5.3.7",
