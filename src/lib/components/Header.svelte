@@ -137,7 +137,7 @@
 			z-index: 1;
 
 			flex-direction: column;
-			gap: 1rem;
+			gap: 2rem;
 			overflow: hidden;
 			background-color: #fff;
 			transition: all 0.2s ease-in-out;
@@ -146,12 +146,14 @@
 		.right-nav {
 			flex-direction: column;
 			align-items: center;
+			gap: 2rem;
 		}
 
 		:where(.main-nav, .right-nav) li {
-			width: 100%;
-			max-width: 320px;
-			margin: 0;
+			width: calc(100% - 80px);
+			max-width: 360px;
+			padding-left: 20px;
+			margin: 0 80px 0 0;
 		}
 
 		.right-nav {
@@ -159,6 +161,7 @@
 		}
 
 		nav:not(.is-active) {
+			right: -100%;
 			left: 100%;
 		}
 	}
