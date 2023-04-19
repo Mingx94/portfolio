@@ -75,7 +75,7 @@
 
 		animation: slide-in 1000ms;
 		animation-fill-mode: both;
-		animation-delay: 3 00ms;
+		animation-delay: 300ms;
 	}
 	.container h1 {
 		margin: 0;
