@@ -33,7 +33,7 @@
 	</div>
 
 	<p use:balancer>
-		我是 Michael Tsai 前端工程師，喜好攝影和公路車。<br />目前使用的相機是 Sony A7C， 使用的鏡頭包括
+		我是 Michael Tsai 前端工程師，喜好攝影和公路車。目前使用的相機是 Sony A7C， 使用的鏡頭包括
 		Sony FE 50mm F2.5 G 和 Tamron 28-200mm F2.8-5.6。 歡迎各位一起交流。
 	</p>
 </article>
