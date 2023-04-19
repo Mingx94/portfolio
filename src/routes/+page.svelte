@@ -73,9 +73,9 @@
 		padding: 2rem;
 		text-align: center;
 
-		animation: slide-in 1000ms;
+		/* animation: slide-in 1000ms;
 		animation-fill-mode: both;
-		animation-delay: 300ms;
+		animation-delay: 300ms; */
 	}
 	.container h1 {
 		margin: 0;
