@@ -10,7 +10,7 @@
 		(photo) => photo.id === data.albumInfo.photoset.primary
 	)!;
 
-	$: title = `${data.albumInfo.photoset.title._content} - Album | Coding Shutter`;
+	$: title = `${data.albumInfo.photoset.title._content} - 相簿 | Coding Shutter`;
 	$: description = data.albumInfo.photoset.description._content;
 
 	$: images = data.album.photoset.photo.map((photo) => {
@@ -39,20 +39,14 @@
 		content="https://coding-shutter.blog/albums/{data.albumInfo.photoset.id}"
 	/>
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content="{data.albumInfo.photoset.title._content} - Album" />
+	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content={primaryPhoto.url_m} />
+	<meta property="og:image:width" content="600" />
+	<meta property="og:image:height" content="400" />
 
 	<!-- Twitter Meta Tags -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta property="twitter:domain" content="coding-shutter.blog" />
-	<meta
-		property="twitter:url"
-		content="https://coding-shutter.blog/albums/{data.albumInfo.photoset.id}"
-	/>
-	<meta name="twitter:title" content="{data.albumInfo.photoset.title._content} - Album" />
-	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content={primaryPhoto.url_m} />
+	<meta name="twitter:card" content="summary" />
 </svelte:head>
 
 <div class="container">

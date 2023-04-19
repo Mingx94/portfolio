@@ -12,6 +12,7 @@
 	<!-- HTML Meta Tags -->
 	<title>{title}</title>
 	<meta name="description" content={description} />
+	<meta name="keywords" content="photography, photo, sony, a7c, tamron, portfolio" />
 
 	<!-- Facebook Meta Tags -->
 	<meta property="og:type" content="website" />
@@ -19,14 +20,11 @@
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:image" content={home} />
+	<meta property="og:image:width" content="600" />
+	<meta property="og:image:height" content="400" />
 
 	<!-- Twitter Meta Tags -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta property="twitter:domain" content="coding-shutter.blog" />
-	<meta property="twitter:url" content="https://coding-shutter.blog/" />
-	<meta name="twitter:title" content={title} />
-	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content={home} />
+	<meta name="twitter:card" content="summary" />
 </svelte:head>
 
 <div class="container">
@@ -55,6 +53,16 @@
 </section>
 
 <style>
+	@keyframes slide-in {
+		from {
+			transform: translateX(-30%);
+			opacity: 0;
+		}
+		to {
+			transform: translateX(0%);
+			opacity: 1;
+		}
+	}
 	.container {
 		height: 50vh;
 		display: flex;
@@ -64,6 +72,10 @@
 		width: 100%;
 		padding: 2rem;
 		text-align: center;
+
+		animation: slide-in 1000ms;
+		animation-fill-mode: both;
+		animation-delay: 3 00ms;
 	}
 	.container h1 {
 		margin: 0;
