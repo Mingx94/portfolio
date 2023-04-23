@@ -55,11 +55,11 @@
 <style>
 	@keyframes slide-in {
 		from {
-			transform: translateX(-30%);
+			transform: translateY(-20%);
 			opacity: 0;
 		}
 		to {
-			transform: translateX(0%);
+			transform: translateY(0%);
 			opacity: 1;
 		}
 	}
@@ -73,9 +73,9 @@
 		padding: 2rem;
 		text-align: center;
 
-		/* animation: slide-in 1000ms;
+		animation: slide-in 1000ms;
 		animation-fill-mode: both;
-		animation-delay: 300ms; */
+		animation-delay: 300ms;
 	}
 	.container h1 {
 		margin: 0;

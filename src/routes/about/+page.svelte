@@ -1,6 +1,5 @@
 <script>
 	import me from '$lib/assets/me.jpg';
-	import { balancer } from 'svelte-action-balancer';
 
 	let title = '關於我 | Coding Shutter';
 	let description = 'Michael Tsai, 前端工程師 | Coding Shutter';
@@ -32,17 +31,16 @@
 		<img class="image-cropped-transform" src={me} alt="Michael Tsai" />
 	</div>
 
-	<p use:balancer>
-		我是 Michael Tsai 前端工程師，喜好攝影和公路車。目前使用的相機是 Sony A7C， 使用的鏡頭包括
-		Sony FE 50mm F2.5 G 和 Tamron 28-200mm F2.8-5.6。 歡迎各位一起交流。
+	<p>
+		我是 Michael Tsai 前端工程師，喜好攝影和公路車。 目前使用的相機是 Sony A7C， 使用的鏡頭為 Sony
+		FE 50mm F2.5 G 和 Tamron 28-200mm F2.8-5.6。 歡迎各位一起交流。
 	</p>
 </article>
 
 <style>
 	.avatar {
 		position: relative;
-		width: 100%;
-		max-width: 300px;
+		width: 300px;
 		aspect-ratio: 1/1;
 		border-radius: 999px;
 		overflow: hidden;
@@ -70,5 +68,7 @@
 	p {
 		line-height: 1.6;
 		margin: 1rem auto;
+		max-width: 400px;
+		text-align: left;
 	}
 </style>
