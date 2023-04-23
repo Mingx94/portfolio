@@ -21,7 +21,7 @@
 	<meta property="og:height" content="300" />
 
 	<!-- Twitter Meta Tags -->
-	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <article>

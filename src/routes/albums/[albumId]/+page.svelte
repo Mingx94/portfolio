@@ -46,7 +46,7 @@
 	<meta property="og:image:height" content="400" />
 
 	<!-- Twitter Meta Tags -->
-	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <div class="container">
