@@ -1,5 +1,4 @@
 <script lang="ts">
-	import home from '$lib/assets/home.jpg';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -19,7 +18,7 @@
 	<meta property="og:url" content="https://coding-shutter.blog/" />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
-	<meta property="og:image" content={home} />
+	<meta property="og:image" content="https://coding-shutter.blog/home.jpg" />
 	<meta property="og:image:width" content="600" />
 	<meta property="og:image:height" content="400" />
 
