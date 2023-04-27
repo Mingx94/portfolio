@@ -17,6 +17,16 @@
 </script>
 
 <header>
+	<a
+		href="https://www.instagram.com/michael.tsai_94/"
+		target="_blank"
+		title="Instagram"
+		class="link show-in-mobile"
+	>
+		<img src={instagram} alt="Instagram" width="28" height="28" />
+		Instagram
+	</a>
+
 	<button class="hamburger" on:click={toggleMenu} class:is-active={isMenuOpen}>
 		<span class="hamburger__line" />
 		<span class="hamburger__line" />
@@ -26,30 +36,40 @@
 	<nav class:is-active={isMenuOpen}>
 		<ul class="main-nav">
 			<li>
-				<a href="/" title="Home">
+				<a class="link" href="/" title="Home">
 					<img src={logo} alt="Logo" width="28" height="28" />
-					Home
+					首頁
 				</a>
 			</li>
 		</ul>
 
 		<ul class="right-nav">
 			<li>
-				<a href="/about" title="About">
+				<a class="link" href="/about" title="About">
 					<img src={about} alt="About" width="28" height="28" />
-					About Me
+					關於我
 				</a>
 			</li>
 			<li>
-				<a href="https://www.instagram.com/michael.tsai_94/" target="_blank" title="Instagram">
+				<a
+					class="link"
+					href="https://github.com/Mingx94/photo-gallery"
+					target="_blank"
+					title="GitHub"
+				>
+					<img src={github} alt="GitHub" width="28" height="28" />
+					原始碼
+				</a>
+			</li>
+			<li class="hide-in-mobile">
+				<a
+					class="link"
+					href="https://www.instagram.com/michael.tsai_94/"
+					target="_blank"
+					title="Instagram"
+				>
 					<img src={instagram} alt="Instagram" width="28" height="28" />
 					Instagram
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/Mingx94/photo-gallery" target="_blank" title="GitHub">
-					<img src={github} alt="GitHub" width="28" height="28" />
-					GitHub
 				</a>
 			</li>
 		</ul>
@@ -91,12 +111,16 @@
 		margin-left: auto;
 	}
 
-	li a {
+	.link {
 		color: #18181b;
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
 		text-decoration: none;
+	}
+
+	.show-in-mobile {
+		display: none;
 	}
 
 	@media (max-width: 768px) {
@@ -161,9 +185,22 @@
 			margin: 0;
 		}
 
+		header {
+			display: flex;
+			align-items: center;
+		}
+
 		nav:not(.is-active) {
 			right: -100%;
 			left: 100%;
+		}
+
+		.show-in-mobile {
+			display: flex;
+			margin-left: 15px;
+		}
+		.hide-in-mobile {
+			display: none;
 		}
 	}
 </style>
