@@ -7,7 +7,6 @@
 	import { inject } from '@vercel/analytics';
 	import 'overlayscrollbars/overlayscrollbars.css';
 	import './styles.css';
-	import Gtm from '$lib/components/GTM.svelte';
 
 	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
@@ -22,7 +21,6 @@
 	inject({ mode: dev ? 'development' : 'production' });
 </script>
 
-<Gtm />
 <Analytics />
 <Header />
 <div class="page-container">
