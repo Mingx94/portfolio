@@ -22,6 +22,7 @@
 
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content={me} />
 </svelte:head>
 
 <article>
