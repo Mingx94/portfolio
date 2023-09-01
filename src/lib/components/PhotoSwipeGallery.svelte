@@ -98,8 +98,16 @@
 			target="_blank"
 			style:--width={layout.boxes[i].width}
 			style:--height={layout.boxes[i].height}
+			class="shadow-sm bg-gray-100 inline-block w-[calc(var(--width)*1px)] h-[calc(var(--height)*1px)]"
 		>
-			<img src={thumb.src} alt={img.alt ?? ''} width={thumb.width} height={thumb.height} />
+			<img
+				src={thumb.src}
+				alt={img.alt ?? ''}
+				width={thumb.width}
+				height={thumb.height}
+				loading="lazy"
+				class="object-cover w-full h-full rounded-md"
+			/>
 		</a>
 	{/each}
 </div>
@@ -110,19 +118,5 @@
 		flex-wrap: wrap;
 		padding-left: calc(var(--gap) * 1px);
 		gap: calc(var(--gap) * 1px);
-	}
-	a {
-		display: inline-block;
-		width: calc(var(--width) * 1px);
-		height: calc(var(--height) * 1px);
-
-		box-shadow: 0 0 #0000, 0 0 #0000, 0 20px 25px -5px rgb(0 0 0 / 0.1),
-			0 8px 10px -6px rgb(0 0 0 / 0.1);
-	}
-	img {
-		vertical-align: bottom;
-		width: 100%;
-		height: 100%;
-		object-fit: contain;
 	}
 </style>

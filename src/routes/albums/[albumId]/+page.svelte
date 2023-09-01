@@ -50,74 +50,16 @@
 	<meta name="twitter:image" content={primaryPhoto.url_m} />
 </svelte:head>
 
-<div class="container">
-	<img class="title-img" src={primaryPhoto.url_m} alt={data.album.photoset.title} />
-	<h1 class="title">
+<div class="max-w-1400px mx-auto py-40px px-20px xl:px-40px">
+	<h1 class="text-24px font-600 mb-10px">
 		{data.albumInfo.photoset.title._content}
 	</h1>
-	<p class="description">
-		{data.albumInfo.photoset.description._content}
-	</p>
+	{#if data.albumInfo.photoset.description._content}
+		<p class="text-16px">
+			{data.albumInfo.photoset.description._content}
+		</p>
+	{/if}
 </div>
-<section in:fade={{ duration: 300 }}>
+<section class="max-w-1400px mx-auto px-10px xl:px-30px" in:fade={{ duration: 300 }}>
 	<PhotoSwipeGallery {images} />
 </section>
-
-<style>
-	.container {
-		padding: 2rem;
-		display: grid;
-		grid-template-areas:
-			'image title'
-			'image description';
-
-		grid-template-columns: minmax(400px, 1fr) 1fr;
-		grid-template-rows: 60px 1fr;
-
-		gap: 30px;
-	}
-
-	.title {
-		grid-area: title;
-		margin: 0;
-	}
-
-	.description {
-		grid-area: description;
-		margin: 0;
-	}
-
-	.title-img {
-		grid-area: image;
-		align-self: start;
-		justify-self: self-end;
-		width: 400px;
-		height: auto;
-		object-fit: contain;
-	}
-
-	section {
-		padding: 4rem;
-		max-width: 1600px;
-		margin: 0 auto;
-	}
-
-	@media (max-width: 767px) {
-		.container {
-			display: grid;
-			grid-template-areas:
-				'title'
-				'description';
-			grid-template-columns: 1fr;
-			grid-template-rows: 1fr 1fr;
-		}
-
-		.title-img {
-			display: none;
-		}
-
-		section {
-			padding: 1rem;
-		}
-	}
-</style>
