@@ -18,12 +18,12 @@
 
 <header class="sticky top-0 z-10 isolate bg-white">
 	<div class="h-48px flex flex-items-center px-20px xl:px-40px max-w-1400px mx-auto">
-		<h1 class="font-normal text-20px inline-block mr-auto">
+		<div class="font-normal text-20px inline-block mr-auto">
 			<a href="/" title="Coding Shutter" class="flex flex-items-center gap-8px">
 				<img src={logo} alt="Logo" class="w-28px h-28px" />
 				<span class="hidden sm:inline">Coding Shutter</span>
 			</a>
-		</h1>
+		</div>
 		<nav>
 			<ul class="flex gap-24px sm:gap-16px">
 				<li>
