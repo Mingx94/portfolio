@@ -32,7 +32,7 @@
 </svelte:head>
 
 <section class="max-w-1400px mx-auto py-40px px-20px xl:px-40px">
-	<h1 class="text-24px font-600 mb-10px">Michael Tsai</h1>
+	<h1 class="text-24px font-600 mb-5px">Michael Tsai</h1>
 	<p class="text-14px">Front-end Engineer | Photography enthusiast</p>
 </section>
 
