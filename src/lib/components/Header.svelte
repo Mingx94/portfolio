@@ -3,20 +3,9 @@
 	import instagram from '$lib/assets/instagram.svg';
 	import logo from '$lib/assets/logo.svg';
 	import about from '$lib/assets/about.svg';
-	import { navigating } from '$app/stores';
-
-	let isMenuOpen = false;
-
-	function toggleMenu() {
-		isMenuOpen = !isMenuOpen;
-	}
-
-	$: if ($navigating) {
-		isMenuOpen = false;
-	}
 </script>
 
-<header class="sticky top-0 z-10 isolate bg-white">
+<header class="fixed w-full left-0 top-0 z-10 isolate bg-white/80 backdrop-blur-lg">
 	<div class="h-48px flex flex-items-center px-20px xl:px-40px max-w-1400px mx-auto">
 		<div class="font-normal text-20px inline-block mr-auto">
 			<a href="/" title="Coding Shutter" class="flex flex-items-center gap-8px">
