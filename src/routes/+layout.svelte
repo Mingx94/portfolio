@@ -7,6 +7,6 @@
 
 <Header />
 
-<main>
+<main class="pb-80px">
 	<slot />
 </main>
