@@ -1,6 +1,7 @@
 <script lang="ts">
-	import type { GalleryItem } from '$lib/components/PhotoSwipeGallery.svelte';
-	import PhotoSwipeGallery from '$lib/components/PhotoSwipeGallery.svelte';
+	import DialogGallery from '$lib/components/DialogGallery.svelte';
+	import FlickrLayoutImages from '$lib/components/FlickrLayoutImages.svelte';
+	import type { GalleryItem } from '$lib/types/GalleryItem';
 	import { fade } from 'svelte/transition';
 	import type { PageData } from './$types';
 
@@ -24,7 +25,7 @@
 				width: photo.width_w,
 				height: photo.height_w
 			}
-		} as GalleryItem;
+		} satisfies GalleryItem;
 	});
 </script>
 
@@ -60,6 +61,8 @@
 		</p>
 	{/if}
 </div>
-<section class="max-w-1400px mx-auto px-10px xl:px-30px" in:fade={{ duration: 300 }}>
-	<PhotoSwipeGallery {images} />
+<section class="max-w-1400px mx-auto px-5px xl:px-25px" in:fade={{ duration: 300 }}>
+	<FlickrLayoutImages {images} />
 </section>
+
+<DialogGallery {images} />
