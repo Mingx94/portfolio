@@ -44,7 +44,7 @@
 			返回
 		</div>
 		<div
-			class="snap-x snap-mandatory md:overflow-hidden items-center h-full whitespace-nowrap cursor-grab flex items-center overflow-x-auto"
+			class="snap-x snap-mandatory md:overflow-x-scroll items-center h-full whitespace-nowrap cursor-grab flex items-center overflow-x-auto"
 			use:dragScroll
 			use:removeScroll
 			use:initialScrollLeft={{ index: Number(openBox) }}

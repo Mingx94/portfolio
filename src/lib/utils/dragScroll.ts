@@ -13,8 +13,45 @@ export const dragScroll: Action<HTMLDivElement> = (node) => {
 	}
 
 	function end() {
-		node.style.removeProperty('user-select');
-		node.style.removeProperty('scroll-snap-type');
+		function getTargetScrollPosition(node: HTMLElement): number {
+			const { children: elements, scrollLeft, offsetWidth: width } = node;
+			const scrollCenter = scrollLeft + width / 2;
+			let closestCenter = 0;
+			let minDistance = Infinity;
+
+			Array.from(elements as HTMLCollectionOf<HTMLElement>).forEach((element) => {
+				const elementCenter = element.offsetLeft + element.offsetWidth / 2;
+				const distance = Math.abs(scrollCenter - elementCenter);
+				if (distance < minDistance) {
+					minDistance = distance;
+					closestCenter = elementCenter;
+				}
+			});
+
+			return closestCenter - width / 2;
+		}
+
+		const targetScroll = getTargetScrollPosition(node);
+		const scrollWidth = node.scrollWidth;
+		const width = node.offsetWidth;
+
+		if (targetScroll < 0) {
+			node.scrollTo({ left: 0, behavior: 'smooth' });
+		} else if (targetScroll + width > scrollWidth) {
+			node.scrollTo({ left: scrollWidth - width, behavior: 'smooth' });
+		} else {
+			node.scrollTo({ left: targetScroll, behavior: 'smooth' });
+		}
+
+		let timer: NodeJS.Timeout;
+		node.addEventListener('scroll', function scrollHandler() {
+			clearTimeout(timer);
+			timer = setTimeout(() => {
+				node.removeEventListener('scroll', scrollHandler);
+				node.style.removeProperty('user-select');
+				node.style.removeProperty('scroll-snap-type');
+			}, 100);
+		});
 	}
 
 	function mousedown(e: MouseEvent) {
@@ -25,6 +62,7 @@ export const dragScroll: Action<HTMLDivElement> = (node) => {
 	}
 
 	function mouseleave() {
+		if (!isDown) return;
 		isDown = false;
 		isDragged = false;
 		end();
@@ -36,6 +74,7 @@ export const dragScroll: Action<HTMLDivElement> = (node) => {
 	}
 
 	function mouseup() {
+		if (!isDown) return;
 		const elements = node.children;
 		if (isDragged) {
 			for (let i = 0; i < elements.length; i++) {
