@@ -29,7 +29,7 @@
 			href="{$page.url.pathname}?index={i}"
 			style:--width={layout.boxes[i].width}
 			style:--height={layout.boxes[i].height}
-			class="shadow-sm bg-gray-100 inline-block w-[calc(var(--width)*1px)] h-[calc(var(--height)*1px)]"
+			class="shadow-sm bg-gray-100 inline-block w-[calc(var(--width)*1px)] h-[calc(var(--height)*1px)] rounded-md overflow-hidden isolate"
 		>
 			<Image
 				src={thumb.src}

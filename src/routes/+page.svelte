@@ -42,7 +42,9 @@
 			<li
 				class="w-[calc(100%-20px)] sm:w-[calc(50%-20px)] mx-10px lg:w-[calc(100%/3-20px)] mb-20px"
 			>
-				<figure class="w-full aspect-ratio-[4/3] relative shadow-md bg-gray-100">
+				<figure
+					class="w-full aspect-ratio-[4/3] relative shadow-md bg-gray-100 rounded-md isolate overflow-hidden"
+				>
 					<a class="h-full w-full" href={`/albums/${album.id}`}>
 						<img
 							class="absolute top-0 left-0 w-full h-full object-cover rounded-md"
