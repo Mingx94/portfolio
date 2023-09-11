@@ -7,6 +7,7 @@
 	import type { Action } from 'svelte/action';
 	import { fade } from 'svelte/transition';
 	import Image from './Image.svelte';
+	import ExifViewer from '$lib/components/ExifViewer.svelte';
 
 	export let images: GalleryItem[] = [];
 
@@ -28,21 +29,15 @@
 		in:fade={{ duration: 300 }}
 		class="fixed top-0 bottom-0 left-0 right-0 bg-gray-100 overflow-hidden z-50"
 	>
-		<div
-			role="button"
+		<button
 			class="absolute top-0 left-0 p-10px cursor-pointer hover:bg-gray-200 z-[1]"
 			on:click={() => {
 				goto($page.url.pathname, { replaceState: true });
 			}}
-			on:keydown={(event) => {
-				if (event.key === 'Enter' || event.key === ' ') {
-					goto($page.url.pathname, { replaceState: true });
-				}
-			}}
 			tabindex="0"
 		>
 			返回
-		</div>
+		</button>
 		<div
 			class="snap-x snap-mandatory md:overflow-x-scroll items-center h-full whitespace-nowrap cursor-grab flex items-center overflow-x-auto"
 			use:dragScroll
@@ -54,6 +49,7 @@
 					class="w-full h-full md:p-20px snap-start snap-always md:scroll-px-20px flex-shrink-0 flex-grow-0"
 				>
 					<div class="w-full h-full relative">
+						<ExifViewer photoId={image.photoId} />
 						<Image
 							src={image.src}
 							alt=""

@@ -1,5 +1,6 @@
 export interface GalleryItem {
 	src: string;
+	photoId: string;
 	thumbnail?: {
 		src: string;
 		width: number;

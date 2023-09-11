@@ -4,18 +4,14 @@
 
 	export let data: PageData;
 
-	let title = 'Michael Tsai 📷 Coding Shutter';
-	let description = 'A Front-end Engineer / Photography enthusiast';
+	let title = 'Michael Tsai 📷 Photography';
+	let description = "A Front-end Engineer / Photography enthusiast's photo blog.";
 </script>
 
 <svelte:head>
 	<!-- HTML Meta Tags -->
 	<title>{title}</title>
 	<meta name="description" content={description} />
-	<meta
-		name="keywords"
-		content="Front-end, Engineer, photography, photo, sony, a7c, tamron, portfolio"
-	/>
 
 	<!-- Facebook Meta Tags -->
 	<meta property="og:type" content="website" />

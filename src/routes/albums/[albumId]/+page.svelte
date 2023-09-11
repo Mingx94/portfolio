@@ -11,7 +11,7 @@
 		(photo) => photo.id === data.albumInfo.photoset.primary
 	)!;
 
-	$: title = `${data.albumInfo.photoset.title._content} - 相簿 | Coding Shutter`;
+	$: title = `${data.albumInfo.photoset.title._content} - Michael Tsai 📷`;
 	$: description = data.albumInfo.photoset.description._content;
 
 	$: images = data.album.photoset.photo.map((photo) => {
@@ -20,6 +20,7 @@
 			width: photo.width_o,
 			height: photo.height_o,
 			alt: photo.title,
+			photoId: photo.id,
 			thumbnail: {
 				src: photo.url_w,
 				width: photo.width_w,
