@@ -5,26 +5,15 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"test": "playwright test",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"test:unit": "vitest",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write .",
-		"prepare": "husky install"
+		"format": "prettier --plugin-search-dir . --write ."
 	},
-	"lint-staged": {
-    "*.{ts,js,svelte}": [
-      "eslint --fix"
-    ],
-    "*.{html,scss,css,ts,js,svelte}": [
-      "prettier --write"
-    ]
- },
 	"devDependencies": {
 		"@playwright/test": "^1.37.1",
 		"@sveltejs/adapter-cloudflare": "^2.3.3",
-		"@sveltejs/kit": "^1.24.0",
+		"@sveltejs/kit": "^1.27.5",
 		"@types/justified-layout": "^4.1.0",
 		"@typescript-eslint/eslint-plugin": "^6.5.0",
 		"@typescript-eslint/parser": "^6.5.0",
@@ -33,7 +22,6 @@
 		"eslint": "^8.38.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-svelte": "^2.33.0",
-		"husky": "^8.0.3",
 		"justified-layout": "^4.1.0",
 		"photoswipe": "^5.3.8",
 		"prettier": "^3.0.3",
@@ -43,8 +31,7 @@
 		"tslib": "^2.6.2",
 		"typescript": "^5.2.2",
 		"unocss": "^0.55.4",
-		"vite": "^4.4.9",
-		"vitest": "^0.34.3"
+		"vite": "^4.4.9"
 	},
 	"type": "module"
 }
