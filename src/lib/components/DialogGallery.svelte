@@ -7,7 +7,6 @@
 	import type { Action } from 'svelte/action';
 	import { fade } from 'svelte/transition';
 	import Image from './Image.svelte';
-	import ExifViewer from '$lib/components/ExifViewer.svelte';
 
 	export let images: GalleryItem[] = [];
 
@@ -49,7 +48,6 @@
 					class="w-full h-full md:p-20px snap-start snap-always md:scroll-px-20px flex-shrink-0 flex-grow-0"
 				>
 					<div class="w-full h-full relative">
-						<ExifViewer photoId={image.photoId} />
 						<Image
 							src={image.src}
 							alt=""
