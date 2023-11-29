@@ -1,6 +1,10 @@
 {
-	"name": "photo-gallery",
+	"name": "portfolio",
 	"version": "1.0.0",
+	"author": {
+		"name": "Michael Tsai",
+		"email": "mingxcv@gmail.com"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
