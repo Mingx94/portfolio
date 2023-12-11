@@ -14,7 +14,9 @@ export const load: PageServerLoad = async () => {
 	});
 
 	return {
-		...photosets,
-		photoset,
+		photosets: {
+			...photosets,
+			photoset,
+		}
 	};
 };
