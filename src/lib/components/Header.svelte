@@ -9,8 +9,7 @@
 	<div class="h-48px flex flex-items-center px-20px xl:px-40px max-w-1400px mx-auto">
 		<div class="font-normal text-20px inline-block mr-auto">
 			<a href="/" title="Coding Shutter" class="flex flex-items-center gap-8px">
-				<img src={logo} alt="Logo" class="w-28px h-28px" />
-				<span class="hidden sm:inline">Coding Shutter</span>
+				<img src={logo} alt="Logo" class="w-28px h-28px transition-transform hover:rotate-180 duration-1s" />
 			</a>
 		</div>
 		<nav>
@@ -28,7 +27,6 @@
 						class="flex flex-items-center gap-8px"
 					>
 						<img src={github} alt="GitHub" class="w-28px h-28px" />
-						<span class="hidden sm:inline">原始碼</span>
 					</a>
 				</li>
 				<li>
@@ -38,7 +36,6 @@
 						class="flex flex-items-center gap-8px"
 					>
 						<img src={instagram} alt="Instagram" class="w-28px h-28px" />
-						<span class="hidden sm:inline">Instagram</span>
 					</a>
 				</li>
 			</ul>
