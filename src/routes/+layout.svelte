@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 	import 'uno.css';
 	import '@unocss/reset/tailwind.css';
 	import './styles.css';
@@ -7,14 +8,8 @@
 
 <Header />
 
-<main class="pt-48px pb-80px">
+<main class="pt-64px min-h-[calc(100%_-_80px)] bg-rose-50 flex flex-col [&>*]:w-full [&>*]:flex-1">
 	<slot />
 </main>
 
-<footer class="py-12px">
-	<p class="text-center text-gray-500 text-sm">
-		All photos are CC BY 2.0 by <b>Michael Tsai</b>.
-		<br />
-		Website is licensed under <b>MIT</b>.
-	</p>
-</footer>
+<Footer />
