@@ -12,6 +12,10 @@
 			name: 'Albums',
 			href: '/albums',
 		},
+		{
+			name: 'Resume',
+			href: '/resume',
+		}
 	];
 </script>
 
