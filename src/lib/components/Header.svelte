@@ -5,10 +5,6 @@
 
 	const navLinks = [
 		{
-			name: 'Home',
-			href: '/',
-		},
-		{
 			name: 'Albums',
 			href: '/albums',
 		},
