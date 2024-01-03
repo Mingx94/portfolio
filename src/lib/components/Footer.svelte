@@ -1,5 +1,12 @@
+<script lang="ts">
+	import { page } from '$app/stores';
+</script>
 
-<footer class="flex items-center justify-center h-80px w-full bg-rose-50">
+<footer
+	class="flex items-center justify-center h-80px w-full bg-rose-50"
+	class:mb-80px={$page.url.pathname === '/resume'}
+	class:md:mb-0={$page.url.pathname === '/resume'}
+>
 	<p class="text-center text-gray-500 text-sm">
 		All photos are CC BY 2.0 by <b>Michael Tsai</b>.
 		<br />

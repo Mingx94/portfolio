@@ -1,7 +1,7 @@
 <script lang="ts">
 	import logo from '$lib/assets/logo.svg';
 
-	import { getStores, navigating, page, updated } from '$app/stores';
+	import { page } from '$app/stores';
 
 	const navLinks = [
 		{

@@ -8,11 +8,13 @@
 	<title>履歷 - Michael Tsai</title>
 </svelte:head>
 
-<section class="max-w-1100px mx-auto flex p-40px space-x-12px">
+<section class="max-w-1100px mx-auto flex space-x-12px p-40px">
 	<div
-		class="basis-1/4 flex-shrink-0 flex-grow-0 bg-white rounded-8px shadow-md self-start sticky top-104px p-12px"
+		class="flex-shrink-0 flex-grow-0 bg-white rounded-t-8px shadow-md h-80px
+		fixed z-10 bottom-0 top-unset left-0 right-0 flex items-center 
+		md:basis-1/4 md:sticky md:top-104px md:self-start md:rounded-8px md:h-auto"
 	>
-		<ul class="list-circle list-inside pl-8px text-lg font-600">
+		<ul class="list-circle list-inside text-lg font-600 flex justify-between w-full px-20px md:block md:px-8px md:p-12px">
 			<li>
 				<a href="#summary">簡介</a>
 			</li>
@@ -20,7 +22,7 @@
 				<a href="#skill">技能</a>
 			</li>
 			<li>
-				<a href="#work-experience">工作經歷</a>
+				<a href="#work-experience">經歷</a>
 			</li>
 			<li>
 				<a href="#education">學歷</a>
@@ -28,10 +30,10 @@
 		</ul>
 	</div>
 
-	<div class="basis-3/4 flex-shrink flex-grow-0 space-y-20px">
+	<div class="basis-full md:basis-3/4 flex-shrink flex-grow-0 space-y-20px">
 		<div id="summary" class="p-24px bg-white rounded-8px shadow-md scroll-mt-104px">
 			<h2>
-				<a href="#summary">經歷</a>
+				<a href="#summary">簡介</a>
 			</h2>
 			<ul class="list-square">
 				<li>5年以上網頁前端開發經驗，主要為前端開發，少許後端開發經驗</li>
@@ -62,6 +64,7 @@
 						<li><code>Go</code></li>
 						<li><code>C#</code></li>
 						<li><code>SQL</code></li>
+						<li><code>Docker</code></li>
 					</ul>
 				</li>
 			</ul>
@@ -76,9 +79,11 @@
 					<ul class="list-disc">
 						<li>
 							使用 <code>React.js</code> 開發及維護
-							<a href="https://playsee.co/" target="_blank" rel="noopener nofollow noreferrer"
-							class="text-fuchsia-600 hover:underline"
-								>Playsee</a
+							<a
+								href="https://playsee.co/"
+								target="_blank"
+								rel="noopener nofollow noreferrer"
+								class="text-fuchsia-600 hover:underline">Playsee</a
 							> 平台
 						</li>
 						<li>遷移 <code>styled-components</code> 到 <code>TailwindCSS</code></li>
