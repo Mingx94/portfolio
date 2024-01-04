@@ -7,9 +7,5 @@
 	class:mb-80px={$page.url.pathname === '/resume'}
 	class:md:mb-0={$page.url.pathname === '/resume'}
 >
-	<p class="text-center text-gray-500 text-sm">
-		All photos are CC BY 2.0 by <b>Michael Tsai</b>.
-		<br />
-		Website is licensed under <b>MIT</b>.
-	</p>
+	<p class="text-center text-gray-500 text-sm">Michael Tsai © 2024</p>
 </footer>
