@@ -1,7 +1,7 @@
 <script lang="ts">
-	import DialogGallery from '$lib/components/DialogGallery.svelte';
-	import FlickrLayoutImages from '$lib/components/FlickrLayoutImages.svelte';
-	import type { GalleryItem } from '$lib/types/GalleryItem';
+	import DialogGallery from '$lib/components/dialog-gallery.svelte';
+	import LayoutImages from '$lib/components/layout-images.svelte';
+	import type { GalleryItem } from '$lib/types/gallery-item';
 	import { fade } from 'svelte/transition';
 	import type { PageData } from './$types';
 
@@ -63,7 +63,7 @@
 	{/if}
 </div>
 <section class="max-w-1400px mx-auto px-5px xl:px-25px" in:fade={{ duration: 300 }}>
-	<FlickrLayoutImages {images} />
+	<LayoutImages {images} />
 </section>
 
 <DialogGallery {images} />

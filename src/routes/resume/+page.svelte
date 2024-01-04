@@ -1,5 +1,5 @@
 <script>
-	import Timeline from '$lib/components/Timeline.svelte';
+	import Timeline from '$lib/components/timeline.svelte';
 	import TimelineItem from '$lib/components/TimelineItem.svelte';
 </script>
 

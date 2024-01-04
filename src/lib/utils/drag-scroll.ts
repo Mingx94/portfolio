@@ -43,7 +43,7 @@ export const dragScroll: Action<HTMLDivElement> = (node) => {
 			node.scrollTo({ left: targetScroll, behavior: 'smooth' });
 		}
 
-		let timer: NodeJS.Timeout;
+		let timer: number;
 		node.addEventListener('scroll', function scrollHandler() {
 			clearTimeout(timer);
 			timer = setTimeout(() => {

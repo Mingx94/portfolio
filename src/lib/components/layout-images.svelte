@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import type { GalleryItem } from '$lib/types/GalleryItem';
+	import type { GalleryItem } from '$lib/types/gallery-item';
 	import justifiedLayout from 'justified-layout';
-	import Image from './Image.svelte';
+	import Image from './image.svelte';
 
 	export let images: GalleryItem[] = [];
 

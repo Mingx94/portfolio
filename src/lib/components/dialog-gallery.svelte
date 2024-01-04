@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import type { GalleryItem } from '$lib/types/GalleryItem';
-	import { dragScroll } from '$lib/utils/dragScroll';
-	import { removeScroll } from '$lib/utils/removeScroll';
+	import type { GalleryItem } from '$lib/types/gallery-item';
+	import { dragScroll } from '$lib/utils/drag-scroll';
+	import { removeScroll } from '$lib/utils/remove-scroll';
 	import type { Action } from 'svelte/action';
 	import { fade } from 'svelte/transition';
-	import Image from './Image.svelte';
+	import Image from './image.svelte';
 
 	export let images: GalleryItem[] = [];
 
