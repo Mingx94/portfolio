@@ -14,3 +14,4 @@ yarn.lock
 
 # Ignore files for Config
 *.config.ts
+*.config.js
