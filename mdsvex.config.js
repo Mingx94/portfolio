@@ -20,7 +20,7 @@ const config = defineConfig({
 		_: './src/lib/layout/mdsvex.svelte'
 	},
 
-	remarkPlugins: [remarkUnwrapImages, [remarkToc, { tight: true }]],
+	remarkPlugins: [remarkUnwrapImages],
 	rehypePlugins: [rehypeSlug]
 });
 

@@ -8,7 +8,7 @@
 
 <Header />
 
-<main class="pt-64px min-h-[calc(100%_-_80px)] bg-rose-50 flex flex-col [&>*]:w-full [&>*]:flex-1">
+<main class="pt-64px min-h-[calc(100%_-_80px)] flex flex-col [&>*]:w-full [&>*]:flex-1">
 	<slot />
 </main>
 
