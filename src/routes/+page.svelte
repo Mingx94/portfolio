@@ -1,9 +1,8 @@
 <script lang="ts">
 	import github from '$lib/assets/github.svg';
 	import instagram from '$lib/assets/instagram.svg';
+	import { title, description, url } from '$lib/config'
 	
-	let title = 'Michael Tsai 📷 Photography';
-	let description = "A Front-end Engineer / Photography enthusiast's photo blog.";
 </script>
 
 <svelte:head>
@@ -13,16 +12,16 @@
 
 	<!-- Facebook Meta Tags -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://coding-shutter.blog/" />
+	<meta property="og:url" content={url} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
-	<meta property="og:image" content="https://coding-shutter.blog/home.jpg" />
+	<meta property="og:image" content={`${url}/home.jpg`} />
 	<meta property="og:image:width" content="600" />
 	<meta property="og:image:height" content="400" />
 
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content="https://coding-shutter.blog/home.jpg" />
+	<meta name="twitter:image" content={`${url}/home.jpg`} />
 </svelte:head>
 
 <section

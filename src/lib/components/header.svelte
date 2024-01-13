@@ -6,11 +6,15 @@
 	const navLinks = [
 		{
 			name: 'Albums',
-			href: '/albums',
+			href: '/albums'
+		},
+		{
+			name: 'Blog',
+			href: '/blog'
 		},
 		{
 			name: 'Resume',
-			href: '/resume',
+			href: '/resume'
 		}
 	];
 </script>
@@ -33,14 +37,12 @@
 			<ul class="flex items-center space-x-8px">
 				{#each navLinks as navLink}
 					<li>
-						<a
-							href={navLink.href}
-							class:text-blue-600={$page.url.pathname === navLink.href}
-						>
+						<a href={navLink.href} class:text-blue-600={$page.url.pathname === navLink.href}>
 							{navLink.name}
 						</a>
 					</li>
 				{/each}
+			</ul>
 		</nav>
 	</div>
 </header>
