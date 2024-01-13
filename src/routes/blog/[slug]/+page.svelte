@@ -18,15 +18,17 @@
 		<p class="mt-16px text-gray-4 text-sm">Published at {formatDate(data.meta.date)}</p>
 	</hgroup>
 
-	<!-- Tags -->
-	<div class="flex gap-10px mt-20px">
-		{#each data.meta.categories as category}
-			<span class="px-10px py-4px rounded-full bg-gray-3 text-gray-8">&num;{category}</span>
-		{/each}
-	</div>
+	{#if data.meta.categories && data.meta.categories.length > 0 }
+		<!-- Tags -->
+		<div class="flex gap-10px mt-20px">
+			{#each data.meta.categories as category}
+				<span class="px-10px py-4px rounded-full bg-gray-3 text-gray-8">&num;{category}</span>
+			{/each}
+		</div>
+	{/if}
 
 	<!-- Post -->
-	<div class="mt-40px prose">
+	<div class="mt-40px prose prose-slate prose-a:gray">
 		<svelte:component this={data.content} />
 	</div>
 </article>

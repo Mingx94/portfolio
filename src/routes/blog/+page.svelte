@@ -26,7 +26,7 @@
 	<ul class="grid gap-2rem">
 		{#each data.posts as post}
 			<li class="post not-last:(border-b border-b-gray-4 pb-2rem)">
-				<a href={`/blog/${post.slug}`} class="title">{post.title}</a>
+				<a href={`/blog/${post.slug}`} class="title decoration-underline">{post.title}</a>
 				<p class="text-gray-4 text-sm">{formatDate(post.date)}</p>
 				<p class="mt-16px">{post.description}</p>
 			</li>

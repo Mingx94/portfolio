@@ -1,5 +1,6 @@
 <script lang="ts" context="module">
-	export { img } from './custom';
+	import { img } from './origin';
+	export { img };
 </script>
 
 <slot />
