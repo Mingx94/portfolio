@@ -1,6 +1,5 @@
 import extractorSvelte from '@unocss/extractor-svelte';
-import presetUno from '@unocss/preset-uno';
-import { defineConfig, transformerVariantGroup, presetTypography } from 'unocss';
+import { defineConfig, transformerVariantGroup, presetTypography, presetUno } from 'unocss';
 
 export default defineConfig({
 	extractors: [extractorSvelte()],
