@@ -1,7 +1,6 @@
 <script lang="ts">
-	import type { PageData } from './$types';
 	import albumSvg from '$lib/assets/album.svg';
-	import { slide } from 'svelte/transition';
+	import type { PageData } from './$types';
 
 	export let data: PageData;
 
