@@ -1,11 +1,25 @@
 import extractorSvelte from '@unocss/extractor-svelte';
-import { defineConfig, transformerVariantGroup, presetTypography, presetUno } from 'unocss';
+import {
+	defineConfig,
+	transformerVariantGroup,
+	presetTypography,
+	presetUno,
+	transformerDirectives
+} from 'unocss';
 
 export default defineConfig({
+	content: {
+		filesystem: ['src/app.html']
+	},
+	shortcuts: [
+		[
+			/^sq-(.*)$/,
+			([, c]) => {
+				return `w-${c} h-${c}`;
+			}
+		]
+	],
 	extractors: [extractorSvelte()],
-	shortcuts: [],
 	presets: [presetUno(), presetTypography()],
-  transformers: [
-    transformerVariantGroup(),
-  ],
+	transformers: [transformerVariantGroup(), transformerDirectives()]
 });

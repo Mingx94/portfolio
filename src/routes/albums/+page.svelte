@@ -24,8 +24,8 @@
 	<ul class="flex flex-wrap">
 		{#each data.photosets.photoset as album, index}
 			<li
-				style:--delay="{(index +1) * 40}ms"
-				class="w-[calc(100%-20px)] sm:w-[calc(50%-20px)] mx-10px lg:w-[calc(100%/3-20px)] mb-20px animate-delay-[--delay] animate-fade-in-up animate-both animate-duration-200"
+				style:--delay="{(index + 1) * 80}ms"
+				class="w-[calc(100%-20px)] sm:w-[calc(50%-20px)] mx-10px lg:w-[calc(100%/3-20px)] mb-20px animate-delay-[--delay] animate-fade-in-up animate-both animate-duration-500 animate-ease-in-out"
 			>
 				<figure
 					class="w-full aspect-ratio-[4/3] relative shadow-md bg-gray-100 rounded-md isolate overflow-hidden"
