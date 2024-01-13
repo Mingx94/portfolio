@@ -14,7 +14,7 @@ published: true
 此部落格本是為了存放相片而建的，部落格一直都是躺在我的 Todo list 裡面，
 直到我看到此<Link href="https://joyofcode.xyz/sveltekit-markdown-blog/" target="_blank">教學影片</Link>，才決定開始實作。
 
-此部落格使用 SvelteKit + UnoCSS + Markdown
+此部落格使用 SvelteKit + UnoCSS + Markdown，
 未來會加入一些功能，例如：搜尋、分類、標籤、留言等等
 
 ---
