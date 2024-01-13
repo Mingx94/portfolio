@@ -3,11 +3,11 @@
 }
 
 *::-webkit-scrollbar-thumb {
-	@apply bg-gray-200 rounded-8px border-solid border-4px border-transparent bg-clip-content;
+	@apply bg-gray-400 rounded-8px border-solid border-4px border-transparent bg-clip-content;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-	@apply bg-gray-400;
+	@apply bg-gray-600;
 }
 
 @keyframes fade-in-up {
