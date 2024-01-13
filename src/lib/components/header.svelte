@@ -5,17 +5,13 @@
 
 	const navLinks = [
 		{
-			name: 'Albums',
+			name: '相簿',
 			href: '/albums'
 		},
 		{
-			name: 'Blog',
+			name: '文章',
 			href: '/blog'
 		},
-		{
-			name: 'Resume',
-			href: '/resume'
-		}
 	];
 </script>
 
