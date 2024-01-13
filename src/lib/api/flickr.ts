@@ -1,7 +1,7 @@
 import { FLICKR_API_KEY } from '$env/static/private';
-import type { Photo, PhotoInfo } from '$lib/types/Photo';
-import type { PhotoExif } from '$lib/types/PhotoExif';
-import type { Photoset } from '$lib/types/Photoset';
+import type { Photo, PhotoInfo } from '$lib/types/photo';
+import type { PhotoExif } from '$lib/types/photo-exif';
+import type { Photoset } from '$lib/types/photoset';
 
 const baseUrl = 'https://api.flickr.com/services/rest/';
 
