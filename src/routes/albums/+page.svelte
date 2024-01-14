@@ -1,5 +1,4 @@
 <script lang="ts">
-	import albumSvg from '$lib/assets/album.svg';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -43,7 +42,11 @@
 						class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50 rounded-md pointer-events-none"
 					/>
 					<figcaption class="absolute bottom-2 left-2 text-white font-600 flex gap-4px">
-						<img src={albumSvg} alt="album" class="w-24px h-24px flex-shrink-0" />
+						<div
+							class="i-iconoir:media-image-list sq-24px flex-shrink-0"
+							role="img"
+							title="Album Icon"
+						/>
 						<span class="text-18px line-clamp-2 line-height-24px">{album.title._content}</span>
 					</figcaption>
 				</figure>

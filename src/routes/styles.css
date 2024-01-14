@@ -1,3 +1,7 @@
+body {
+	scrollbar-gutter: stable both-edges;
+}
+
 *::-webkit-scrollbar {
 	@apply w-16px;
 }

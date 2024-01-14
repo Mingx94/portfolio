@@ -4,7 +4,8 @@ import {
 	transformerVariantGroup,
 	presetTypography,
 	presetUno,
-	transformerDirectives
+	transformerDirectives,
+	presetIcons
 } from 'unocss';
 
 export default defineConfig({
@@ -20,6 +21,12 @@ export default defineConfig({
 		]
 	],
 	extractors: [extractorSvelte()],
-	presets: [presetUno(), presetTypography()],
+	presets: [
+		presetUno(),
+		presetTypography(),
+		presetIcons({
+			cdn: 'https://esm.sh/'
+		})
+	],
 	transformers: [transformerVariantGroup(), transformerDirectives()]
 });
