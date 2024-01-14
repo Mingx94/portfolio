@@ -1,6 +1,6 @@
 # Portfolio
 
-A portfolio for demonstrate my photoshots and blog(WIP)
+A portfolio for demonstrate my photoshots and blog
 
 ## Documentation
 
@@ -20,8 +20,8 @@ To run this project, you will need to add the following environment variables to
 
 ## Roadmap
 
-- Add blog posts
-- Beautify website
+- [X] Add blog posts
+- [ ] Beautify website
 
 ## License
 
