@@ -15,7 +15,7 @@
 	];
 </script>
 
-<header class="fixed w-full left-0 top-0 z-10 isolate bg-rose-50 xl:bg-transparent">
+<header class="sticky w-full left-0 top-0 z-10 isolate bg-rose-50 xl:bg-transparent">
 	<div class="h-64px flex items-center justify-between px-20px xl:px-40px max-w-1400px mx-auto">
 		<div class="font-normal text-20px inline-block">
 			<a href="/" title="Coding Shutter" class="flex items-center gap-8px">
