@@ -7,5 +7,5 @@
 	class:mb-80px={$page.url.pathname === '/resume'}
 	class:md:mb-0={$page.url.pathname === '/resume'}
 >
-	<p class="text-center text-gray-500 text-sm">Michael Tsai © 2024</p>
+	<p class="text-center text-gray-600 text-sm">Michael Tsai © 2024</p>
 </footer>
