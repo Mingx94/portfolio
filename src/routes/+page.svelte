@@ -42,15 +42,21 @@
 <section
 	class="max-w-1400px mx-auto px-20px xl:px-40px font-400 min-h-inherit flex justify-center flex-col"
 >
-	<h1 class="text-48px md:text-60px mb-12px md:mb-24px text-blueGray-800">
+	<h1
+		class="text-48px md:text-60px mb-12px md:mb-24px text-blueGray-800 animate-[fade-in-up] animate-both animate-duration-1200 animate-ease-in-out"
+	>
 		Hi, I'm <span class="text-nowrap">Michael Tsai.</span>
 	</h1>
-	<p class="text-24px md:text-36px text-fuchsia-600 mb-12px md:mb-24px">
+	<p
+		class="text-24px md:text-36px text-fuchsia-600 mb-12px md:mb-24px animate-[fade-in-up] animate-both animate-delay-800 animate-duration-1200 animate-ease-in-out"
+	>
 		A Front-end engineer and photography enthusiast.
 	</p>
 
 	<!-- Social links -->
-	<ul class="flex gap-24px sm:gap-16px">
+	<ul
+		class="flex gap-24px sm:gap-16px animate-[fade-in-up] animate-both animate-delay-1600 animate-duration-1200 animate-ease-in-out"
+	>
 		{#each socialLinks as socialLink}
 			<li>
 				<a

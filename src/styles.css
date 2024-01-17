@@ -14,7 +14,7 @@ body {
 	@apply bg-gray-600;
 }
 
-@keyframes fade-in-up {
+@keyframes pop-in {
 	from {
 		opacity: 0;
 		transform: translate3d(0, 4%, 0) scale(0.95);
@@ -22,5 +22,16 @@ body {
 	to {
 		opacity: 1;
 		transform: translate3d(0, 0, 0) scale(1);
+	}
+}
+
+@keyframes fade-in-up {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 4%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
 	}
 }

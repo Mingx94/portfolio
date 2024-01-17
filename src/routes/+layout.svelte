@@ -3,7 +3,7 @@
 	import Footer from '$lib/components/footer.svelte';
 	import 'virtual:uno.css';
 	import '@unocss/reset/tailwind.css';
-	import './styles.css';
+	import '../styles.css';
 </script>
 
 <Header />
