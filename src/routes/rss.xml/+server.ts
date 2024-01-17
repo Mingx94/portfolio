@@ -3,6 +3,16 @@ import FlickrApi from '$lib/api/flickr.js';
 import * as config from '$lib/config';
 import type { Post } from '$lib/types/post';
 
+const escapeMap = new Map([
+	['<', '&lt;'],
+	['>', '&gt;'],
+	['&', '&amp;'],
+	['"', '&quot;'],
+	["'", '&apos;']
+]);
+
+const escapeXml = (unsafe: string) => unsafe.replace(/[<>&'"]/g, (match) => escapeMap.get(match));
+
 export async function GET({ fetch }) {
 	const [response, { photosets }] = await Promise.all([
 		fetch('api/posts'),
@@ -22,8 +32,8 @@ export async function GET({ fetch }) {
 					.map(
 						(album) => `
 						<item>
-							<title>${album.title._content}</title>
-							<description>${album.description._content}</description>
+							<title>${escapeXml(album.title._content)}</title>
+							<description>${escapeXml(album.description._content)}</description>
 							<link>${config.url}/albums/${album.id}</link>
 							<guid isPermaLink="true">${config.url}/albums/${album.id}</guid>
 							<pubDate>${new Date(+album.date_create).toUTCString()}</pubDate>
@@ -35,10 +45,10 @@ export async function GET({ fetch }) {
 					.map(
 						(post) => `
 						<item>
-							<title>${post.title}</title>
-							<description>${post.description}</description>
+							<title>${escapeXml(post.title)}</title>
+							<description>${escapeXml(post.description)}</description>
 							<link>${config.url}/blog/${post.slug}</link>
-							<guid isPermaLink="true">${config.url}/${post.slug}</guid>
+							<guid isPermaLink="true">${config.url}/blog/${post.slug}</guid>
 							<pubDate>${new Date(post.date).toUTCString()}</pubDate>
 						</item>
 					`
