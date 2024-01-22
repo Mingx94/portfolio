@@ -22,6 +22,7 @@ To run this project, you will need to add the following environment variables to
 
 - [X] Add blog posts
 - [ ] Beautify website
+- [ ] Link Obsidian Github Publisher
 
 ## License
 
