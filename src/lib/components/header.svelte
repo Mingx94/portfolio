@@ -22,6 +22,8 @@
 				<img
 					src={logo}
 					alt="Logo"
+					width="28"
+					height="28"
 					class="w-28px h-28px transition-transform hover:rotate-180 duration-1s"
 				/>
 			</a>
