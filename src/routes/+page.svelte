@@ -74,7 +74,7 @@
 					<div
 						class="sq-28px text-#888 {socialLink.icon}"
 						role="img"
-						title="{socialLink.name} icon"
+						title="{socialLink.name}"
 					/>
 				</a>
 			</li>
