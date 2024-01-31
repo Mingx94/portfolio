@@ -16,10 +16,17 @@
 			name: 'LinkedIn',
 			url: 'https://www.linkedin.com/in/ming-xuan-tsai-821157171/',
 			icon: 'i-iconoir:linkedin'
+		}
+	];
+	const rss = [
+		{
+			name: 'Blog',
+			url: `${url}/blog/rss.xml`,
+			icon: 'i-iconoir:rss-feed'
 		},
 		{
-			name: 'RSS',
-			url: `${url}/rss.xml`,
+			name: 'Albums',
+			url: `${url}/albums/rss.xml`,
 			icon: 'i-iconoir:rss-feed'
 		}
 	];
@@ -71,11 +78,23 @@
 					class="flex items-center gap-8px"
 					title={socialLink.name}
 				>
-					<div
-						class="sq-28px text-#888 {socialLink.icon}"
-						role="img"
-						title="{socialLink.name}"
-					/>
+					<div class="sq-28px text-#888 {socialLink.icon}" role="img" title={socialLink.name} />
+				</a>
+			</li>
+		{/each}
+		{#each rss as rss}
+			<li>
+				<a
+					href={rss.url}
+					target="_blank"
+					rel="noopener noreferrer nofollow"
+					class="flex items-center gap-4px text-#888"
+					title="{rss.name} RSS"
+				>
+					<div class="sq-28px {rss.icon}" role="img" title={rss.name} />
+					<span class="text-sm">
+						{rss.name}
+					</span>
 				</a>
 			</li>
 		{/each}
