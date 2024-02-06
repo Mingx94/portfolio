@@ -3,7 +3,7 @@
 </script>
 
 <footer
-	class="flex items-center justify-center h-80px w-full"
+	class="flex items-center justify-center h-80px w-full mt-auto"
 	class:mb-80px={$page.url.pathname === '/resume'}
 	class:md:mb-0={$page.url.pathname === '/resume'}
 >

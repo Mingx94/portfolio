@@ -52,7 +52,7 @@
 </svelte:head>
 
 <section
-	class="max-w-1400px mx-auto px-20px xl:px-40px font-400 min-h-inherit flex justify-center flex-col"
+	class="max-w-1400px mx-auto px-20px xl:px-40px font-400 min-h-inherit flex justify-center flex-col basis-500px"
 >
 	<h1
 		class="text-48px md:text-60px mb-12px md:mb-24px text-blueGray-800 animate-[fade-in-up] animate-both animate-duration-1200 animate-ease-in-out"

@@ -1,7 +1,3 @@
-body {
-	scrollbar-gutter: stable both-edges;
-}
-
 *::-webkit-scrollbar {
 	@apply w-16px;
 }
@@ -12,6 +8,10 @@ body {
 
 *::-webkit-scrollbar-thumb:hover {
 	@apply bg-gray-600;
+}
+
+*::-webkit-scrollbar-corner {
+	@apply bg-transparent;
 }
 
 @keyframes pop-in {
