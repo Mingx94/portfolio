@@ -1,23 +1,6 @@
 <script lang="ts">
 	import { description, title, url } from '$lib/config';
 
-	const socialLinks = [
-		{
-			name: 'Github',
-			url: 'https://github.com/Mingx94/photo-gallery',
-			icon: 'i-iconoir:github'
-		},
-		{
-			name: 'Instagram',
-			url: 'https://www.instagram.com/michael.tsai_94/',
-			icon: 'i-iconoir:instagram'
-		},
-		{
-			name: 'LinkedIn',
-			url: 'https://www.linkedin.com/in/ming-xuan-tsai-821157171/',
-			icon: 'i-iconoir:linkedin'
-		}
-	];
 	const rss = [
 		{
 			name: 'Blog',
@@ -51,9 +34,7 @@
 	<meta name="twitter:image" content={`${url}/home.jpg`} />
 </svelte:head>
 
-<section
-	class="max-w-1400px mx-auto px-20px xl:px-40px font-400 min-h-inherit flex justify-center flex-col basis-500px"
->
+<section class="max-w-1400px mx-auto px-20px xl:px-40px font-400 flex justify-center flex-col">
 	<h1
 		class="text-48px md:text-60px mb-12px md:mb-24px text-blueGray-800 animate-[fade-in-up] animate-both animate-duration-1200 animate-ease-in-out"
 	>
@@ -69,26 +50,13 @@
 	<ul
 		class="flex gap-24px sm:gap-16px animate-[fade-in-up] animate-both animate-delay-1600 animate-duration-1200 animate-ease-in-out"
 	>
-		{#each socialLinks as socialLink}
-			<li>
-				<a
-					href={socialLink.url}
-					target="_blank"
-					rel="noopener noreferrer nofollow"
-					class="flex items-center gap-8px"
-					title={socialLink.name}
-				>
-					<div class="sq-28px text-#888 {socialLink.icon}" role="img" title={socialLink.name} />
-				</a>
-			</li>
-		{/each}
 		{#each rss as rss}
 			<li>
 				<a
 					href={rss.url}
 					target="_blank"
 					rel="noopener noreferrer nofollow"
-					class="flex items-center gap-4px text-#888"
+					class="flex items-center gap-4px text-blueGray-500 hover:text-fuchsia-600"
 					title="{rss.name} RSS"
 				>
 					<div class="sq-28px {rss.icon}" role="img" title={rss.name} />

@@ -8,7 +8,7 @@
 
 <Header />
 
-<main class="min-h-[calc(100%_-_144px)] flex flex-col [&>*]:w-full [&>*]:flex-1">
+<main class="flex-1 flex flex-col [&>*]:w-full [&>*]:flex-1">
 	<slot />
 </main>
 
