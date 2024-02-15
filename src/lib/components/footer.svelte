@@ -21,7 +21,7 @@
 </script>
 
 <footer
-	class="w-full mt-auto max-w-48rem mx-auto px-16px"
+	class="w-full mt-auto max-w-1400px mx-auto px-16px"
 	class:mb-80px={$page.url.pathname === '/resume'}
 	class:md:mb-0={$page.url.pathname === '/resume'}
 >
