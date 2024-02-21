@@ -21,7 +21,7 @@
 </svelte:head>
 
 <!-- Posts -->
-<section class="max-w-1100px mx-auto px-10px xl:px-30px py-20px xl:py-40px">
+<section class="max-w-50rem mx-auto px-10px sm:px-30px py-20px sm:py-40px">
 	<h1 class="text-36px font-700 mb-20px">文章列表</h1>
 	<ul class="grid gap-2rem">
 		{#each data.posts as post, index}

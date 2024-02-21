@@ -11,7 +11,7 @@
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<article class="max-w-1100px mx-auto px-10px xl:px-30px py-20px xl:py-40px">
+<article class="max-w-50rem mx-auto px-10px sm:px-30px py-20px sm:py-40px">
 	<!-- Title -->
 	<hgroup>
 		<h1>{data.meta.title}</h1>
@@ -35,7 +35,6 @@
 
 <style>
 	article {
-		max-inline-size: 70ch;
 		margin-inline: auto;
 	}
 

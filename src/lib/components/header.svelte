@@ -5,37 +5,42 @@
 
 	const navLinks = [
 		{
-			name: '相簿',
+			name: 'Albums',
 			href: '/albums'
 		},
 		{
-			name: '文章',
+			name: 'Articles',
 			href: '/blog'
-		},
+		}
 	];
 </script>
 
-<header class="sticky w-full left-0 top-0 z-10 isolate bg-rose-50 xl:bg-transparent">
-	<div class="h-64px flex items-center justify-between px-20px xl:px-40px max-w-1400px mx-auto">
-		<div class="font-normal text-20px inline-block">
-			<a href="/" title="Coding Shutter" class="flex items-center gap-8px">
+<header class="sticky w-full left-0 top-0 z-10 isolate bg-skin-fill sm:bg-transparent">
+	<div class="flex items-center justify-between px-20px py-2rem sm:px-40px max-w-50rem mx-auto">
+		<div class="inline-block">
+			<a href="/" title="Varitfact" class="flex items-center gap-8px group">
 				<img
 					src={logo}
 					alt="Logo"
 					width="28"
 					height="28"
-					class="w-28px h-28px transition-transform hover:rotate-180 duration-1s"
+					class="w-28px h-28px transition-transform group-hover:rotate-180 duration-1s"
 				/>
+				<span class="font-mono text-2xl group-hover:transform group-hover:scale-102 duration-1s"
+					>Varitfact</span
+				>
 			</a>
 		</div>
 		<!-- Island -->
-		<nav
-			class="absolute bg-white/80 backdrop-blur-lg h-40px top-12px left-1/2 -translate-x-1/2 rounded-full px-14px py-8px shadow-md text-14px flex items-center"
-		>
-			<ul class="flex items-center space-x-8px">
+		<nav class="px-14px py-8px text-xl flex items-center">
+			<ul class="flex items-center space-x-1rem">
 				{#each navLinks as navLink}
 					<li>
-						<a href={navLink.href} class:text-blue-600={$page.url.pathname === navLink.href}>
+						<a
+							href={navLink.href}
+							class="font-mono hover:text-skin-accent"
+							class:text-blue-600={$page.url.pathname === navLink.href}
+						>
 							{navLink.name}
 						</a>
 					</li>

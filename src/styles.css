@@ -14,6 +14,112 @@
 	@apply bg-transparent;
 }
 
+:root,
+html[data-theme='light'] {
+	--color-fill: 251, 254, 251;
+	--color-text-base: 40, 39, 40;
+	--color-accent: 0, 108, 172;
+	--color-card: 230, 230, 230;
+	--color-card-muted: 205, 205, 205;
+	--color-border: 236, 233, 233;
+}
+html[data-theme='dark'] {
+	--color-fill: 33, 39, 55;
+	--color-text-base: 234, 237, 243;
+	--color-accent: 255, 107, 1;
+	--color-card: 52, 63, 96;
+	--color-card-muted: 138, 51, 2;
+	--color-border: 171, 75, 8;
+}
+
+#sun-svg,
+html[data-theme='dark'] #moon-svg {
+	display: none;
+}
+
+#moon-svg,
+html[data-theme='dark'] #sun-svg {
+	display: block;
+}
+
+body {
+	@apply flex min-h-[100svh] flex-col bg-skin-fill text-skin-base 
+	selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
+}
+
+a {
+	@apply outline-2 outline-offset-1 outline-skin-fill 
+	focus-visible:no-underline focus-visible:outline-dashed;
+}
+
+.prose {
+	:where(h1, h2, h3, h4, h5, h6) {
+		@apply !mb-3 !text-skin-base;
+	}
+	h3 {
+		@apply italic;
+	}
+	p {
+		@apply !text-skin-base;
+	}
+	a {
+		@apply break-words hover:!text-skin-accent !text-skin-base !decoration-dashed underline-offset-8;
+	}
+	blockquote {
+		@apply !border-l-skin-accent border-opacity-50 opacity-80;
+	}
+	figcaption {
+		@apply !text-skin-base/70;
+	}
+	strong {
+		@apply !text-skin-base;
+	}
+
+	code {
+		@apply rounded bg-skin-card/75 p-1 before:!content-none after:!content-none;
+	}
+	ol {
+		@apply !text-skin-base;
+	}
+	ul {
+		@apply overflow-x-clip !text-skin-base;
+	}
+	li::marker {
+		@apply !text-skin-accent;
+	}
+	table {
+		@apply !text-skin-base;
+	}
+	th {
+		@apply border border-skin-line;
+	}
+	td {
+		@apply border border-skin-line;
+	}
+	img {
+		@apply !my-2 mx-auto border-2 border-skin-line;
+	}
+	hr {
+		@apply !border-skin-line;
+	}
+
+	details {
+		@apply inline-block cursor-pointer select-none text-skin-base;
+	}
+	summary {
+		@apply focus-outline;
+	}
+}
+
+code,
+blockquote {
+	word-wrap: break-word;
+}
+
+pre > code {
+	white-space: pre;
+}
+
 @keyframes pop-in {
 	from {
 		opacity: 0;

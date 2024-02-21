@@ -19,12 +19,12 @@
 	<meta property="og:description" content={description} />
 </svelte:head>
 
-<section class="max-w-1100px mx-auto px-10px xl:px-30px py-20px xl:py-40px">
+<section class="max-w-50rem mx-auto px-10px sm:px-30px py-20px sm:py-40px">
 	<ul class="flex flex-wrap">
 		{#each data.photosets.photoset as album, index}
 			<li
 				style:--delay="{(index + 1) * 80}ms"
-				class="w-[calc(100%-20px)] sm:w-[calc(50%-20px)] mx-10px lg:w-[calc(100%/3-20px)] mb-20px animate-delay-[--delay] animate-[pop-in] animate-both animate-duration-500 animate-ease-in-out"
+				class="w-[calc(100%-20px)] sm:w-[calc(50%-20px)] mx-10px mb-20px animate-delay-[--delay] animate-[pop-in] animate-both animate-duration-500 animate-ease-in-out"
 			>
 				<figure
 					class="w-full aspect-ratio-[4/3] relative shadow-md bg-gray-100 rounded-md isolate overflow-hidden"

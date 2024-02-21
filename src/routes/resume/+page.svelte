@@ -8,7 +8,7 @@
 	<title>履歷 - Michael Tsai</title>
 </svelte:head>
 
-<section class="max-w-1100px mx-auto flex space-x-12px py-40px px-20px md:p-40px ">
+<section class="max-w-50rem mx-auto flex space-x-12px py-40px px-20px md:p-40px ">
 	<div
 		class="flex-shrink-0 flex-grow-0 bg-white rounded-t-8px shadow-md h-80px
 		fixed z-10 bottom-0 top-unset left-0 right-0 flex items-center 
