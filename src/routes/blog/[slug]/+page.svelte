@@ -11,7 +11,7 @@
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<article class="max-w-50rem mx-auto px-10px sm:px-30px py-20px sm:py-40px">
+<article class="max-w-50rem mx-auto px-1.5rem sm:px-30px py-20px sm:py-40px">
 	<!-- Title -->
 	<hgroup>
 		<h1>{data.meta.title}</h1>
