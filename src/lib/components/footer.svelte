@@ -21,12 +21,12 @@
 </script>
 
 <footer
-	class="w-full mt-auto max-w-50rem mx-auto px-16px"
+	class="w-full mt-auto max-w-50rem mx-auto px-1.5rem sm:px-30px"
 	class:mb-80px={$page.url.pathname === '/resume'}
 	class:md:mb-0={$page.url.pathname === '/resume'}
 >
 	<div class="mb-16px">
-		<hr class="border-gray-300" />
+		<hr class="border-skin-line" />
 	</div>
 	<div class="flex items-center justify-center sm:flex-row-reverse flex-col mb-16px">
 		<ul class="sm:ml-auto sm:mb-0 mb-16px flex gap-16px">
@@ -36,11 +36,11 @@
 						href={socialLink.url}
 						target="_blank"
 						rel="noopener noreferrer nofollow"
-						class="flex items-center gap-8px"
+						class="flex items-center gap-8px text-skin-base hover:text-skin-accent/75"
 						title={socialLink.name}
 					>
 						<div
-							class="sq-28px text-blueGray-800 hover:text-blueGray-400 {socialLink.icon}"
+							class="sq-28px {socialLink.icon}"
 							role="img"
 							title={socialLink.name}
 						/>

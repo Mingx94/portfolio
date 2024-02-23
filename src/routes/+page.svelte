@@ -34,16 +34,16 @@
 	<meta name="twitter:image" content={`${url}/home.jpg`} />
 </svelte:head>
 
-<section class="max-w-50rem mx-auto px-20px sm:px-40px font-400 flex justify-center flex-col">
+<section class="max-w-50rem mx-auto px-1.5rem sm:px-30px font-400 flex justify-center flex-col">
 	<h1
-		class="text-48px md:text-60px mb-12px md:mb-24px text-blueGray-800 animate-[fade-in-up] animate-both animate-duration-1200 animate-ease-in-out"
+		class="text-48px md:text-60px mb-12px md:mb-24px text-skin-base animate-[fade-in-up] animate-both animate-duration-1200 animate-ease-in-out"
 	>
 		Hi, I'm <span class="text-nowrap">Michael Tsai.</span>
 	</h1>
 	<p
 		class="text-24px md:text-36px text-skin-accent mb-12px md:mb-24px animate-[fade-in-up] animate-both animate-delay-800 animate-duration-1200 animate-ease-in-out"
 	>
-		Engineer and photography.
+		Engineer and photography
 	</p>
 
 	<!-- Social links -->
