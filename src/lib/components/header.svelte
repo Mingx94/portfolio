@@ -43,7 +43,7 @@
 			>
 				<div class="text-2xl {isOpen ? 'i-iconoir:menu-scale' : 'i-iconoir:menu'}" tabindex="-1" />
 			</button>
-			<ul id="menu-items" class="sm:flex items-center sm:space-x-1rem" class:!max-sm:hidden={!isOpen}>
+			<ul id="menu-items" class="menu-items sm:flex items-center sm:space-x-1rem" class:!max-sm:hidden={!isOpen}>
 				{#each navLinks as navLink}
 					<li class="px-1rem sm:px-0.5rem sm:py-0.25rem py-0.75rem">
 						<a
@@ -62,7 +62,7 @@
 </header>
 
 <style>
-	#menu-items {
+	.menu-items {
 		grid-template-rows: repeat(2, minmax(0, 1fr));
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 0.5rem;
