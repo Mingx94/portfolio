@@ -16,7 +16,7 @@
 	];
 </script>
 
-<header class="sticky w-full left-0 top-0 z-10 isolate bg-skin-fill sm:bg-transparent">
+<header class="sticky w-full left-0 top-0 z-10 isolate bg-skin-fill">
 	<div class="flex items-center justify-between px-20px sm:py-2rem sm:px-40px max-w-50rem mx-auto">
 		<div class="absolute sm:static sm:top-unset top-8px">
 			<a href="/" title="Varitfact" class="flex items-center gap-8px group">
