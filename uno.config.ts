@@ -24,29 +24,6 @@ export default defineConfig({
 			}
 		]
 	],
-	variants: [
-		// prose-*:
-		(matcher) => {
-			if (!matcher.startsWith('prose-')) {
-				return matcher;
-			}
-
-			const separator = matcher.indexOf(':');
-			if (separator === -1) {
-				return matcher;
-			}
-			console.log({ matcher, separator });
-			const prefix = matcher.slice(0, separator);
-			const children = prefix.slice(6);
-			console.log({ prefix, children });
-
-			return {
-				// slice `hover:` prefix and passed to the next variants and rules
-				matcher: prefix,
-				selector: () => `.prose ${children}`
-			};
-		}
-	],
 	extractors: [extractorSvelte()],
 	presets: [presetUno(), presetTypography(), presetIcons({ cdn: 'https://esm.sh/' })],
 	transformers: [transformerVariantGroup(), transformerDirectives()],
