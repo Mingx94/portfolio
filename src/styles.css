@@ -44,6 +44,14 @@ html[data-theme='dark'] #sun-svg {
 
 body {
 	@apply flex min-h-[100svh] flex-col bg-skin-fill text-skin-base;
+	font-family:
+		SF Pro Text,
+		Noto Sans TC,
+		sans-serif,
+		Apple Color Emoji,
+		Segoe UI Emoji,
+		Segoe UI Symbol,
+		Noto Color Emoji;
 }
 
 body ::selection {

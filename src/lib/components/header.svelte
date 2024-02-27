@@ -27,7 +27,7 @@
 					height="28"
 					class="w-28px h-28px transition-transform group-hover:rotate-180 duration-1s"
 				/>
-				<span class="font-mono text-2xl group-hover:transform group-hover:scale-102 duration-1s"
+				<span class="text-2xl group-hover:transform group-hover:scale-102 duration-1s"
 					>Varitfact</span
 				>
 			</a>
@@ -48,7 +48,7 @@
 					<li class="px-1rem sm:px-0.5rem sm:py-0.25rem py-0.75rem">
 						<a
 							href={navLink.href}
-							class="font-mono hover:text-skin-accent/75"
+							class="hover:text-skin-accent/75"
 							class:text-skin-accent={$page.url.pathname === navLink.href}
 							on:click={() => (isOpen = false)}
 						>
