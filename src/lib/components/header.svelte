@@ -28,7 +28,7 @@
 					class="w-28px h-28px transition-transform group-hover:rotate-180 duration-1s"
 				/>
 				<span class="text-2xl group-hover:transform group-hover:scale-102 duration-1s"
-					>Varitfact</span
+					>Vartifact</span
 				>
 			</a>
 		</div>
