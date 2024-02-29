@@ -1,6 +1,6 @@
 @font-face {
 	font-family: Iansui;
-	src: url('fonts/Iansui-Regular.ttf');
+	src: url('./fonts/Iansui-Regular.ttf');
 }
 
 *::-webkit-scrollbar {
