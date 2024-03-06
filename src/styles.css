@@ -45,6 +45,7 @@ html[data-theme='dark'] #sun-svg {
 body {
 	@apply flex min-h-[100svh] flex-col bg-skin-fill text-skin-base;
 	font-family:
+		LXGW WenKai TC,
 		SF Pro Text,
 		Noto Sans TC,
 		sans-serif,
