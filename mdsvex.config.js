@@ -3,14 +3,18 @@ import { defineMDSveXConfig as defineConfig, escapeSvelte } from 'mdsvex';
 import rehypeSlug from 'rehype-slug';
 import rehypeExternalLinks from 'rehype-external-links';
 import remarkUnwrapImages from 'remark-unwrap-images';
-import shiki from 'shiki';
+import { codeToHtml } from 'shiki';
 
 const config = defineConfig({
 	extensions: ['.svelte.md', '.md', '.svx'],
 	highlight: {
 		highlighter: async (code, lang = 'text') => {
-			const highlighter = await shiki.getHighlighter({ theme: 'poimandres' });
-			const html = escapeSvelte(highlighter.codeToHtml(code, { lang }));
+			const html = escapeSvelte(
+				await codeToHtml(code, {
+					lang,
+					theme: 'poimandres'
+				})
+			);
 			return `{@html \`${html}\` }`;
 		}
 	},
