@@ -17,21 +17,19 @@
 </script>
 
 <header class="sticky w-full left-0 top-0 z-10 isolate bg-skin-fill">
-	<div class="flex items-center justify-between px-1.5rem sm:px-30px sm:py-2rem max-w-50rem mx-auto">
-		<div class="absolute sm:static sm:top-unset top-8px">
-			<a href="/" title="Varitfact" class="flex items-center gap-8px group">
-				<img
-					src={logo}
-					alt="Logo"
-					width="28"
-					height="28"
-					class="w-28px h-28px transition-transform group-hover:rotate-180 duration-1s"
-				/>
-				<span class="text-2xl group-hover:transform group-hover:scale-102 duration-1s"
-					>Vartifact</span
-				>
-			</a>
-		</div>
+	<div class="flex items-center justify-between px-16px sm:px-24px sm:py-24px max-w-50rem mx-auto">
+		<a href="/" title="Varitfact" class="flex items-center gap-8px group">
+			<img
+				src={logo}
+				alt="Logo"
+				width="28"
+				height="28"
+				class="w-28px h-28px transition-transform group-hover:rotate-180 duration-1s"
+			/>
+			<span class="text-2xl group-hover:transform group-hover:scale-102 duration-1s">Vartifact</span
+			>
+		</a>
+
 		<nav class="sm:px-14px py-8px text-xl flex items-center flex-col sm:flex-row w-full sm:w-auto">
 			<button
 				class="sm:hidden self-end p-0.5rem focus:(outline-2px outline-offset-1px outline-skin-fill)"
@@ -43,7 +41,11 @@
 			>
 				<div class="text-2xl {isOpen ? 'i-iconoir:menu-scale' : 'i-iconoir:menu'}" tabindex="-1" />
 			</button>
-			<ul id="menu-items" class="sm:!flex items-center sm:space-x-1rem sm:!mt-0" class:!max-sm:hidden={!isOpen}>
+			<ul
+				id="menu-items"
+				class="sm:!flex items-center sm:space-x-1rem sm:!mt-0"
+				class:!max-sm:hidden={!isOpen}
+			>
 				{#each navLinks as navLink}
 					<li class="px-1rem sm:px-0.5rem sm:py-0.25rem py-0.75rem">
 						<a

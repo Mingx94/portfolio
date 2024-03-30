@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import type { GalleryItem } from '$lib/types/gallery-item';
-	import justifiedLayout from 'justified-layout';
 	import Image from './image.svelte';
 
 	export let images: GalleryItem[] = [];
@@ -9,17 +8,7 @@
 	const boxSpacing = 15;
 	let containerWidth = 0;
 
-	$: layout = justifiedLayout(
-		images.map((img) => ({
-			width: img.width,
-			height: img.height
-		})),
-		{
-			containerPadding: boxSpacing,
-			containerWidth,
-			boxSpacing
-		}
-	);
+	$: layout = images.map((img) => (img.width > img.height ? 2 : 1));
 </script>
 
 <div class="gallery" bind:clientWidth={containerWidth} style:--gap={boxSpacing}>
@@ -27,9 +16,8 @@
 		{@const thumb = img.thumbnail ?? img}
 		<a
 			href="{$page.url.pathname}?index={i}"
-			style:--width={layout.boxes[i].width}
-			style:--height={layout.boxes[i].height}
-			class="shadow-sm bg-gray-100 inline-block w-[calc(var(--width)*1px)] h-[calc(var(--height)*1px)] rounded-md overflow-hidden isolate"
+			style:--column={layout[i]}
+			class="shadow-sm bg-gray-100 inline-block rounded-md overflow-hidden isolate"
 		>
 			<Image
 				src={thumb.src}
@@ -45,9 +33,22 @@
 
 <style>
 	.gallery {
-		display: flex;
-		flex-wrap: wrap;
-		padding-left: calc(var(--gap) * 1px);
+		display: grid;
+		grid-template-columns: 1fr;
 		gap: calc(var(--gap) * 1px);
+	}
+
+	.gallery a {
+		grid-column: span 1;
+	}
+
+	@media (min-width: 768px) {
+		.gallery {
+			grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		}
+
+		.gallery a {
+			grid-column: span var(--column);
+		}
 	}
 </style>
