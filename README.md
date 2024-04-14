@@ -6,7 +6,6 @@ A portfolio for demonstrate my photoshots and blog
 
 - [Svelte](https://svelte.dev/)
 - [SvelteKit](https://kit.svelte.dev/)
-- [UnoCSS](https://unocss.dev/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [Flickr API](https://www.flickr.com/services/api/)
 
