@@ -23,11 +23,11 @@
 <!-- Posts -->
 <section class="mx-auto max-w-[50rem] px-[1.5rem] py-[20px] sm:px-[30px] sm:py-[40px]">
 	<h1 class="mb-[20px] text-[36px] font-bold">文章列表</h1>
-	<ul class="grid gap-[2rem]">
+	<ul class="space-y-[24px]">
 		{#each data.posts as post, index}
 			<li
 				style:--delay="{(index + 1) * 160}ms"
-				class="post animate-duration-800 animate-[fade-in-up] animate-delay-[--delay] animate-fill-both animate-ease-in-out"
+				class="post animate-[fade-in-up] animate-delay-[--delay] animate-duration-[0.8s] animate-fill-both animate-ease-in-out"
 			>
 				<a href={`/blog/${post.slug}`} class="title underline decoration-solid">{post.title}</a>
 				<p class="text-sm text-gray-500">{formatDate(post.date)}</p>
