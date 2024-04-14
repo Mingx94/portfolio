@@ -20,6 +20,6 @@
 	class:loaded
 	bind:this={thisImage}
 	{...$$restProps}
-	class="opacity-0 transition-opacity duration-1200ms ease-out {$$props.class}"
+	class="opacity-0 transition-opacity duration-[1.2s] ease-out {$$props.class}"
 	class:opacity-100={loaded}
 />

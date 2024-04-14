@@ -16,38 +16,46 @@
 	];
 </script>
 
-<header class="sticky w-full left-0 top-0 z-10 isolate bg-skin-fill">
-	<div class="flex items-center justify-between px-16px sm:px-24px sm:py-24px max-w-50rem mx-auto">
-		<a href="/" title="Varitfact" class="flex items-center gap-8px group">
+<header class="sticky left-0 top-0 isolate z-10 w-full bg-skin-fill">
+	<div
+		class="px-16px mx-auto flex max-w-[50rem] items-center justify-between sm:px-[24px] sm:py-[24px]"
+	>
+		<a
+			href="/"
+			title="Varitfact"
+			class="group top-[12px] flex items-center gap-[8px] max-sm:absolute max-sm:left-[16px]"
+		>
 			<img
 				src={logo}
 				alt="Logo"
 				width="28"
 				height="28"
-				class="w-28px h-28px transition-transform group-hover:rotate-180 duration-1s"
+				class="size-[28px] transition-transform duration-[1s] group-hover:rotate-180"
 			/>
-			<span class="text-2xl group-hover:transform group-hover:scale-102 duration-1s">Vartifact</span
+			<span class="text-2xl duration-[1s] group-hover:scale-[1.02] group-hover:transform"
+				>Vartifact</span
 			>
 		</a>
 
-		<nav class="sm:px-14px py-8px text-xl flex items-center flex-col sm:flex-row w-full sm:w-auto">
+		<nav
+			class="sm:px-14px flex w-full flex-col items-center py-[8px] text-xl sm:w-auto sm:flex-row"
+		>
 			<button
-				class="sm:hidden self-end p-0.5rem focus:(outline-2px outline-offset-1px outline-skin-fill)"
+				class="focus:outline-2px focus:outline-offset-1px self-end p-[0.5rem] focus:outline-skin-fill sm:hidden"
 				tabindex="0"
 				aria-label="Open Menu"
 				aria-expanded={isOpen}
 				aria-controls="menu-items"
 				on:click={() => (isOpen = !isOpen)}
 			>
-				<div class="text-2xl {isOpen ? 'i-iconoir:menu-scale' : 'i-iconoir:menu'}" tabindex="-1" />
+				<div class="text-2xl {isOpen ? 'i-iconoir-menu-scale' : 'i-iconoir-menu'}" tabindex="-1" />
 			</button>
 			<ul
 				id="menu-items"
-				class="sm:!flex items-center sm:space-x-1rem sm:!mt-0"
-				class:!max-sm:hidden={!isOpen}
+				class="items-center sm:!mt-0 sm:!flex sm:space-x-[1rem] {!isOpen && 'max-sm:!hidden'}"
 			>
 				{#each navLinks as navLink}
-					<li class="px-1rem sm:px-0.5rem sm:py-0.25rem py-0.75rem">
+					<li class="px-[1rem] py-[0.75rem] sm:px-[0.5rem] sm:py-[0.25rem]">
 						<a
 							href={navLink.href}
 							class="hover:text-skin-accent/75"

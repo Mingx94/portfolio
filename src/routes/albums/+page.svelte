@@ -19,19 +19,19 @@
 	<meta property="og:description" content={description} />
 </svelte:head>
 
-<section class="max-w-50rem mx-auto px-10px sm:px-30px py-20px sm:py-40px">
+<section class="mx-auto max-w-[50rem] px-[10px] py-[20px] sm:px-[30px] sm:py-[40px]">
 	<ul class="flex flex-wrap">
 		{#each data.photosets.photoset as album, index}
 			<li
 				style:--delay="{(index + 1) * 80}ms"
-				class="w-[calc(100%-20px)] sm:w-[calc(50%-20px)] mx-10px mb-20px animate-delay-[--delay] animate-[pop-in] animate-both animate-duration-500 animate-ease-in-out"
+				class="mx-[10px] mb-[20px] w-[calc(100%-20px)] animate-[pop-in] animate-delay-[--delay] animate-duration-500 animate-fill-both animate-ease-in-out sm:w-[calc(50%-20px)]"
 			>
 				<figure
-					class="w-full aspect-ratio-[4/3] relative shadow-md bg-gray-100 rounded-md isolate overflow-hidden"
+					class="relative isolate aspect-[4/3] w-full overflow-hidden rounded-md bg-gray-100 shadow-md"
 				>
 					<a class="h-full w-full" href={`/albums/${album.id}`}>
 						<img
-							class="absolute top-0 left-0 w-full h-full object-cover rounded-md"
+							class="absolute left-0 top-0 h-full w-full rounded-md object-cover"
 							src={album.primary_photo_extras.url_m}
 							alt={album.title._content}
 							loading="lazy"
@@ -39,15 +39,15 @@
 					</a>
 					<!-- gradient mask -->
 					<div
-						class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-black opacity-50 rounded-md pointer-events-none"
+						class="pointer-events-none absolute left-0 top-0 h-full w-full rounded-md bg-gradient-to-b from-transparent to-black opacity-50"
 					/>
-					<figcaption class="absolute bottom-2 left-2 text-white font-600 flex gap-4px">
+					<figcaption class="absolute bottom-2 left-2 flex gap-[4px] font-semibold text-white">
 						<div
-							class="i-iconoir:media-image-list sq-24px flex-shrink-0"
+							class="i-iconoir-media-image-list size-[24px] flex-shrink-0"
 							role="img"
 							title="Album Icon"
 						/>
-						<span class="text-18px line-clamp-2 line-height-24px">{album.title._content}</span>
+						<span class="line-height-[24px] line-clamp-2 text-[18px]">{album.title._content}</span>
 					</figcaption>
 				</figure>
 			</li>

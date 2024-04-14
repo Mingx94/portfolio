@@ -11,24 +11,26 @@
 	<meta property="og:title" content={data.meta.title} />
 </svelte:head>
 
-<article class="max-w-50rem mx-auto px-1.5rem sm:px-30px py-20px sm:py-40px">
+<article class="mx-auto max-w-[50rem] px-[1.5rem] py-[20px] sm:px-[30px] sm:py-[40px]">
 	<!-- Title -->
 	<hgroup>
 		<h1>{data.meta.title}</h1>
-		<p class="mt-16px text-gray-4 text-sm">Published at {formatDate(data.meta.date)}</p>
+		<p class="mt-[16px] text-sm text-gray-500">Published at {formatDate(data.meta.date)}</p>
 	</hgroup>
 
-	{#if data.meta.categories && data.meta.categories.length > 0 }
+	{#if data.meta.categories && data.meta.categories.length > 0}
 		<!-- Tags -->
-		<div class="flex gap-10px mt-20px">
+		<div class="mt-[20px] flex gap-[10px]">
 			{#each data.meta.categories as category}
-				<span class="px-10px py-4px rounded-full bg-gray-3 text-gray-8">&num;{category}</span>
+				<span class="rounded-full bg-gray-800 px-[10px] py-[4px] text-gray-800"
+					>&num;{category}</span
+				>
 			{/each}
 		</div>
 	{/if}
 
 	<!-- Post -->
-	<div class="mt-40px prose prose-slate prose-a:gray">
+	<div class="prose prose-slate mt-[40px]">
 		<svelte:component this={data.content} />
 	</div>
 </article>

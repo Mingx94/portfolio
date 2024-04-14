@@ -5,5 +5,5 @@
 
 <figure>
 	<img {src} {alt} class="w-full" />
-	<figcaption class="mt-4px text-center">{alt}</figcaption>
+	<figcaption class="mt-[4px] text-center">{alt}</figcaption>
 </figure>

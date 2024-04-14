@@ -26,10 +26,10 @@
 {#if openBox !== null}
 	<div
 		in:fade={{ duration: 300 }}
-		class="fixed top-0 bottom-0 left-0 right-0 bg-gray-100 overflow-hidden z-50"
+		class="fixed bottom-0 left-0 right-0 top-0 isolate z-[50] overflow-hidden bg-gray-100"
 	>
 		<button
-			class="absolute top-0 left-0 p-10px cursor-pointer hover:bg-gray-200 z-[1]"
+			class="p-10px absolute left-0 top-0 z-[1] cursor-pointer hover:bg-gray-200"
 			on:click={() => {
 				goto($page.url.pathname, { replaceState: true });
 			}}
@@ -38,20 +38,20 @@
 			返回
 		</button>
 		<div
-			class="snap-x snap-mandatory md:overflow-x-scroll items-center h-full whitespace-nowrap cursor-grab flex items-center overflow-x-auto"
+			class="md:overflow-x-scroll flex h-full cursor-grab snap-x snap-mandatory items-center overflow-x-auto whitespace-nowrap"
 			use:dragScroll
 			use:removeScroll
 			use:initialScrollLeft={{ index: Number(openBox) }}
 		>
 			{#each images as image}
 				<div
-					class="w-full h-full md:p-20px snap-start snap-always md:scroll-px-20px flex-shrink-0 flex-grow-0"
+					class="md:p-20px md:scroll-px-20px h-full w-full flex-shrink-0 flex-grow-0 snap-start snap-always"
 				>
-					<div class="w-full h-full relative">
+					<div class="relative h-full w-full">
 						<Image
 							src={image.src}
 							alt=""
-							class="absolute object-contain left-0 top-0 object-center w-full h-full"
+							class="absolute left-0 top-0 h-full w-full object-contain object-center"
 						/>
 					</div>
 				</div>

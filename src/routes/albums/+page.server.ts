@@ -16,7 +16,7 @@ export const load: PageServerLoad = async () => {
 	return {
 		photosets: {
 			...photosets,
-			photoset,
+			photoset
 		}
 	};
 };

@@ -5,12 +5,12 @@
 		{
 			name: 'Blog',
 			url: `${url}/blog/rss.xml`,
-			icon: 'i-iconoir:rss-feed'
+			icon: 'i-iconoir-rss-feed'
 		},
 		{
 			name: 'Albums',
 			url: `${url}/albums/rss.xml`,
-			icon: 'i-iconoir:rss-feed'
+			icon: 'i-iconoir-rss-feed'
 		}
 	];
 </script>
@@ -34,21 +34,21 @@
 	<meta name="twitter:image" content={`${url}/home.jpg`} />
 </svelte:head>
 
-<section class="max-w-50rem mx-auto px-1.5rem sm:px-30px font-400 flex justify-center flex-col">
+<section class="mx-auto flex max-w-[50rem] flex-col justify-center px-[1.5rem] sm:px-[30px]">
 	<h1
-		class="text-48px md:text-60px mb-12px md:mb-24px text-skin-base animate-[fade-in-up] animate-both animate-duration-1200 animate-ease-in-out"
+		class="md:text-[60px] md:mb-[24px] mb-[12px] animate-[fade-in-up] text-[48px] text-skin-base animate-duration-[1.2s] animate-fill-both animate-ease-in-out"
 	>
 		Hi, I'm <span class="text-nowrap">Michael Tsai.</span>
 	</h1>
 	<p
-		class="text-24px md:text-36px text-skin-accent mb-12px md:mb-24px animate-[fade-in-up] animate-both animate-delay-800 animate-duration-1200 animate-ease-in-out"
+		class="md:text-36px md:mb-[24px] mb-[12px] animate-[fade-in-up] text-[24px] text-skin-accent animate-delay-[0.8s] animate-duration-[1.2s] animate-fill-both animate-ease-in-out"
 	>
 		Engineer and photography
 	</p>
 
 	<!-- Social links -->
 	<ul
-		class="flex gap-24px sm:gap-16px animate-[fade-in-up] animate-both animate-delay-1600 animate-duration-1200 animate-ease-in-out"
+		class="sm:gap-16px flex animate-[fade-in-up] gap-[24px] animate-delay-[1.6s] animate-duration-[1.2s] animate-fill-both animate-ease-in-out"
 	>
 		{#each rss as rss}
 			<li>
@@ -56,10 +56,10 @@
 					href={rss.url}
 					target="_blank"
 					rel="noopener noreferrer nofollow"
-					class="flex items-center gap-4px text-skin-base/75 hover:text-skin-accent/75"
+					class="gap-4px flex items-center text-skin-base/75 hover:text-skin-accent/75"
 					title="{rss.name} RSS"
 				>
-					<div class="sq-28px {rss.icon}" role="img" title={rss.name} />
+					<div class="size-[28px] {rss.icon}" role="img" title={rss.name} />
 					<span class="text-sm">
 						{rss.name}
 					</span>

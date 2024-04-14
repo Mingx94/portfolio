@@ -52,8 +52,8 @@
 	<meta name="twitter:image" content={primaryPhoto.url_m} />
 </svelte:head>
 
-<div class="max-w-50rem mx-auto pt-24px pb-48px px-16px sm:px-24px">
-	<h1 class="text-24px font-600 mb-10px">
+<div class="mx-auto max-w-[50rem] px-[16px] pb-[48px] pt-[24px] sm:px-[24px]">
+	<h1 class="mb-[10px] text-[24px] font-semibold">
 		{data.albumInfo.photoset.title._content}
 	</h1>
 	{#if data.albumInfo.photoset.description._content}
@@ -62,7 +62,7 @@
 		</p>
 	{/if}
 </div>
-<section class="max-w-80rem mx-auto px-16px sm:px-24px pb-48px" in:fade={{ duration: 300 }}>
+<section class="mx-auto max-w-[80rem] px-[16px] pb-[48px] sm:px-[24px]" in:fade={{ duration: 300 }}>
 	<LayoutImages {images} />
 </section>
 

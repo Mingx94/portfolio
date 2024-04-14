@@ -11,7 +11,7 @@
 		{@const thumb = img.thumbnail ?? img}
 		<a
 			href="{$page.url.pathname}?index={i}"
-			class="inline-block aspect-ratio-1 flex items-center justify-center group overflow-hidden"
+			class="group flex aspect-square items-center justify-center overflow-hidden"
 		>
 			<Image
 				src={thumb.src}
@@ -19,7 +19,7 @@
 				width={thumb.width}
 				height={thumb.height}
 				loading="lazy"
-				class="object-contain m-4px max-h-[calc(100%-16px)] max-w-[calc(100%-16px)] group-hover:scale-108 transition-transform duration-300"
+				class="m-[4px] max-h-[calc(100%-16px)] max-w-[calc(100%-16px)] object-contain transition-transform duration-300 group-hover:scale-[1.08]"
 			/>
 		</a>
 	{/each}

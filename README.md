@@ -20,7 +20,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Roadmap
 
-- [X] Add blog posts
+- [x] Add blog posts
 - [ ] Beautify website
 - [ ] Link Obsidian Github Publisher
 
