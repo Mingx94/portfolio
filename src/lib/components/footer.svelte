@@ -16,6 +16,11 @@
 			name: 'LinkedIn',
 			url: 'https://www.linkedin.com/in/ming-xuan-tsai-821157171/',
 			icon: 'i-iconoir-linkedin'
+		},
+		{
+			name: 'RSS',
+			url: '/rss.xml',
+			icon: 'i-iconoir-rss-feed'
 		}
 	];
 </script>

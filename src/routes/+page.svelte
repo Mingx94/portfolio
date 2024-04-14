@@ -1,18 +1,5 @@
 <script lang="ts">
 	import { description, title, url } from '$lib/config';
-
-	const rss = [
-		{
-			name: 'Blog',
-			url: `${url}/blog/rss.xml`,
-			icon: 'i-iconoir-rss-feed'
-		},
-		{
-			name: 'Albums',
-			url: `${url}/albums/rss.xml`,
-			icon: 'i-iconoir-rss-feed'
-		}
-	];
 </script>
 
 <svelte:head>
@@ -45,26 +32,4 @@
 	>
 		Engineer and photography
 	</p>
-
-	<!-- Social links -->
-	<ul
-		class="sm:gap-16px flex animate-[fade-in-up] gap-[24px] animate-delay-[1.6s] animate-duration-[1.2s] animate-fill-both animate-ease-in-out"
-	>
-		{#each rss as rss}
-			<li>
-				<a
-					href={rss.url}
-					target="_blank"
-					rel="noopener noreferrer nofollow"
-					class="gap-4px flex items-center text-skin-base/75 hover:text-skin-accent/75"
-					title="{rss.name} RSS"
-				>
-					<div class="size-[28px] {rss.icon}" role="img" title={rss.name} />
-					<span class="text-sm">
-						{rss.name}
-					</span>
-				</a>
-			</li>
-		{/each}
-	</ul>
 </section>
