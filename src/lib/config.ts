@@ -23,8 +23,8 @@ export const socialLinks = [
 		icon: 'i-iconoir-linkedin'
 	},
 	{
-		name: 'RSS',
-		url: '/rss.xml',
-		icon: 'i-iconoir-rss-feed'
+		name: 'X',
+		url: 'https://twitter.com/mingx94',
+		icon: 'i-iconoir-x'
 	}
 ];

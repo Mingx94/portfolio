@@ -48,13 +48,23 @@
 				Blog
 			</a>
 		</li>
-		<li class="separator" />
+		<li class="separator"></li>
 		<li>
 			<a
 				href="/albums"
 				class="text-skin-base transition-colors duration-200 hover:text-skin-accent/80"
 			>
 				Albums
+			</a>
+		</li>
+		<li class="separator"></li>
+		<li>
+			<a
+				href="/rss.xml"
+				class="text-skin-base transition-colors duration-200 hover:text-skin-accent/80"
+				target="_blank"
+			>
+				RSS
 			</a>
 		</li>
 	</ul>
@@ -80,6 +90,6 @@
 
 <style lang="postcss">
 	.separator {
-		@apply h-[18px] w-[1px] border-skin-fill/50 border-l-[2px];
+		@apply h-[18px] w-[1px] border-l-[2px] border-skin-fill/50;
 	}
 </style>
