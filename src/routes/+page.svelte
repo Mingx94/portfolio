@@ -22,23 +22,17 @@
 </svelte:head>
 
 <section
-	class="mx-auto my-auto flex max-w-[50rem] flex-col justify-center px-[1.5rem] sm:px-[30px]"
+	style:--duration="0.8s"
+	style:--step="0.5s"
+	class="mx-auto my-auto flex max-w-[50rem] flex-col justify-center px-[1.5rem] children:animate-[fade-in-up] children:animate-delay-[--delay] children:animate-duration-[--duration] children:animate-fill-both children:animate-ease-in-out sm:px-[30px]"
 >
-	<h1
-		class="mb-[20px] animate-[fade-in-up] text-[48px] text-skin-base animate-duration-[1.2s] animate-fill-both animate-ease-in-out"
-	>
-		Michael Tsai
-	</h1>
-	<p
-		style:--delay="0.8s"
-		class="mb-[20px] animate-[fade-in-up] text-[16px] text-skin-base/80 animate-delay-[--delay] animate-duration-[1.2s] animate-fill-both animate-ease-in-out"
-	>
+	<h1 style:--delay="calc(var(--step) * 0)" class="mb-2 text-5xl text-skin-base">Michael Tsai</h1>
+	<p style:--delay="calc(var(--step) * 1)" class="mb-4 text-skin-base/80">
 		Hello, I'm Michael Tsai, a software engineer and an enthusiastic photographer.
 	</p>
-
 	<ul
-		style:--delay="1.6s"
-		class="mb-[12px] flex animate-[fade-in-up] items-center gap-[8px] animate-delay-[--delay] animate-duration-[1.2s] animate-fill-both animate-ease-in-out"
+		style:--delay="calc(var(--step) * 2)"
+		class="mb-2 flex animate-[fade-in-up] items-center gap-2"
 	>
 		<li>
 			<a
@@ -68,10 +62,7 @@
 			</a>
 		</li>
 	</ul>
-	<ul
-		style:--delay="2.4s"
-		class="flex animate-[fade-in-up] gap-[8px] animate-delay-[--delay] animate-duration-[1.2s] animate-fill-both animate-ease-in-out"
-	>
+	<ul style:--delay="calc(var(--step) * 3)" class="flex animate-[fade-in-up] gap-2">
 		{#each socialLinks as socialLink}
 			<li>
 				<a

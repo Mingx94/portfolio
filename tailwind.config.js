@@ -1,4 +1,5 @@
 import { iconsPlugin, getIconCollections } from '@egoist/tailwindcss-icons';
+import plugin from 'tailwindcss/plugin';
 
 function withOpacity(variableName) {
 	return ({ opacityValue }) => {
@@ -84,6 +85,9 @@ export default {
 			// collections: getIconCollections("all"),
 			// and the more recommended way is to use `dynamicIconsPlugin`, see below.
 		}),
-		require('tailwindcss-animated')
+		require('tailwindcss-animated'),
+		plugin(function({ addVariant }) {
+			addVariant('children', '& > *');
+		})
 	]
 };

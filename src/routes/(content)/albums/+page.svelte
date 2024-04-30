@@ -20,11 +20,11 @@
 </svelte:head>
 
 <section class="mx-auto max-w-[50rem] px-[10px] py-[20px] sm:px-[30px] sm:py-[40px]">
-	<ul class="flex flex-wrap">
+	<ul class="flex flex-wrap" style:--step="0.1s" style:--duration="0.8s">
 		{#each data.photosets.photoset as album, index}
 			<li
-				style:--delay="{(index + 1) * 80}ms"
-				class="mx-[10px] mb-[20px] w-[calc(100%-20px)] animate-[pop-in] animate-delay-[--delay] animate-duration-[0.5s] animate-fill-both animate-ease-in-out sm:w-[calc(50%-20px)]"
+				style:--delay="calc(var(--step) * {index})"
+				class="mx-[10px] mb-[20px] w-[calc(100%-20px)] animate-[pop-in] animate-delay-[--delay] animate-duration-[--duration] animate-fill-both animate-ease-in-out sm:w-[calc(50%-20px)]"
 			>
 				<figure
 					class="relative isolate aspect-[4/3] w-full overflow-hidden rounded-md bg-gray-100 shadow-md"
