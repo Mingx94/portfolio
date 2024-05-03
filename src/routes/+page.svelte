@@ -22,9 +22,9 @@
 </svelte:head>
 
 <section
-	style:--duration="0.8s"
-	style:--step="0.5s"
-	class="mx-auto my-auto flex max-w-[50rem] flex-col justify-center px-[1.5rem] children:animate-[fade-in-up] children:animate-delay-[--delay] children:animate-duration-[--duration] children:animate-fill-both children:animate-ease-in-out sm:px-[30px]"
+	style:--duration="0.5s"
+	style:--step="0.4s"
+	class="mx-auto my-auto flex max-w-[50rem] flex-col justify-center px-[1.5rem] children:animate-[fade-in-up] children:animate-delay-[--delay] children:animate-duration-[--duration] children:animate-fill-both children:animate-ease-in sm:px-[30px]"
 >
 	<h1 style:--delay="calc(var(--step) * 0)" class="mb-2 text-5xl text-skin-base">Michael Tsai</h1>
 	<p style:--delay="calc(var(--step) * 1)" class="mb-4 text-skin-base/80">
@@ -69,10 +69,10 @@
 					href={socialLink.url}
 					target="_blank"
 					rel="noopener noreferrer nofollow"
-					class="text-skin-base transition-colors duration-200 hover:text-skin-accent/80"
+					class="text-skin-base transition-colors duration-200 hover:text-skin-accent/80 flex"
 					title={socialLink.name}
 				>
-					<div class="size-[28px] {socialLink.icon}" role="img" title={socialLink.name} />
+					<span class="size-[28px] {socialLink.icon}" role="img" title={socialLink.name} />
 				</a>
 			</li>
 		{/each}

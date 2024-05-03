@@ -141,7 +141,7 @@
 @keyframes pop-in {
 	from {
 		opacity: 0;
-		transform: translate3d(0, 4%, 0) scale(0.95);
+		transform: translate3d(0, 3%, 0) scale(0.96);
 	}
 	to {
 		opacity: 1;
