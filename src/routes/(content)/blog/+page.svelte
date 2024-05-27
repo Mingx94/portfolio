@@ -22,16 +22,21 @@
 
 <!-- Posts -->
 <section class="mx-auto max-w-[50rem] px-[1.5rem] py-[20px] sm:px-[30px] sm:py-[40px]">
-	<h1 class="mb-[20px] text-[36px] font-bold">文章列表</h1>
-	<ul class="space-y-[24px]" style:--step="0.1s" style:--duration="0.4s">
+	<h1 class="mb-[20px] text-[36px] font-semibold">文章列表</h1>
+	<ul class="-mx-4 w-full space-y-[24px]" style:--step="0.1s" style:--duration="0.4s">
 		{#each data.posts as post, index}
 			<li
 				style:--delay="calc(var(--step) * {index})"
-				class="post animate-[fade-in-up] animate-delay-[--delay] animate-duration-[--duration] animate-fill-both animate-ease-out"
+				class="post w-full animate-[fade-in-up] animate-delay-[--delay] animate-duration-[--duration] animate-fill-both animate-ease-out"
 			>
-				<a href={`/blog/${post.slug}`} class="title underline decoration-solid">{post.title}</a>
-				<p class="text-sm text-gray-500">{formatDate(post.date)}</p>
-				<p class="mt-[16px]">{post.description}</p>
+				<a
+					href={`/blog/${post.slug}`}
+					class="block w-full p-4 transition-colors bg-transparent hover:bg-gray-200/50 duration-200"
+				>
+					<h2 class="title underline decoration-solid">{post.title}</h2>
+					<p class="text-sm text-gray-500">{formatDate(post.date)}</p>
+					<p class="mt-[16px]">{post.description}</p>
+				</a>
 			</li>
 		{/each}
 	</ul>
@@ -39,8 +44,6 @@
 
 <style lang="postcss">
 	.post {
-		max-inline-size: 70ch;
-
 		&:not(:last-child) {
 			@apply border-b border-b-gray-500 pb-[2rem];
 		}

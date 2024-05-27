@@ -1,5 +1,5 @@
-import { iconsPlugin, getIconCollections } from '@egoist/tailwindcss-icons';
-import plugin from 'tailwindcss/plugin';
+import { getIconCollections, iconsPlugin } from '@egoist/tailwindcss-icons';
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 function withOpacity(variableName) {
 	return ({ opacityValue }) => {
@@ -19,7 +19,9 @@ export default {
 		screens: {
 			sm: '640px'
 		},
-
+		fontFamily: {
+			serif: ["'Noto Serif TC'", ...fontFamily.serif]
+		},
 		extend: {
 			textColor: {
 				skin: {

@@ -38,16 +38,7 @@
 	}
 
 	body {
-		@apply flex flex-col bg-skin-fill text-skin-base;
-		font-family:
-			LXGW WenKai,
-			SF Pro Text,
-			Noto Sans TC,
-			sans-serif,
-			Apple Color Emoji,
-			Segoe UI Emoji,
-			Segoe UI Symbol,
-			Noto Color Emoji;
+		@apply flex flex-col bg-skin-fill text-skin-base font-serif;
 	}
 
 	body ::selection {
