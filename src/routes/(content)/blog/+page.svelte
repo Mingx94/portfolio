@@ -25,13 +25,10 @@
 	<h1 class="mb-[20px] text-[36px] font-semibold">文章列表</h1>
 	<ul class="-mx-4 w-full space-y-[24px]" style:--step="0.1s" style:--duration="0.4s">
 		{#each data.posts as post, index}
-			<li
-				style:--delay="calc(var(--step) * {index})"
-				class="post w-full animate-[fade-in-up] animate-delay-[--delay] animate-duration-[--duration] animate-fill-both animate-ease-out"
-			>
+			<li style:--stagger={index} class="post w-full">
 				<a
 					href={`/blog/${post.slug}`}
-					class="block w-full p-4 transition-colors bg-transparent hover:bg-gray-200/50 duration-200"
+					class="block w-full bg-transparent p-4 transition-colors duration-200 hover:bg-gray-200/50"
 				>
 					<h2 class="title underline decoration-solid">{post.title}</h2>
 					<p class="text-sm text-gray-500">{formatDate(post.date)}</p>
@@ -50,5 +47,11 @@
 	}
 	.title {
 		font-size: clamp(1.5rem, 4vw, 2rem);
+	}
+
+	ul > * {
+		animation: fade-in-up var(--duration) ease;
+		animation-fill-mode: both;
+		animation-delay: calc(var(--delay) * var(--stagger));
 	}
 </style>

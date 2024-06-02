@@ -22,18 +22,13 @@
 </svelte:head>
 
 <section
-	style:--duration="0.5s"
-	style:--step="0.4s"
-	class="mx-auto my-auto flex max-w-[50rem] flex-col justify-center px-[1.5rem] *:animate-[fade-in-up] *:animate-delay-[--delay] *:animate-duration-[--duration] *:animate-fill-both *:animate-ease-in sm:px-[30px]"
+	class="mx-auto my-auto flex max-w-[50rem] flex-col justify-center px-[1.5rem] sm:px-[30px]"
 >
-	<h1 style:--delay="calc(var(--step) * 0)" class="mb-2 text-5xl text-skin-base">Michael Tsai</h1>
-	<p style:--delay="calc(var(--step) * 1)" class="mb-4 text-skin-base/80">
+	<h1 style:--stagger="0" class="mb-2 text-5xl text-skin-base">Michael Tsai</h1>
+	<p style:--stagger="1" class="mb-4 text-skin-base/80">
 		Hello, I'm Michael Tsai, a software engineer and an enthusiastic photographer.
 	</p>
-	<ul
-		style:--delay="calc(var(--step) * 2)"
-		class="mb-2 flex animate-[fade-in-up] items-center gap-2"
-	>
+	<ul style:--stagger="2" class="mb-2 flex animate-[fade-in-up] items-center gap-2">
 		<li>
 			<a
 				href="/blog"
@@ -62,7 +57,7 @@
 			</a>
 		</li>
 	</ul>
-	<ul style:--delay="calc(var(--step) * 3)" class="flex animate-[fade-in-up] gap-2">
+	<ul style:--stagger="3" class="flex animate-[fade-in-up] gap-2">
 		{#each socialLinks as socialLink}
 			<li>
 				<a
@@ -82,5 +77,11 @@
 <style lang="postcss">
 	.separator {
 		@apply h-[18px] w-[1px] border-l-[2px] border-skin-fill/50;
+	}
+
+	section > * {
+		animation: fade-in-up var(--duration) ease;
+		animation-fill-mode: both;
+		animation-delay: calc(var(--delay) * var(--stagger));
 	}
 </style>
