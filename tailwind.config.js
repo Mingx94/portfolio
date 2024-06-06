@@ -20,7 +20,7 @@ export default {
 			sm: '640px'
 		},
 		fontFamily: {
-			serif: ["'Noto Serif TC'", ...fontFamily.serif]
+			serif: ['"LXGW WenKai TC"', ...fontFamily.serif]
 		},
 		extend: {
 			textColor: {
