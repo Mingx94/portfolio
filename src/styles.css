@@ -48,7 +48,7 @@
 	}
 
 	body {
-		@apply flex flex-col bg-skin-fill font-serif text-skin-base;
+		@apply flex flex-col bg-skin-fill font-serif text-skin-base min-h-dvh;
 	}
 
 	body ::selection {
