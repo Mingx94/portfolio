@@ -1,9 +1,7 @@
 <script lang="ts">
-	import DialogGallery from '$lib/components/dialog-gallery.svelte';
-	import LayoutImages from '$lib/components/layout-images.svelte';
-	import type { GalleryItem } from '$lib/types/gallery-item';
-	import { fade } from 'svelte/transition';
+	import Image from '$lib/components/image.svelte';
 	import type { PageData } from './$types';
+	import { Drawer } from 'vaul-svelte';
 
 	export let data: PageData;
 
@@ -14,20 +12,15 @@
 	$: title = `${data.albumInfo.photoset.title._content} - Michael Tsai 📷`;
 	$: description = data.albumInfo.photoset.description._content;
 
-	$: images = data.album.photoset.photo.map((photo) => {
-		return {
-			src: photo.url_o,
-			width: photo.width_o,
-			height: photo.height_o,
-			alt: photo.title,
-			photoId: photo.id,
-			thumbnail: {
-				src: photo.url_w,
-				width: photo.width_w,
-				height: photo.height_w
-			}
-		} satisfies GalleryItem;
-	});
+	let activePhoto: {
+		src: string;
+		width: number;
+		height: number;
+		photoId: string;
+		alt?: string;
+	} | null = null;
+
+	let isOpen = false;
 </script>
 
 <svelte:head>
@@ -50,6 +43,10 @@
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:image" content={primaryPhoto.url_m} />
+
+	{#each data.images as image, i}
+		<link rel="prefetch" href={image.src} />
+	{/each}
 </svelte:head>
 
 <div class="mx-auto max-w-[50rem] px-[16px] pb-[48px] pt-[24px] sm:px-[24px]">
@@ -62,8 +59,78 @@
 		</p>
 	{/if}
 </div>
-<section class="mx-auto max-w-[80rem] px-[16px] pb-[48px] sm:px-[24px]" in:fade={{ duration: 300 }}>
-	<LayoutImages {images} />
-</section>
 
-<DialogGallery {images} />
+<Drawer.Root
+	open={isOpen}
+	onOpenChange={(event) => (isOpen = event)}
+	direction="right"
+	preventScroll
+>
+	<section class="mx-auto max-w-[80rem] px-[16px] pb-[48px] sm:px-[24px]">
+		<div class="gallery">
+			{#each data.images as img, i}
+				{@const thumb = img.thumbnail ?? img}
+				<Drawer.Trigger
+					class="group flex aspect-square items-center justify-center overflow-hidden"
+					type="button"
+					on:click={() =>
+						(activePhoto = {
+							src: img.src,
+							width: img.width,
+							height: img.height,
+							photoId: img.photoId,
+							alt: img.alt ?? ''
+						})}
+					tabindex="0"
+				>
+					<Image
+						src={thumb.src}
+						alt={img.alt ?? ''}
+						width={thumb.width}
+						height={thumb.height}
+						loading="lazy"
+						class="m-[4px] max-h-[calc(100%-16px)] max-w-[calc(100%-16px)] object-contain transition-transform duration-[0.15s] group-hover:scale-[1.08]"
+					/>
+				</Drawer.Trigger>
+			{/each}
+		</div>
+	</section>
+
+	<Drawer.Portal>
+		<Drawer.Overlay class="fixed inset-0 z-20 bg-black/40" />
+		<Drawer.Content
+			data-testid="content"
+			class="fixed bottom-0 right-0 top-0 z-30 flex w-full flex-row rounded-l-[10px] bg-skin-fill p-6 md:w-[80%] md:max-w-[1000px]"
+		>
+			<div class="flex size-full flex-row gap-[50px] rounded-full">
+				<div class="my-auto h-12 w-1.5 rounded-full bg-zinc-300" />
+				<div class="relative grid size-full place-content-center">
+					{#if activePhoto !== null}
+						<Image
+							src={activePhoto.src}
+							alt={activePhoto.alt ?? ''}
+							width={activePhoto.width}
+							height={activePhoto.height}
+							class="absolute left-0 top-0 size-full object-contain"
+							data-vaul-no-drag
+						/>
+					{/if}
+				</div>
+			</div>
+		</Drawer.Content>
+	</Drawer.Portal>
+</Drawer.Root>
+
+<style>
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+		gap: 2px;
+	}
+
+	@media (min-width: 768px) {
+		.gallery {
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		}
+	}
+</style>

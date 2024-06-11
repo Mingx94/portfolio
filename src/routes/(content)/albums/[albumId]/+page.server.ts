@@ -1,5 +1,6 @@
 import { FLICKR_USER_ID } from '$env/static/private';
 import FlickrApi from '$lib/api/flickr';
+import type { GalleryItem } from '$lib/types/gallery-item';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {
@@ -9,5 +10,22 @@ export const load: PageServerLoad = async ({ params }) => {
 		FlickrApi.getAlbumInfo(albumId, FLICKR_USER_ID)
 	]);
 
-	return { album, albumInfo };
+	return {
+		album,
+		albumInfo,
+		images: album.photoset.photo.map((photo) => {
+			return {
+				src: photo.url_o,
+				width: photo.width_o,
+				height: photo.height_o,
+				alt: photo.title,
+				photoId: photo.id,
+				thumbnail: {
+					src: photo.url_w,
+					width: photo.width_w,
+					height: photo.height_w
+				}
+			} satisfies GalleryItem;
+		})
+	};
 };

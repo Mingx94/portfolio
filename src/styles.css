@@ -42,6 +42,11 @@
 		@apply bg-transparent;
 	}
 
+	html {
+		@apply overflow-y-auto min-h-dvh;
+		scrollbar-gutter: stable;
+	}
+
 	body {
 		@apply flex flex-col bg-skin-fill font-serif text-skin-base;
 	}

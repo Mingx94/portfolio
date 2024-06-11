@@ -14,11 +14,6 @@ function withOpacity(variableName) {
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
-		// Remove the following screen breakpoint or add other breakpoints
-		// if one breakpoint is not enough for you
-		screens: {
-			sm: '640px'
-		},
 		fontFamily: {
 			serif: ['"LXGW WenKai TC"', ...fontFamily.serif]
 		},
