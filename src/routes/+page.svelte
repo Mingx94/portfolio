@@ -28,7 +28,7 @@
 	<p style:--stagger="1" class="mb-4 text-skin-base/80">
 		Hello, I'm Michael Tsai, a software engineer and an enthusiastic photographer.
 	</p>
-	<ul style:--stagger="2" class="mb-2 flex animate-[fade-in-up] items-center gap-2">
+	<ul style:--stagger="2" class="mb-2 flex items-center gap-2">
 		<li>
 			<a
 				href="/blog"
@@ -57,7 +57,7 @@
 			</a>
 		</li>
 	</ul>
-	<ul style:--stagger="3" class="flex animate-[fade-in-up] gap-2">
+	<ul style:--stagger="3" class="flex gap-2">
 		{#each socialLinks as socialLink}
 			<li>
 				<a
