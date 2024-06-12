@@ -64,7 +64,7 @@
 	open={isOpen}
 	onOpenChange={(event) => (isOpen = event)}
 	direction="right"
-	preventScroll
+	preventScroll={false}
 >
 	<section class="mx-auto max-w-[80rem] px-[16px] pb-[48px] sm:px-[24px]">
 		<div class="gallery">
