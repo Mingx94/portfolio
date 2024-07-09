@@ -1,10 +1,11 @@
 import { dev } from '$app/environment';
 
-export const title = 'Vartifact';
+export const siteTitle = 'Vartifact';
+export const siteDescription = '程式筆記 & 攝影部落格';
+export const siteUrl = dev ? 'http://localhost:5173' : 'https://vartifact.cc';
+export const siteAuthor = 'Ming-Xuan Tsai';
 
-export const description = '程式筆記 & 攝影部落格';
-
-export const url = dev ? 'http://localhost:5173' : 'https://vartifact.cc';
+export const postsPerPage = 10;
 
 export const socialLinks = [
 	{

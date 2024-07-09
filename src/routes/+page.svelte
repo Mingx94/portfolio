@@ -1,24 +1,24 @@
 <script lang="ts">
-	import { description, title, url, socialLinks } from '$lib/config';
+	import { siteDescription, siteTitle, siteUrl, socialLinks } from '$lib/config';
 </script>
 
 <svelte:head>
 	<!-- HTML Meta Tags -->
-	<title>{title}</title>
-	<meta name="description" content={description} />
+	<title>{siteTitle}</title>
+	<meta name="description" content={siteDescription} />
 
 	<!-- Facebook Meta Tags -->
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content={url} />
-	<meta property="og:title" content={title} />
-	<meta property="og:description" content={description} />
-	<meta property="og:image" content={`${url}/home.jpg`} />
+	<meta property="og:url" content={siteUrl} />
+	<meta property="og:title" content={siteTitle} />
+	<meta property="og:description" content={siteDescription} />
+	<meta property="og:image" content={`${siteUrl}/home.jpg`} />
 	<meta property="og:image:width" content="600" />
 	<meta property="og:image:height" content="400" />
 
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:image" content={`${url}/home.jpg`} />
+	<meta name="twitter:image" content={`${siteUrl}/home.jpg`} />
 </svelte:head>
 
 <section

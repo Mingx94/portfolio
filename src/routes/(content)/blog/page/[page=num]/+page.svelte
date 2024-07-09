@@ -28,6 +28,8 @@
 	<Posts posts={data.posts} />
 
 	<!-- Pagination -->
-	<Pagination currentPage={1} totalPage={data.total} />
+	<Pagination currentPage={data.page} totalPage={data.total} />
 </section>
 
+<style lang="postcss">
+</style>
