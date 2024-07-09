@@ -49,18 +49,6 @@ const config = {
 			}
 		}),
 		inlineStyleThreshold: 3000,
-		prerender: {
-			entries: [
-				'*',
-				'/api/posts/page/*',
-				'/blog/category/*/page/',
-				'/blog/category/*/page/*',
-				'/blog/category/page/',
-				'/blog/category/page/*',
-				'/blog/page/',
-				'/blog/page/*'
-			]
-		}
 	}
 };
 
