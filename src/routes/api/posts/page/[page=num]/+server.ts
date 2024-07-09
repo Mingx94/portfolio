@@ -2,8 +2,6 @@ import { postsPerPage } from '$lib/config';
 import { fetchPosts } from '$lib/api/posts';
 import { json } from '@sveltejs/kit';
 
-export const prerender = true;
-
 export const GET = async ({ params }) => {
 	const page = +params.page || 1;
 

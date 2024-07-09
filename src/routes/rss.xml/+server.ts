@@ -1,8 +1,6 @@
 import { fetchPosts } from '$lib/api/posts';
 import * as config from '$lib/config';
 
-export const prerender = true;
-
 const escapeMap = new Map([
 	['<', '&lt;'],
 	['>', '&gt;'],
