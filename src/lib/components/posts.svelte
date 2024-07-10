@@ -5,7 +5,7 @@
 	export let posts: Post[] = [];
 </script>
 
-<ul class="-mx-4 w-full space-y-[24px]" style:--step="0.1s" style:--duration="0.4s">
+<ul class="w-full space-y-[24px]" style:--step="0.1s" style:--duration="0.4s">
 	{#each posts as post, index}
 		<li style:--stagger={index} class="post w-full">
 			<article>
