@@ -21,8 +21,6 @@ To run this project, you will need to add the following environment variables to
 
 - [x] Add blog posts
 - [ ] Beautify website
-- [ ] Link Obsidian Github Publisher
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
+## Credit
+- [sveltekit-blog-starter](https://github.com/josh-collinsworth/sveltekit-blog-starter)
