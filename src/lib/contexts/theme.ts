@@ -35,9 +35,12 @@ function listenMatchMedia(store: Writable<App.ColorSchema>) {
 function createColorSchemeStore(initial: App.ColorSchema) {
 	const store = writable(initial);
 
-	const preferred = derived(store, (c) => (c === 'system' ? getPrefersColorScheme() : c));
+	let unsubscribe: (() => void) | undefined;
+	if (initial === 'system') {
+		unsubscribe = listenMatchMedia(store);
+	}
 
-	listenMatchMedia(store);
+	const preferred = derived(store, (c) => (c === 'system' ? getPrefersColorScheme() : c));
 
 	return {
 		subscribe: store.subscribe,
@@ -45,6 +48,7 @@ function createColorSchemeStore(initial: App.ColorSchema) {
 		 * @param {App.ColorSchema} scheme
 		 */
 		change(scheme: App.ColorSchema) {
+			unsubscribe?.();
 			document.documentElement.dataset.theme = scheme;
 			document.cookie = `${COOKIE_THEME}=${scheme}; path=/; SameSite=Lax; Secure`;
 			store.set(scheme);
