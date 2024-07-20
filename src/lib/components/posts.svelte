@@ -11,7 +11,7 @@
 			<article>
 				<a
 					href={`/blog/${post.slug}`}
-					class="block w-full bg-transparent p-4 transition-colors duration-200 hover:bg-gray-200/50"
+					class="block w-full bg-transparent p-4 transition-colors duration-200 hover:bg-skin-card/70"
 				>
 					<img
 						src={post.coverImage}
@@ -22,7 +22,7 @@
 						class="h-auto w-full max-w-full"
 					/>
 					<h2 class="title decoration-solid">{post.title}</h2>
-					<p class="text-sm text-gray-500">{formatDate(post.date)}</p>
+					<p class="text-sm text-skin-base/50">{formatDate(post.date)}</p>
 					<p class="mt-[16px]">{post.excerpt}</p>
 				</a>
 			</article>
@@ -31,10 +31,8 @@
 </ul>
 
 <style lang="postcss">
-	.post {
-		&:not(:last-child) {
-			@apply border-b border-b-gray-500 pb-[2rem];
-		}
+	.post + .post {
+		@apply border-t border-skin-line;
 	}
 	.title {
 		font-size: clamp(1.5rem, 4vw, 2rem);

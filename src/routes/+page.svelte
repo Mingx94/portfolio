@@ -1,5 +1,8 @@
 <script lang="ts">
 	import { siteDescription, siteTitle, siteUrl, socialLinks } from '$lib/config';
+	import { getColorSchemeContext } from '$lib/contexts/theme';
+
+	const { preferred, change } = getColorSchemeContext();
 </script>
 
 <svelte:head>
@@ -67,10 +70,23 @@
 					class="flex text-skin-base transition-colors duration-200 hover:text-skin-accent/80"
 					title={socialLink.name}
 				>
-					<span class="size-[28px] {socialLink.icon}" role="img" title={socialLink.name} />
+					<span class="size-[28px] {socialLink.icon}" role="img" title={socialLink.name}></span>
 				</a>
 			</li>
 		{/each}
+		<li>
+			<button
+				on:click={() => change($preferred === 'light' ? 'dark' : 'light')}
+				class="flex text-skin-base transition-colors duration-200 hover:text-skin-accent/80"
+				title="Toggle theme"
+			>
+				<span
+					class={'size-[28px] ' +
+						($preferred === 'light' ? 'i-iconoir-half-moon' : 'i-iconoir-sun-light')}
+					aria-hidden="true"
+				></span>
+			</button>
+		</li>
 	</ul>
 </section>
 

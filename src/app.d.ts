@@ -1,9 +1,14 @@
 // See https://kit.svelte.dev/docs/types#app
+
 // for information about these interfaces
 declare global {
 	namespace App {
+		type ColorSchema = 'dark' | 'light' | 'system'
+
 		// interface Error {}
-		// interface Locals {}
+		interface Locals {
+			colorSchema: ColorSchema;
+		}
 		// interface PageData {}
 		// interface Platform {}
 	}
@@ -21,4 +26,5 @@ declare global {
 	}
 }
 
-export {};
+export { };
+

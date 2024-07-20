@@ -29,3 +29,5 @@ export const socialLinks = [
 		icon: 'i-iconoir-x'
 	}
 ];
+
+export const COOKIE_THEME = 'theme';
