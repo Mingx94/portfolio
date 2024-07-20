@@ -158,3 +158,17 @@ export interface Photo {
 	height_w: number;
 	width_w: number;
 }
+
+export interface ClientPhoto {
+	src: string;
+	photoId: string;
+	thumbnail?: {
+		src: string;
+		width: number;
+		height: number;
+	};
+	width: number;
+	height: number;
+	cropped?: boolean;
+	alt?: string;
+}

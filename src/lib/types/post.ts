@@ -1,6 +1,4 @@
-export type Categories = 'sveltekit' | 'svelte';
-
-export type Post = {
+export interface Post {
 	title: string;
 	slug: string;
 	excerpt: string;
@@ -9,4 +7,4 @@ export type Post = {
 	coverHeight: number;
 	date: string;
 	categories: string[];
-};
+}

@@ -1,6 +1,6 @@
 import { FLICKR_USER_ID } from '$env/static/private';
 import FlickrApi from '$lib/api/flickr';
-import type { GalleryItem } from '$lib/types/gallery-item';
+import type { ClientPhoto } from '$lib/types/photo';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ params }) => {
@@ -25,7 +25,7 @@ export const load: PageServerLoad = async ({ params }) => {
 					width: photo.width_w,
 					height: photo.height_w
 				}
-			} satisfies GalleryItem;
+			} satisfies ClientPhoto;
 		})
 	};
 };

@@ -1,6 +1,5 @@
 import { FLICKR_API_KEY } from '$env/static/private';
-import type { Photo, PhotoInfo } from '$lib/types/photo';
-import type { PhotoExif } from '$lib/types/photo-exif';
+import type { Photo } from '$lib/types/photo';
 import type { Photoset } from '$lib/types/photoset';
 
 const baseUrl = 'https://api.flickr.com/services/rest/';
@@ -99,46 +98,10 @@ const getPhotos = async (photosetId: string) => {
 	};
 };
 
-const getPhotoInfo = async (photoId: string) => {
-	const url = new URL(baseUrl);
-	url.searchParams.append('method', 'flickr.photos.getInfo');
-	url.searchParams.append('api_key', FLICKR_API_KEY);
-	url.searchParams.append('photo_id', photoId);
-	url.searchParams.append('format', 'json');
-	url.searchParams.append('nojsoncallback', '1');
-
-	const response = await fetch(url);
-	const data = await response.json();
-
-	return data as {
-		photo: PhotoInfo;
-		stat: string;
-	};
-};
-
-const getPhotoExif = async (photoId: string) => {
-	const url = new URL(baseUrl);
-	url.searchParams.append('method', 'flickr.photos.getExif');
-	url.searchParams.append('api_key', FLICKR_API_KEY);
-	url.searchParams.append('photo_id', photoId);
-	url.searchParams.append('format', 'json');
-	url.searchParams.append('nojsoncallback', '1');
-
-	const response = await fetch(url);
-	const data = await response.json();
-
-	return data as {
-		photo: PhotoExif;
-		stat: string;
-	};
-};
-
 const FlickrApi = {
 	getAlbums,
 	getAlbumInfo,
-	getPhotos,
-	getPhotoInfo,
-	getPhotoExif
+	getPhotos
 };
 
 export default FlickrApi;
