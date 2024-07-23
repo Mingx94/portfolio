@@ -19,14 +19,15 @@ function listenMatchMedia(store: Writable<App.ColorSchema>) {
 	if (!browser) return;
 
 	const listener = (e: MediaQueryListEvent) => {
-		store.set(e.matches ? 'dark' : 'light');
+		const scheme = e.matches ? 'dark' : 'light';
+		document.documentElement.dataset.theme = scheme;
+		// expire cookie
+		document.cookie = `${COOKIE_THEME}=; path=/; SameSite=Lax; Secure; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+		store.set(scheme);
 	};
 
 	const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 	mediaQuery.addEventListener('change', listener);
-	store.set(mediaQuery.matches ? 'dark' : 'light');
-
-	return () => mediaQuery.removeEventListener('change', listener);
 }
 
 /**
@@ -35,10 +36,7 @@ function listenMatchMedia(store: Writable<App.ColorSchema>) {
 function createColorSchemeStore(initial: App.ColorSchema) {
 	const store = writable(initial);
 
-	let unsubscribe: (() => void) | undefined;
-	if (initial === 'system') {
-		unsubscribe = listenMatchMedia(store);
-	}
+	listenMatchMedia(store);
 
 	const preferred = derived(store, (c) => (c === 'system' ? getPrefersColorScheme() : c));
 
@@ -48,7 +46,6 @@ function createColorSchemeStore(initial: App.ColorSchema) {
 		 * @param {App.ColorSchema} scheme
 		 */
 		change(scheme: App.ColorSchema) {
-			unsubscribe?.();
 			document.documentElement.dataset.theme = scheme;
 			document.cookie = `${COOKIE_THEME}=${scheme}; path=/; SameSite=Lax; Secure`;
 			store.set(scheme);
