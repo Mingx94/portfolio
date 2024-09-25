@@ -16,7 +16,7 @@ export default {
 	darkMode: ['selector', '[data-theme="dark"]'],
 	theme: {
 		fontFamily: {
-			serif: ['"LXGW WenKai TC"', ...fontFamily.serif]
+			serif: ['"HunInn"', ...fontFamily.serif]
 		},
 		extend: {
 			textColor: {
