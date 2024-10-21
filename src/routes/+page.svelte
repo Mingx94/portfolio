@@ -81,8 +81,7 @@
 				title="Toggle theme"
 			>
 				<span
-					class={'size-[28px] ' +
-						($preferred === 'light' ? 'i-iconoir-half-moon' : 'i-iconoir-sun-light')}
+					class={'size-[28px] ' + ($preferred === 'light' ? 'i-tabler-moon' : 'i-tabler-sun-high')}
 					aria-hidden="true"
 				></span>
 			</button>
