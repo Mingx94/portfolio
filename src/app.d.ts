@@ -3,7 +3,7 @@
 // for information about these interfaces
 declare global {
 	namespace App {
-		type ColorSchema = 'dark' | 'light' | 'system'
+		type ColorSchema = 'dark' | 'light' | 'system';
 
 		// interface Error {}
 		interface Locals {
@@ -26,5 +26,4 @@ declare global {
 	}
 }
 
-export { };
-
+export {};

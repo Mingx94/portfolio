@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { socialLinks } from '$lib/config';
 	import { getColorSchemeContext } from '$lib/contexts/theme';
-	
+
 	const { preferred, change } = getColorSchemeContext();
 </script>
 
@@ -24,6 +24,7 @@
 						rel="noopener noreferrer nofollow"
 						class="flex items-center gap-[8px] text-skin-base hover:text-skin-accent/75"
 						title={socialLink.name}
+						aria-label={socialLink.name}
 					>
 						<div
 							class="size-[28px] {socialLink.icon}"
@@ -40,24 +41,26 @@
 					rel="noopener noreferrer nofollow"
 					class="flex items-center gap-[8px] text-skin-base hover:text-skin-accent/75"
 					title="RSS"
+					aria-label="RSS"
 				>
 					<div class="i-iconoir-rss-feed size-[28px]" role="img" aria-label="RSS"></div>
 				</a>
 			</li>
-			
-		<li>
-			<button
-				on:click={() => change($preferred === 'light' ? 'dark' : 'light')}
-				class="flex text-skin-base transition-colors duration-200 hover:text-skin-accent/80"
-				title="Toggle theme"
-			>
-				<span
-					class={'size-[28px] ' +
-						($preferred === 'light' ? 'i-iconoir-half-moon' : 'i-iconoir-sun-light')}
-					aria-hidden="true"
-				></span>
-			</button>
-		</li>
+
+			<li>
+				<button
+					onclick={() => change($preferred === 'light' ? 'dark' : 'light')}
+					class="flex text-skin-base transition-colors duration-200 hover:text-skin-accent/80"
+					title="Toggle theme"
+					aria-label="Toggle theme"
+				>
+					<span
+						class={'size-[28px] ' +
+							($preferred === 'light' ? 'i-iconoir-half-moon' : 'i-iconoir-sun-light')}
+						aria-hidden="true"
+					></span>
+				</button>
+			</li>
 		</ul>
 		<p class="text-blueGray-800 text-center text-sm">Michael Tsai © 2024</p>
 	</div>

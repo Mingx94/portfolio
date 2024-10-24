@@ -2,7 +2,11 @@
 	import type { Post } from '$lib/types/post';
 	import { formatDate } from '$lib/utils/formate-date';
 
-	export let posts: Post[] = [];
+	interface Props {
+		posts?: Post[];
+	}
+
+	let { posts = [] }: Props = $props();
 </script>
 
 <ul class="w-full space-y-[24px]" style:--step="0.1s" style:--duration="0.4s">

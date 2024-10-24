@@ -1,12 +1,19 @@
 <script lang="ts">
 	import { formatDate } from '$lib/utils/formate-date';
+	import type { PageData } from './$types';
 
-	export let data;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	const { title, excerpt, date, updated, coverImage, coverWidth, coverHeight, categories } =
 		data.meta;
 
 	const { content } = data;
+
+	const SvelteComponent = $derived(content);
 </script>
 
 <!-- SEO -->
@@ -43,7 +50,7 @@
 		<b>Updated:</b>
 		{formatDate(updated)}
 	</div>
-	
+
 	{#if categories}
 		<aside class="mt-6">
 			<ul class="mt-2 flex flex-wrap gap-2 p-0">
@@ -60,7 +67,7 @@
 
 	<!-- Post -->
 	<div class="prose prose-slate mt-[40px] max-w-none">
-		<svelte:component this={content} />
+		<SvelteComponent />
 	</div>
 </article>
 

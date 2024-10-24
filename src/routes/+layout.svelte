@@ -1,10 +1,15 @@
 <script lang="ts">
 	import '../styles.css';
-  import { setColorSchemeContext } from '$lib/contexts/theme';
-	
-  export let data;
+	import { setColorSchemeContext } from '$lib/contexts/theme';
 
-  setColorSchemeContext(data.colorSchema);
+	interface Props {
+		data: any;
+		children?: import('svelte').Snippet;
+	}
+
+	let { data, children }: Props = $props();
+
+	setColorSchemeContext(data.colorSchema);
 </script>
 
-<slot />
+{@render children?.()}

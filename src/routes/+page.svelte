@@ -69,6 +69,7 @@
 					rel="noopener noreferrer nofollow"
 					class="flex text-skin-base transition-colors duration-200 hover:text-skin-accent/80"
 					title={socialLink.name}
+					aria-label={socialLink.name}
 				>
 					<span class="size-[28px] {socialLink.icon}" role="img" title={socialLink.name}></span>
 				</a>
@@ -76,9 +77,10 @@
 		{/each}
 		<li>
 			<button
-				on:click={() => change($preferred === 'light' ? 'dark' : 'light')}
+				onclick={() => change($preferred === 'light' ? 'dark' : 'light')}
 				class="flex text-skin-base transition-colors duration-200 hover:text-skin-accent/80"
 				title="Toggle theme"
+				aria-label="Toggle theme"
 			>
 				<span
 					class={'size-[28px] ' + ($preferred === 'light' ? 'i-tabler-moon' : 'i-tabler-sun-high')}

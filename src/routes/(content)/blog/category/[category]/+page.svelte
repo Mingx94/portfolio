@@ -1,10 +1,15 @@
 <!-- Renders posts listed by category -->
-<script>
+<script lang="ts">
 	import Pagination from '$lib/components/pagination.svelte';
 	import Posts from '$lib/components/posts.svelte';
 	import { siteDescription } from '$lib/config';
+	import type { PageData } from './$types.js';
 
-	export let data;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 	const { category, total, posts } = data;
 </script>
 

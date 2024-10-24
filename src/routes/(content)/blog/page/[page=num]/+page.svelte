@@ -3,7 +3,11 @@
 	import Posts from '$lib/components/posts.svelte';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	const title = '文章列表 - Michael Tsai 📷';
 	const description = '文章列表 ';
