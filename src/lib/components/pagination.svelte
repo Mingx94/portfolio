@@ -2,11 +2,15 @@
 	import { goto } from '$app/navigation';
 	import { postsPerPage } from '$lib/config';
 
-	export let currentPage: number;
-	export let totalPage: number;
-	export let path = '/blog/page';
+	interface Props {
+		currentPage: number;
+		totalPage: number;
+		path?: string;
+	}
 
-	$: pagesAvailable = Math.ceil(totalPage / postsPerPage);
+	let { currentPage = $bindable(), totalPage, path = '/blog/page' }: Props = $props();
+
+	let pagesAvailable = $derived(Math.ceil(totalPage / postsPerPage));
 
 	const isCurrentPage = (page: number) => page == currentPage;
 
@@ -25,7 +29,11 @@
 		<nav aria-label="Pagination navigation" class="mx-auto my-12">
 			<ul class="flex items-center justify-center">
 				<li>
-					<button on:click={() => setPage(currentPage - 1)} disabled={currentPage === 1}>
+					<button
+						onclick={() => setPage(currentPage - 1)}
+						disabled={currentPage === 1}
+						aria-label="Previous page"
+					>
 						<span class="i-iconoir-nav-arrow-left size-[28px]"></span>
 					</button>
 				</li>
@@ -35,7 +43,9 @@
 					{#if page === currentPage}
 						<li><button class="active">{page}</button></li>
 					{:else if page === 1 || page === totalPage || Math.abs(page - currentPage) <= 1 || page === currentPage - 1 || page === currentPage + 1}
-						<li><button on:click={() => setPage(page)}>{page}</button></li>
+						<li>
+							<button onclick={() => setPage(page)} aria-label={`Page ${page}`}>{page}</button>
+						</li>
 					{:else if page < currentPage - 1 && page === 2}
 						<li>...</li>
 					{:else if page > currentPage + 1 && page === totalPage - 1}
@@ -43,7 +53,11 @@
 					{/if}
 				{/each}
 				<li>
-					<button on:click={() => setPage(currentPage + 1)} disabled={currentPage === totalPage}>
+					<button
+						onclick={() => setPage(currentPage + 1)}
+						disabled={currentPage === totalPage}
+						aria-label="Next page"
+					>
 						<span class="i-iconoir-nav-arrow-right size-[28px]"></span>
 					</button>
 				</li>

@@ -3,14 +3,18 @@
 	import type { PageData } from './$types';
 	import { Drawer } from 'vaul-svelte';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
 
-	$: primaryPhoto = data.album.photoset.photo.find(
-		(photo) => photo.id === data.albumInfo.photoset.primary
-	)!;
+	let { data }: Props = $props();
 
-	$: title = `${data.albumInfo.photoset.title._content} - Michael Tsai 📷`;
-	$: description = data.albumInfo.photoset.description._content;
+	let primaryPhoto = $derived(
+		data.album.photoset.photo.find((photo) => photo.id === data.albumInfo.photoset.primary)!
+	);
+
+	let title = $derived(`${data.albumInfo.photoset.title._content} - Michael Tsai 📷`);
+	let description = $derived(data.albumInfo.photoset.description._content);
 
 	let activePhoto: {
 		src: string;
@@ -18,9 +22,9 @@
 		height: number;
 		photoId: string;
 		alt?: string;
-	} | null = null;
+	} | null = $state(null);
 
-	let isOpen = false;
+	let isOpen = $state(false);
 </script>
 
 <svelte:head>
@@ -103,7 +107,7 @@
 			class="fixed bottom-0 right-0 top-0 z-30 flex w-full flex-row rounded-l-[10px] bg-skin-fill p-6 md:w-[80%] md:max-w-[1000px]"
 		>
 			<div class="flex size-full flex-row gap-[50px] rounded-full">
-				<div class="my-auto h-12 w-1.5 rounded-full bg-zinc-300" />
+				<div class="my-auto h-12 w-1.5 rounded-full bg-zinc-300"></div>
 				<div class="relative grid size-full place-content-center">
 					{#if activePhoto !== null}
 						<Image

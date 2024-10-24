@@ -1,4 +1,3 @@
-
 export const load = ({ locals }) => {
-  return { colorSchema: locals.colorSchema };
+	return { colorSchema: locals.colorSchema };
 };

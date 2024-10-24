@@ -3,7 +3,7 @@
 
 	import { page } from '$app/stores';
 
-	let isOpen = false;
+	let isOpen = $state(false);
 	const navLinks = [
 		{
 			name: '相簿',
@@ -46,9 +46,12 @@
 				aria-label="Open Menu"
 				aria-expanded={isOpen}
 				aria-controls="menu-items"
-				on:click={() => (isOpen = !isOpen)}
+				onclick={() => (isOpen = !isOpen)}
 			>
-				<div class="text-2xl {isOpen ? 'i-iconoir-menu-scale' : 'i-iconoir-menu'}" tabindex="-1" />
+				<div
+					class="text-2xl {isOpen ? 'i-iconoir-menu-scale' : 'i-iconoir-menu'}"
+					tabindex="-1"
+				></div>
 			</button>
 			<ul
 				id="menu-items"
@@ -60,7 +63,7 @@
 							href={navLink.href}
 							class="hover:text-skin-accent/75"
 							class:text-skin-accent={$page.url.pathname === navLink.href}
-							on:click={() => (isOpen = false)}
+							onclick={() => (isOpen = false)}
 						>
 							{navLink.name}
 						</a>

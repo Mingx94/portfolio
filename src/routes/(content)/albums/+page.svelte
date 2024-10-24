@@ -1,7 +1,11 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	let title = '相簿列表 - Michael Tsai 📷';
 	let description = '相簿列表';
@@ -40,13 +44,13 @@
 					<!-- gradient mask -->
 					<div
 						class="pointer-events-none absolute left-0 top-0 h-full w-full rounded-md bg-gradient-to-b from-transparent to-black opacity-50"
-					/>
+					></div>
 					<figcaption class="absolute bottom-2 left-2 flex gap-[4px] font-semibold text-white">
 						<div
 							class="i-iconoir-media-image-list size-[24px] flex-shrink-0"
 							role="img"
 							title="Album Icon"
-						/>
+						></div>
 						<span class="line-height-[24px] line-clamp-2 text-[18px]">{album.title._content}</span>
 					</figcaption>
 				</figure>

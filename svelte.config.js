@@ -48,7 +48,7 @@ const config = {
 				exclude: ['<all>']
 			}
 		}),
-		inlineStyleThreshold: 3000,
+		inlineStyleThreshold: 3000
 	}
 };
 

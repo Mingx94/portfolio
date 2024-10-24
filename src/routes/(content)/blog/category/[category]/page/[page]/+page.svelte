@@ -3,8 +3,13 @@
 	import Pagination from '$lib/components/pagination.svelte';
 	import Posts from '$lib/components/posts.svelte';
 	import { siteDescription } from '$lib/config';
+	import type { PageData } from './$types';
 
-	export let data;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 	const { page, category, totalPosts, posts } = data;
 </script>
 

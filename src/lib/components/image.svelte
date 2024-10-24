@@ -1,12 +1,15 @@
 <script lang="ts">
-	export let src: string;
-	export let alt: string;
-
 	import { onMount } from 'svelte';
+	interface Props {
+		src: string;
+		alt: string;
+		[key: string]: any;
+	}
 
-	let loaded = false;
-	let thisImage: HTMLImageElement;
+	let { src, alt, ...props }: Props = $props();
 
+	let loaded = $state(false);
+	let thisImage!: HTMLImageElement;
 	onMount(() => {
 		thisImage.onload = () => {
 			loaded = true;
@@ -19,7 +22,7 @@
 	{alt}
 	class:loaded
 	bind:this={thisImage}
-	{...$$restProps}
-	class="opacity-0 transition-opacity duration-[1.2s] ease-out {$$props.class}"
+	{...props}
+	class="opacity-0 transition-opacity duration-[1.2s] ease-out {props.class}"
 	class:opacity-100={loaded}
 />

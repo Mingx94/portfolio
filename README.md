@@ -23,4 +23,5 @@ To run this project, you will need to add the following environment variables to
 - [ ] Beautify website
 
 ## Credit
+
 - [sveltekit-blog-starter](https://github.com/josh-collinsworth/sveltekit-blog-starter)
