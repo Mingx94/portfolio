@@ -21,6 +21,10 @@ export async function GET() {
 				<title>${escapeXml(config.siteTitle)}</title>
 				<description>${escapeXml(config.siteDescription)}</description>
 				<link>${config.siteUrl}/blog</link>
+				<follow_challenge>
+					<feedId>72215661807600640</feedId>
+					<userId>41289469655933952</userId>
+				</follow_challenge>
 				<atom:link href="${config.siteUrl}/rss.xml" rel="self" type="application/rss+xml"/>
 				${posts
 					.map(
