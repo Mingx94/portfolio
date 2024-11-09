@@ -20,7 +20,7 @@ To run this project, you will need to add the following environment variables to
 ## Roadmap
 
 - [x] Add blog posts
-- [ ] Beautify website
+- [x] Beautify website
 
 ## Credit
 

@@ -20,39 +20,13 @@ export default {
 		},
 		extend: {
 			textColor: {
-				skin: {
-					base: withOpacity('--color-text-base'),
-					accent: withOpacity('--color-accent'),
-					inverted: withOpacity('--color-fill')
-				}
+				main: withOpacity('--color-text'),
+				accent: withOpacity('--color-text-accent')
 			},
 			backgroundColor: {
-				skin: {
-					fill: withOpacity('--color-fill'),
-					accent: withOpacity('--color-accent'),
-					inverted: withOpacity('--color-text-base'),
-					card: withOpacity('--color-card'),
-					'card-muted': withOpacity('--color-card-muted')
-				}
-			},
-			outlineColor: {
-				skin: {
-					fill: withOpacity('--color-accent')
-				}
-			},
-			borderColor: {
-				skin: {
-					line: withOpacity('--color-border'),
-					fill: withOpacity('--color-text-base'),
-					accent: withOpacity('--color-accent')
-				}
-			},
-			fill: {
-				skin: {
-					base: withOpacity('--color-text-base'),
-					accent: withOpacity('--color-accent')
-				},
-				transparent: 'transparent'
+				main: withOpacity('--color-bg'),
+				card: withOpacity('--color-bg-card'),
+				accent: withOpacity('--color-bg-accent'),
 			},
 			fontFamily: {
 				mono: ['IBM Plex Mono', 'monospace']
@@ -73,12 +47,11 @@ export default {
 		}
 	},
 	plugins: [
-		require('@tailwindcss/typography'),
 		iconsPlugin({
 			// Select the icon collections you want to use
 			// You can also ignore this option to automatically discover all individual icon packages you have installed
 			// If you install @iconify/json, you should explicitly specify the collections you want to use, like this:
-			collections: getIconCollections(['iconoir', 'tabler'])
+			collections: getIconCollections(['iconoir'])
 			// If you want to use all icons from @iconify/json, you can do this:
 			// collections: getIconCollections("all"),
 			// and the more recommended way is to use `dynamicIconsPlugin`, see below.
