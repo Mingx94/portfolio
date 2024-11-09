@@ -26,7 +26,7 @@ export default {
 			backgroundColor: {
 				main: withOpacity('--color-bg'),
 				card: withOpacity('--color-bg-card'),
-				accent: withOpacity('--color-bg-accent'),
+				accent: withOpacity('--color-bg-accent')
 			},
 			fontFamily: {
 				mono: ['IBM Plex Mono', 'monospace']

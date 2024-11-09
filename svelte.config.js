@@ -1,8 +1,7 @@
 import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { sequence, preprocessMeltUI } from '@melt-ui/pp';
-import markdown from './src/lib/markdown.js'
-
+import markdown from './src/lib/markdown.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
