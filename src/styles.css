@@ -94,7 +94,7 @@
 
 @layer component {
 	.site-width {
-		@apply mx-auto w-full max-w-[75rem];
+		@apply container mx-auto;
 	}
 }
 
