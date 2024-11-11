@@ -13,7 +13,7 @@
 </script>
 
 <footer
-	class="container mt-20 px-4 sm:px-8"
+	class="site-width mt-20 px-4 sm:px-8"
 	class:mb-80px={$page.url.pathname === '/resume'}
 	class:md:mb-0={$page.url.pathname === '/resume'}
 >

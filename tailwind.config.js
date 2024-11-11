@@ -1,5 +1,6 @@
 import { getIconCollections, iconsPlugin } from '@egoist/tailwindcss-icons';
 import { fontFamily } from 'tailwindcss/defaultTheme';
+import tailwindAnimated from 'tailwindcss-animated';
 
 function withOpacity(variableName) {
 	return ({ opacityValue }) => {
@@ -56,6 +57,6 @@ export default {
 			// collections: getIconCollections("all"),
 			// and the more recommended way is to use `dynamicIconsPlugin`, see below.
 		}),
-		require('tailwindcss-animated')
+		tailwindAnimated
 	]
 };

@@ -44,7 +44,7 @@
 	<meta name="twitter:image" content={siteImage} />
 </svelte:head>
 
-<section class="container flex flex-col px-4 pt-20 sm:px-8">
+<section class="site-width flex flex-col px-4 pt-20 sm:px-8">
 	<div class="mb-20 flex flex-col items-center gap-6 sm:flex-row">
 		<div class="shrink-0 sm:w-3/5">
 			<h1 class="mb-6 text-balance text-2xl">

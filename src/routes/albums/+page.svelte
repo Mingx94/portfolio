@@ -22,37 +22,26 @@
 	<meta name="twitter:description" content="相簿列表" />
 </svelte:head>
 
-<section class="container px-4 py-6 sm:px-8">
-	<ul class="flex flex-wrap">
+<section class="site-width px-2 py-6 md:px-4">
+	<ul
+		class="grid w-full grid-cols-[repeat(auto-fill,minmax(280px,30%))] place-content-center gap-6 max-md:!grid-cols-2 md:gap-12"
+	>
 		{#each data.photosets.photoset as album, index}
-			<li
-				style:--stagger={index}
-				class="mx-[10px] mb-[20px] w-[calc(100%-20px)] sm:w-[calc(50%-20px)]"
-			>
-				<figure
-					class="relative isolate aspect-[4/3] w-full overflow-hidden rounded-md bg-gray-100 shadow-md"
-				>
-					<a class="h-full w-full" href={`/albums/${album.id}`}>
+			<li style:--stagger={index} class="col-span-1">
+				<a class="flex w-full" href={`/albums/${album.id}`}>
+					<figure class="w-full text-center">
 						<img
-							class="absolute left-0 top-0 h-full w-full rounded-md object-cover"
+							class="aspect-square w-full object-cover"
 							src={album.primary_photo_extras.url_m}
 							alt={album.title._content}
 							loading="lazy"
 						/>
-					</a>
-					<!-- gradient mask -->
-					<div
-						class="pointer-events-none absolute left-0 top-0 h-full w-full rounded-md bg-gradient-to-b from-transparent to-black opacity-50"
-					></div>
-					<figcaption class="absolute bottom-2 left-2 flex gap-[4px] font-semibold text-white">
-						<div
-							class="i-iconoir-media-image-list size-[24px] flex-shrink-0"
-							role="img"
-							title="Album Icon"
-						></div>
-						<span class="line-height-[24px] line-clamp-2 text-[18px]">{album.title._content}</span>
-					</figcaption>
-				</figure>
+
+						<figcaption class="my-4 text-lg sm:text-2xl">
+							{album.title._content}
+						</figcaption>
+					</figure>
+				</a>
 			</li>
 		{/each}
 	</ul>

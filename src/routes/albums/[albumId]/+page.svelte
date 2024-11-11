@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Image from '$lib/components/image.svelte';
+	import Masonry from '$lib/components/masonry.svelte';
 	import { siteName, siteUrl, twitterHandle } from '$lib/site/config';
 
 	let { data } = $props();
@@ -38,7 +38,7 @@
 	{/each}
 </svelte:head>
 
-<div class="container px-4 pt-12 sm:px-8">
+<div class="site-width px-4 pt-12 sm:px-8">
 	<h1 class="mb-[10px] text-[24px] font-semibold">
 		{data.albumInfo.photoset.title._content}
 	</h1>
@@ -47,34 +47,8 @@
 			{data.albumInfo.photoset.description._content}
 		</p>
 	{/if}
+
+	<section class="">
+		<Masonry loading="lazy" images={data.images}></Masonry>
+	</section>
 </div>
-
-<section class="container px-4 py-12 sm:px-8">
-	<div class="gallery">
-		{#each data.images as img, i}
-			{@const thumb = img.thumbnail ?? img}
-			<Image
-				src={thumb.src}
-				alt={img.alt ?? ''}
-				width={thumb.width}
-				height={thumb.height}
-				loading="lazy"
-				class="m-[4px] max-h-[calc(100%-16px)] max-w-[calc(100%-16px)] object-contain transition-transform duration-[0.15s] group-hover:scale-[1.08]"
-			/>
-		{/each}
-	</div>
-</section>
-
-<style>
-	.gallery {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-		gap: 2px;
-	}
-
-	@media (min-width: 768px) {
-		.gallery {
-			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		}
-	}
-</style>

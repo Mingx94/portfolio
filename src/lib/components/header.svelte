@@ -4,7 +4,7 @@
 </script>
 
 <header class="sticky left-0 top-0 isolate z-10 w-full">
-	<div class="container flex items-center justify-between p-4 sm:p-8">
+	<div class="site-width flex items-center justify-between p-4 sm:p-8">
 		<a href="/" title="Varitfact" class="group top-[12px] flex items-center gap-[8px]">
 			<img
 				src={logo}

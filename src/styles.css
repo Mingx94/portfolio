@@ -93,8 +93,8 @@
 }
 
 @layer component {
-	.container {
-		@apply mx-auto w-full !max-w-[75rem];
+	.site-width {
+		@apply mx-auto w-full max-w-[75rem];
 	}
 }
 

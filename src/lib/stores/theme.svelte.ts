@@ -42,4 +42,4 @@ export function createColorSchemeStore() {
 	};
 }
 
-export let theme = createColorSchemeStore();
+export const theme = createColorSchemeStore();

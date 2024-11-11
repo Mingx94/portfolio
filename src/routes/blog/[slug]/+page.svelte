@@ -26,7 +26,7 @@
 	<meta name="twitter:description" content={description} />
 </svelte:head>
 
-<article class="prose container py-4 sm:py-8">
+<article class="prose site-width py-4 sm:py-8">
 	<!-- Title -->
 	<hgroup>
 		<h1>{data.meta.title}</h1>

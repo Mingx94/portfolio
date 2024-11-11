@@ -12,7 +12,7 @@
 	<meta content="{category} 類別" name="description" />
 </svelte:head>
 
-<section class="container flex flex-col px-4 pt-20 sm:px-8">
+<section class="site-width flex flex-col px-4 pt-20 sm:px-8">
 	<h1 class="mb-6 text-2xl">&num;{category}</h1>
 
 	<Posts posts={data.posts}></Posts>

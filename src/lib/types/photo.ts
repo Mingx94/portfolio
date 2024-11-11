@@ -162,7 +162,7 @@ export interface Photo {
 export interface ClientPhoto {
 	src: string;
 	photoId: string;
-	thumbnail?: {
+	thumbnail: {
 		src: string;
 		width: number;
 		height: number;
