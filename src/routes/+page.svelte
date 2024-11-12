@@ -73,7 +73,7 @@
 		</div>
 
 		<figure class="rounded-md bg-card p-2 shadow-lg sm:w-2/5 sm:rotate-2">
-			<img src="/home.jpg" alt="澎湖" class=" rounded-sm" />
+			<img src="/home.webp" alt="澎湖" class=" rounded-sm" width="600" height="400" />
 			<figcaption class="mt-1 text-right text-sm text-main/80">澎湖 - 南寮浮球秘境</figcaption>
 		</figure>
 	</div>
