@@ -3,19 +3,32 @@
 
 	import type { HTMLImgAttributes } from 'svelte/elements';
 
-	let { src, alt, ...props }: HTMLImgAttributes = $props();
+	let {
+		src,
+		srcFallback,
+		alt,
+		...props
+	}: HTMLImgAttributes & {
+		srcFallback: string;
+	} = $props();
 
 	let loaded = $state(false);
-	let thisImage!: HTMLImageElement;
 </script>
 
 <img
 	{src}
 	{alt}
-	bind:this={thisImage}
 	{...props}
-	class={cn('transition-opacity duration-[1.2s] ease-out', !loaded && 'opacity-0', props.class)}
+	class={cn(!loaded && 'absolute opacity-0', props.class)}
 	onload={() => {
 		loaded = true;
 	}}
 />
+
+<img src={srcFallback} {alt} {...props} class={cn(loaded && 'hidden', props.class)} />
+
+{#if !loaded}
+	<div
+		class="i-iconoir-refresh absolute right-0 top-0 size-6 animate-spin text-white/80 animate-duration-[1500ms] animate-infinite animate-ease-in-out"
+	></div>
+{/if}

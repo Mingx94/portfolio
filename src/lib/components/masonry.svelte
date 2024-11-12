@@ -98,8 +98,7 @@
 	{#each items as { item, left, top, index, ratio } (item.photoId)}
 		<li
 			class="absolute left-0 top-0 aspect-[--ratio] w-[--width]"
-			style="transform: translate3D({left}px, {top}px, 0);
-		--ratio: {ratio}"
+			style="transform: translate3D({left}px, {top}px, 0); --ratio: {ratio}"
 		>
 			<button onclick={() => onclick?.(index)} class={cn('contents', !onclick && 'cursor-default')}>
 				<img
