@@ -27,7 +27,7 @@ export default {
 				accent: withOpacity('--color-bg-accent')
 			},
 			fontFamily: {
-				sans: ['"M PLUS 2"', '"Noto Sans TC"', ...fontFamily.sans],
+				sans: ['"Noto Sans TC"', ...fontFamily.sans],
 				mono: ['IBM Plex Mono', 'monospace']
 			},
 
