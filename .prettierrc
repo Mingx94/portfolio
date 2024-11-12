@@ -7,9 +7,22 @@
 	"plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
 	"overrides": [
 		{
-			"files": "*.svelte",
+			"files": ["*.svelte"],
 			"options": {
-				"parser": "svelte"
+				"bracketSameLine": false
+			}
+		},
+		{
+			"files": ["README.md", "packages/*/README.md", "**/package.json"],
+			"options": {
+				"useTabs": false,
+				"tabWidth": 2
+			}
+		},
+		{
+			"files": ["sites/svelte-5-preview/src/routes/docs/content/**/*.md"],
+			"options": {
+				"printWidth": 60
 			}
 		}
 	]

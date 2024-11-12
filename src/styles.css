@@ -3,177 +3,53 @@
 @tailwind utilities;
 
 @layer base {
-	@font-face {
-		font-family: 'HunInn';
-		src: url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.eot); /* IE9 Compat Modes */
-		src:
-			url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.eot?#iefix)
-				format('embedded-opentype'),
-			/* IE6-IE8 */
-				url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.woff)
-				format('woff'),
-			/* Modern Browsers */
-				url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.ttf)
-				format('truetype'),
-			/* Safari, Android, iOS */
-				url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.svg#SealmemoryHeader)
-				format('svg'); /* Legacy iOS */
-	}
-
 	:root {
 		--delay: 200ms;
 		--duration: 0.8s;
 	}
 
 	:root {
-		--color-fill: 251, 254, 251;
-		--color-text-base: 40, 39, 40;
-		--color-accent: 0, 108, 172;
-		--color-card: 230, 230, 230;
-		--color-card-muted: 205, 205, 205;
-		--color-border: 236, 233, 233;
+		--color-bg: 220, 241, 210;
+		--color-bg-card: 252, 250, 242;
+		--color-bg-accent: 129, 199, 212;
+		--color-text: 12, 12, 12;
+		--color-text-accent: 38, 135, 133;
 	}
 
 	@media (prefers-color-schema: light) {
 		:root:not([data-theme='dark']) {
-			--color-fill: 251, 254, 251;
-			--color-text-base: 40, 39, 40;
-			--color-accent: 0, 108, 172;
-			--color-card: 230, 230, 230;
-			--color-card-muted: 205, 205, 205;
-			--color-border: 236, 233, 233;
+			--color-bg: 220, 241, 210;
+			--color-bg-card: 252, 250, 242;
+			--color-bg-accent: 129, 199, 212;
+			--color-text: 12, 12, 12;
+			--color-text-accent: 38, 135, 133;
 		}
 	}
 
 	:root[data-theme='dark'] {
-		--color-fill: 33, 39, 55;
-		--color-text-base: 234, 237, 243;
-		--color-accent: 255, 107, 1;
-		--color-card: 52, 63, 96;
-		--color-card-muted: 138, 51, 2;
-		--color-border: 171, 75, 8;
+		--color-bg: 67, 67, 67;
+		--color-bg-card: 28, 28, 28;
+		--color-bg-accent: 68, 138, 155;
+		--color-text: 252, 250, 242;
+		--color-text-accent: 129, 199, 212;
 	}
 
 	@media (prefers-color-scheme: dark) {
 		:root:not([data-theme='light']) {
-			--color-fill: 33, 39, 55;
-			--color-text-base: 234, 237, 243;
-			--color-accent: 255, 107, 1;
-			--color-card: 52, 63, 96;
-			--color-card-muted: 138, 51, 2;
-			--color-border: 171, 75, 8;
+			--color-bg: 67, 67, 67;
+			--color-bg-card: 28, 28, 28;
+			--color-bg-accent: 68, 138, 155;
+			--color-text: 252, 250, 242;
+			--color-text-accent: 129, 199, 212;
 		}
-	}
-
-	*::-webkit-scrollbar {
-		@apply w-[16px];
-	}
-
-	*::-webkit-scrollbar-thumb {
-		@apply rounded-[8px] border-[4px] border-solid border-transparent bg-gray-400 bg-clip-content;
-	}
-
-	*::-webkit-scrollbar-thumb:hover {
-		@apply bg-gray-600;
-	}
-
-	*::-webkit-scrollbar-corner {
-		@apply bg-transparent;
-	}
-
-	html {
-		@apply min-h-dvh overflow-y-auto;
-		scrollbar-gutter: stable;
 	}
 
 	body {
-		@apply flex min-h-dvh flex-col bg-skin-fill font-serif text-skin-base;
-	}
-
-	body ::selection {
-		@apply bg-skin-accent bg-opacity-70 text-skin-inverted;
+		background-image: url('/texture.png');
 	}
 
 	a {
-		@apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
-	}
-
-	code,
-	blockquote {
-		word-wrap: break-word;
-	}
-
-	pre > code {
-		white-space: pre;
-	}
-
-	#sun-svg,
-	html[data-theme='dark'] #moon-svg {
-		display: none;
-	}
-
-	#moon-svg,
-	html[data-theme='dark'] #sun-svg {
-		display: block;
-	}
-
-	.prose {
-		:where(h1, h2, h3, h4, h5, h6) {
-			@apply !mb-3 !text-skin-base;
-		}
-		h3 {
-			@apply italic;
-		}
-		p {
-			@apply !text-skin-base;
-		}
-		a {
-			@apply break-words !text-skin-base !decoration-dashed underline-offset-8 hover:!text-skin-accent;
-		}
-		blockquote {
-			@apply !border-l-skin-accent border-opacity-50 opacity-80;
-		}
-		figcaption {
-			@apply !text-skin-base/70;
-		}
-		strong {
-			@apply !text-skin-base;
-		}
-
-		code {
-			@apply rounded bg-skin-card/75 p-1 before:!content-none after:!content-none;
-		}
-		ol {
-			@apply !text-skin-base;
-		}
-		ul {
-			@apply overflow-x-clip !text-skin-base;
-		}
-		li::marker {
-			@apply !text-skin-accent;
-		}
-		table {
-			@apply !text-skin-base;
-		}
-		th {
-			@apply border border-skin-line;
-		}
-		td {
-			@apply border border-skin-line;
-		}
-		img {
-			@apply !my-2 mx-auto border-2 border-skin-line;
-		}
-		hr {
-			@apply !border-skin-line;
-		}
-
-		details {
-			@apply inline-block cursor-pointer select-none text-skin-base;
-		}
-		summary {
-			@apply focus-outline;
-		}
+		@apply hover:text-accent;
 	}
 }
 
@@ -199,8 +75,115 @@
 	}
 }
 
-@layer components {
-	.focus-outline {
-		@apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
+@layer component {
+	.site-width {
+		@apply container mx-auto;
+	}
+}
+
+.prose {
+	display: grid;
+	grid-template-columns: 1fr [gutter-start] 40px [content-start] minmax(0px, 90ch) [content-end] 40px [gutter-end] 1fr;
+
+	> * {
+		grid-column: content-start / content-end;
+	}
+
+	header {
+		@apply mb-32 mt-48 text-center;
+	}
+
+	h1 {
+		line-height: clamp(32px, 6vw, 48px);
+	}
+
+	h2 {
+		@apply mb-8 mt-16;
+	}
+
+	/* no one has to know 🤫 */
+	#table-of-contents + ul a {
+		text-decoration: none;
+		font-weight: inherit;
+	}
+
+	p > a,
+	li > a {
+		text-decoration: underline;
+		text-underline-offset: 4px;
+	}
+
+	p,
+	li {
+		@apply text-lg;
+	}
+
+	@media (width > theme('screens.lg')) {
+		& :where(iframe, video, img, pre, .rehype-code-title) {
+			grid-column: gutter-start / gutter-end;
+		}
+	}
+
+	img {
+		justify-self: center;
+		border-radius: 8px;
+	}
+
+	img,
+	iframe,
+	video,
+	p,
+	ul,
+	ol,
+	pre,
+	blockquote,
+	details {
+		@apply mb-8;
+	}
+
+	li > ul {
+		margin-bottom: 0;
+	}
+
+	ul,
+	ol {
+		@apply gap-x-2;
+		display: grid;
+		list-style-type: none;
+		list-style-position: inside;
+	}
+
+	li > ul {
+		@apply mt-1 pl-4;
+	}
+
+	li > ul > li {
+		list-style-type: circle;
+	}
+
+	li > ul > li::before {
+		content: none;
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+
+	li > ol {
+		@apply mt-1 pl-4;
+	}
+
+	blockquote {
+		@apply rounded-md p-4 text-lg shadow-sm;
+		border: 1px solid var(--post-blockquote-border);
+		border-top: 4px solid var(--clr-primary);
+
+		p {
+			margin-bottom: 0;
+		}
+	}
+
+	details summary {
+		@apply mt-2 font-bold;
 	}
 }

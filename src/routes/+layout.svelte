@@ -1,15 +1,22 @@
 <script lang="ts">
+	import 'lite-youtube-embed/src/lite-yt-embed.css';
+
 	import '../styles.css';
-	import { setColorSchemeContext } from '$lib/contexts/theme';
 
-	interface Props {
-		data: any;
-		children?: import('svelte').Snippet;
-	}
+	import Footer from '$lib/components/footer.svelte';
+	import Header from '$lib/components/header.svelte';
 
-	let { data, children }: Props = $props();
+	$effect(() => {
+		void import('lite-youtube-embed');
+	});
 
-	setColorSchemeContext(data.colorSchema);
+	let { children } = $props();
 </script>
 
-{@render children?.()}
+<Header />
+
+<main class="flex flex-1 flex-col [&>*]:w-full [&>*]:flex-1">
+	{@render children()}
+</main>
+
+<Footer />

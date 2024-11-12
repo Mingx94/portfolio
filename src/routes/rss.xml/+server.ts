@@ -1,5 +1,6 @@
-import { fetchPosts } from '$lib/api/posts';
-import * as config from '$lib/config';
+import * as config from '$lib/site/config';
+import type { Post } from '$lib/types/index.js';
+import { fetchJSON } from '$lib/utils/index.js';
 
 const escapeMap = new Map([
 	['<', '&lt;'],
@@ -11,8 +12,8 @@ const escapeMap = new Map([
 
 const escapeXml = (unsafe: string) => unsafe.replace(/[<>&'"]/g, (match) => escapeMap.get(match));
 
-export async function GET() {
-	const { posts } = fetchPosts({ limit: -1 });
+export async function GET({ fetch }) {
+	const posts = await fetchJSON<Post[]>('/api/posts', fetch);
 
 	const headers = { 'Content-Type': 'application/xml' };
 	const xml = `
@@ -31,10 +32,10 @@ export async function GET() {
 						(post) => `
 					<item>
 						<title>${escapeXml(post.title)}</title>
-						<description>${escapeXml(post.excerpt)}</description>
+						<description>${escapeXml(post.description)}</description>
 						<link>${config.siteUrl}/blog/${post.slug}</link>
 						<guid>${config.siteUrl}/blog/${post.slug}</guid>
-						<pubDate>${new Date(post.date).toUTCString()}</pubDate>
+						<pubDate>${new Date(post.published).toUTCString()}</pubDate>
 					</item>
 				`
 					)
