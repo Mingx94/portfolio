@@ -28,7 +28,7 @@ export default {
 			},
 			fontFamily: {
 				sans: ['"Noto Sans TC"', ...fontFamily.sans],
-				mono: ['IBM Plex Mono', 'monospace']
+				mono: ['"JetBrains Mono"', 'monospace']
 			},
 
 			typography: {
