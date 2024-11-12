@@ -26,34 +26,36 @@
 	<meta name="twitter:description" content={description} />
 </svelte:head>
 
-<article class="prose site-width py-4 sm:py-8">
-	<!-- Title -->
-	<hgroup>
-		<h1>{data.meta.title}</h1>
-		<p class="!mb-0 mt-2">
-			<b>Published:</b>
-			{formatDate(published)}
-			<br />
-			<b>Updated:</b>
-			{formatDate(updated)}
-		</p>
-	</hgroup>
+<section class="site-width py-4 sm:py-8">
+	<article class="prose">
+		<!-- Title -->
+		<hgroup class="mb-4">
+			<h1 class="mb-2 text-3xl font-semibold">{data.meta.title}</h1>
+			<p class="!mb-0 mt-2 !text-base">
+				<b>Published:</b>
+				{formatDate(published)}
+				<br />
+				<b>Updated:</b>
+				{formatDate(updated)}
+			</p>
+		</hgroup>
 
-	<!-- Tags -->
-	{#if categories}
-		<aside>
-			<ul>
-				{#each categories as category}
-					<li class="inline-block text-sm">
-						<a class="bg-accent p-1 !no-underline" href="/blog/category/{category}/">
-							&num;{category}
-						</a>
-					</li>
-				{/each}
-			</ul>
-		</aside>
-	{/if}
+		<!-- Tags -->
+		{#if categories}
+			<aside class="mb-4">
+				<ul>
+					{#each categories as category}
+						<li class="inline-block text-sm">
+							<a class="bg-accent p-1 !no-underline" href="/blog/category/{category}/">
+								&num;{category}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			</aside>
+		{/if}
 
-	<!-- Post -->
-	<data.content />
-</article>
+		<!-- Post -->
+		<data.content />
+	</article>
+</section>

@@ -16,9 +16,6 @@ export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	darkMode: ['selector', '[data-theme="dark"]'],
 	theme: {
-		fontFamily: {
-			serif: ['"HunInn"', ...fontFamily.serif]
-		},
 		extend: {
 			textColor: {
 				main: withOpacity('--color-text'),
@@ -30,6 +27,7 @@ export default {
 				accent: withOpacity('--color-bg-accent')
 			},
 			fontFamily: {
+				sans: ['"M PLUS 2"', '"Noto Sans TC"', ...fontFamily.sans],
 				mono: ['IBM Plex Mono', 'monospace']
 			},
 

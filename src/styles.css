@@ -3,30 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-	@font-face {
-		font-family: 'HunInn';
-		src: url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.eot); /* IE9 Compat Modes */
-		src:
-			url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.eot?#iefix)
-				format('embedded-opentype'),
-			/* IE6-IE8 */
-				url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.woff)
-				format('woff'),
-			/* Modern Browsers */
-				url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.ttf)
-				format('truetype'),
-			/* Safari, Android, iOS */
-				url(https://cdn.jsdelivr.net/gh/marsnow/open-huninn-font@1.1/font/jf-openhuninn.svg#SealmemoryHeader)
-				format('svg'); /* Legacy iOS */
-	}
-
 	:root {
 		--delay: 200ms;
 		--duration: 0.8s;
 	}
 
 	:root {
-		--color-bg: 168, 216, 185;
+		--color-bg: 220, 241, 210;
 		--color-bg-card: 252, 250, 242;
 		--color-bg-accent: 129, 199, 212;
 		--color-text: 12, 12, 12;
@@ -35,7 +18,7 @@
 
 	@media (prefers-color-schema: light) {
 		:root:not([data-theme='dark']) {
-			--color-bg: 168, 216, 185;
+			--color-bg: 220, 241, 210;
 			--color-bg-card: 252, 250, 242;
 			--color-bg-accent: 129, 199, 212;
 			--color-text: 12, 12, 12;
@@ -100,16 +83,7 @@
 
 .prose {
 	display: grid;
-	grid-template-columns:
-		1fr
-		[gutter-start]
-		40px
-		[content-start]
-		minmax(0px, 90ch)
-		[content-end]
-		40px
-		[gutter-end]
-		1fr;
+	grid-template-columns: 1fr [gutter-start] 40px [content-start] minmax(0px, 90ch) [content-end] 40px [gutter-end] 1fr;
 
 	> * {
 		grid-column: content-start / content-end;

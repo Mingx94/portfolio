@@ -1,6 +1,7 @@
 <script lang="ts">
-	import '../styles.css';
 	import 'lite-youtube-embed/src/lite-yt-embed.css';
+
+	import '../styles.css';
 
 	import Footer from '$lib/components/footer.svelte';
 	import Header from '$lib/components/header.svelte';
