@@ -1,13 +1,14 @@
 <script lang="ts">
 	import Posts from '$lib/components/posts.svelte';
 	import {
+		albumLink,
 		categories,
+		links,
 		siteDescription,
 		siteImage,
 		siteName,
 		siteTitle,
 		siteUrl,
-		links,
 		twitterHandle
 	} from '$lib/site/config';
 	import { createSeparator, melt } from '@melt-ui/svelte';
@@ -61,7 +62,7 @@
 							href={socialLink.url}
 							target="_blank"
 							rel="noopener noreferrer nofollow"
-							class="flex items-center gap-[8px]"
+							class="flex"
 							title={socialLink.name}
 							aria-label={socialLink.name}
 						>
@@ -69,6 +70,16 @@
 						</a>
 					</li>
 				{/each}
+				<li>
+					<a
+						href={albumLink.url}
+						class="flex"
+						title={albumLink.name}
+						aria-label="{albumLink.name}}"
+					>
+						<span class="size-[28px] {albumLink.icon}" role="img" aria-hidden="true"></span>
+					</a>
+				</li>
 			</ul>
 		</div>
 

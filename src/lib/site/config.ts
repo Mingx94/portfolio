@@ -28,13 +28,14 @@ export const links = [
 		name: 'RSS Feed',
 		url: '/rss.xml',
 		icon: 'i-iconoir-rss-feed-tag'
-	},
-	{
-		name: '攝影作品',
-		url: '/albums',
-		icon: 'i-iconoir-camera'
 	}
 ];
+
+export const albumLink = {
+	name: '攝影作品',
+	url: '/albums',
+	icon: 'i-iconoir-camera'
+};
 
 export const categories = ['svelte'];
 
