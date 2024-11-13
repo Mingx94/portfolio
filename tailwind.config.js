@@ -27,7 +27,7 @@ export default {
 				accent: withOpacity('--color-bg-accent')
 			},
 			fontFamily: {
-				sans: ['"Noto Sans TC"', ...fontFamily.sans],
+				sans: ['"jf-openhuninn-2.1"', ...fontFamily.sans],
 				mono: ['"JetBrains Mono"', 'monospace']
 			},
 

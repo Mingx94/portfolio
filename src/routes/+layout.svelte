@@ -1,5 +1,6 @@
 <script lang="ts">
 	import 'lite-youtube-embed/src/lite-yt-embed.css';
+	import '$lib/assets/jf-openhuninn-2.1.ttf?subsets';
 
 	import '../styles.css';
 

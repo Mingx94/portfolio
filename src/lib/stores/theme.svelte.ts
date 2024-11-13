@@ -1,4 +1,6 @@
 import { browser } from '$app/environment';
+import { COOKIE_THEME } from '$lib/site/config';
+import { setCookie } from '$lib/utils';
 
 /**
  * requires `window.matchMedia` (only in browser context)
@@ -6,7 +8,7 @@ import { browser } from '$app/environment';
  */
 function getPrefersColorScheme(): App.ColorSchema {
 	if (!browser) return 'light';
-	return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	return (document.documentElement.dataset.theme as App.ColorSchema) || 'light';
 }
 
 function listenMatchMedia(updater: (nextState: App.ColorSchema) => void) {
@@ -34,6 +36,7 @@ export function createColorSchemeStore() {
 	return {
 		change(scheme: App.ColorSchema) {
 			document.documentElement.dataset.theme = scheme;
+			setCookie(COOKIE_THEME, scheme);
 			updater(scheme);
 		},
 		get preferred() {
