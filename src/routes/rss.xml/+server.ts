@@ -21,7 +21,7 @@ export async function GET({ fetch }) {
 			<channel>
 				<title>${escapeXml(config.siteTitle)}</title>
 				<description>${escapeXml(config.siteDescription)}</description>
-				<link>${config.siteUrl}/blog</link>
+				<link>${config.siteUrl}</link>
 				<follow_challenge>
 					<feedId>72215661807600640</feedId>
 					<userId>41289469655933952</userId>
