@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { siteName, siteUrl, twitterHandle } from '$lib/site/config.js';
+	import { ogUrl, siteName, siteUrl, twitterHandle } from '$lib/site/config.js';
 	import { formatDate } from '$lib/utils';
 
 	let { data } = $props();
 
 	const { title, description, published, updated, categories } = data.meta;
+	const ogImage = ogUrl + '?text=' + encodeURIComponent(data.meta.title);
 </script>
 
 <!-- SEO -->
@@ -18,12 +19,17 @@
 	<meta property="og:url" content={siteUrl} />
 	<meta property="og:site_name" content={siteName} />
 	<meta property="og:description" content={description} />
+	<meta property="og:image" content={ogImage} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="600" />
+	<meta property="og:type" content="article" />
 
 	<!-- Twitter Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:creator" content={twitterHandle} />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
+	<meta property="twitter:image" content={ogImage} />
 </svelte:head>
 
 <section class="site-width py-4 sm:py-8">

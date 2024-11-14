@@ -34,8 +34,8 @@
 	<meta property="og:site_name" content={siteName} />
 	<meta property="og:description" content={siteDescription} />
 	<meta property="og:image" content={siteImage} />
-	<meta property="og:image:width" content="600" />
-	<meta property="og:image:height" content="400" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="600" />
 
 	<!-- Twitter Tags -->
 	<meta name="twitter:card" content="summary_large_image" />

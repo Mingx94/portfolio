@@ -159,9 +159,15 @@ importers:
       vite:
         specifier: ^5.4.10
         version: 5.4.10(@types/node@22.9.0)
+      vite-plugin-arraybuffer:
+        specifier: ^0.0.8
+        version: 0.0.8
       vite-plugin-font:
         specifier: ^4.0.0
         version: 4.0.0
+      vite-plugin-wasm-module-workers:
+        specifier: ^0.0.2
+        version: 0.0.2
 
 packages:
 
@@ -2739,8 +2745,14 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
+  vite-plugin-arraybuffer@0.0.8:
+    resolution: {integrity: sha512-F+InDQuxd93YDVRdXTjBr3lydgjyVHSpgRZS4izK/i85Anl5kmbvf2NwJ//XHAccHh1TScfX70MFJfBx/rf3cg==}
+
   vite-plugin-font@4.0.0:
     resolution: {integrity: sha512-Rz6w61LtN7dBkibq+ChKhAha7iEF2T7vVVSqynW3n2EfJCcM7An+Wv0T9tqBKzK5eO+p3+Po2h4APp8YbO09lQ==}
+
+  vite-plugin-wasm-module-workers@0.0.2:
+    resolution: {integrity: sha512-zbVuJb5gTGSrR1EREDh3DUCyCgacAaIwAashvatXjBYfmIqDiuBRGchj4kT9ekjvAG51fK/VWbWHSeye5x4vvg==}
 
   vite@5.4.10:
     resolution: {integrity: sha512-1hvaPshuPUtxeQ0hsVH3Mud0ZanOLwVTneA1EgbAM5LhaZEqyPWGRQ7BtaMvUrTDeEaC8pxtj6a6jku3x4z6SQ==}
@@ -5658,6 +5670,8 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
+  vite-plugin-arraybuffer@0.0.8: {}
+
   vite-plugin-font@4.0.0:
     dependencies:
       cn-font-metrics: 2.1.6
@@ -5670,6 +5684,8 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - webpack-sources
+
+  vite-plugin-wasm-module-workers@0.0.2: {}
 
   vite@5.4.10(@types/node@22.9.0):
     dependencies:
