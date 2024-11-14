@@ -1,6 +1,6 @@
 ---
 title: 關於此部落格
-description: 部落格誕生的契機及目的
+description: 歡迎來到我的部落格，分享開發心得及相片管理。
 published: '2024-01-13'
 updated: '2024-11-14'
 categories:
