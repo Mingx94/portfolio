@@ -14,6 +14,7 @@ const escapeXml = (unsafe: string) => unsafe.replace(/[<>&'"]/g, (match) => esca
 
 export async function GET({ fetch }) {
 	const posts = await fetchJSON<Post[]>('/api/posts', fetch);
+	const publishedPosts = posts.filter(({ draft }) => !draft);
 
 	const headers = { 'Content-Type': 'application/xml' };
 	const xml = `
@@ -27,7 +28,7 @@ export async function GET({ fetch }) {
 					<userId>41289469655933952</userId>
 				</follow_challenge>
 				<atom:link href="${config.siteUrl}/rss.xml" rel="self" type="application/rss+xml"/>
-				${posts
+				${publishedPosts
 					.map(
 						(post) => `
 					<item>
