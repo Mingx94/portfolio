@@ -159,9 +159,6 @@ importers:
       vite:
         specifier: ^5.4.10
         version: 5.4.10(@types/node@22.9.0)
-      vite-plugin-arraybuffer:
-        specifier: ^0.0.8
-        version: 0.0.8
       vite-plugin-font:
         specifier: ^4.0.0
         version: 4.0.0
@@ -2741,9 +2738,6 @@ packages:
 
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
-
-  vite-plugin-arraybuffer@0.0.8:
-    resolution: {integrity: sha512-F+InDQuxd93YDVRdXTjBr3lydgjyVHSpgRZS4izK/i85Anl5kmbvf2NwJ//XHAccHh1TScfX70MFJfBx/rf3cg==}
 
   vite-plugin-font@4.0.0:
     resolution: {integrity: sha512-Rz6w61LtN7dBkibq+ChKhAha7iEF2T7vVVSqynW3n2EfJCcM7An+Wv0T9tqBKzK5eO+p3+Po2h4APp8YbO09lQ==}
@@ -5663,8 +5657,6 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
-
-  vite-plugin-arraybuffer@0.0.8: {}
 
   vite-plugin-font@4.0.0:
     dependencies:
