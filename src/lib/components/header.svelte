@@ -3,7 +3,7 @@
 	import { theme } from '$lib/stores/theme.svelte';
 </script>
 
-<header class="sticky left-0 top-0 isolate z-10 w-full">
+<header class="bg-bg sticky top-0 left-0 isolate z-10 w-full">
 	<div class="site-width flex items-center justify-between p-4 sm:p-8">
 		<a href="/" title="Varitfact" class="group top-[12px] flex items-center gap-[8px]">
 			<img
@@ -33,7 +33,6 @@
 
 <style>
 	header {
-		background-color: rgb(var(--color-bg));
 		background-image: url('/texture.png');
 	}
 </style>

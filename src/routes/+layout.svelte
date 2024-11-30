@@ -16,7 +16,7 @@
 
 <Header />
 
-<main class="flex flex-1 flex-col [&>*]:w-full [&>*]:flex-1">
+<main class="flex flex-1 flex-col *:w-full *:flex-1">
 	{@render children()}
 </main>
 

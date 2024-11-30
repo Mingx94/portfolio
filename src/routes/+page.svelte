@@ -48,7 +48,7 @@
 <section class="site-width flex flex-col px-4 pt-20 sm:px-8">
 	<div class="mb-20 flex flex-col items-center gap-6 sm:flex-row">
 		<div class="shrink-0 sm:w-3/5">
-			<h1 class="mb-6 text-balance text-2xl">
+			<h1 class="mb-6 text-2xl text-balance">
 				你好，👋 我是 Michael Tsai，是一名前端工程師。
 				這邊主要分享我在前端領域的學習心得，擅長使用React、Next.js 開發，Svelte
 				則是我主要使用在個人專案上的技術之一。
@@ -83,25 +83,25 @@
 			</ul>
 		</div>
 
-		<figure class="rounded-md bg-card p-2 shadow-lg sm:w-2/5 sm:rotate-2">
-			<img src="/home.webp" alt="澎湖" class=" rounded-sm" width="600" height="400" />
-			<figcaption class="mt-1 text-right text-sm text-main/80">澎湖 - 南寮浮球秘境</figcaption>
+		<figure class="bg-bg-card rounded-md p-2 shadow-lg sm:w-2/5 sm:rotate-2">
+			<img src="/home.webp" alt="澎湖" class=" rounded-xs" width="600" height="400" />
+			<figcaption class="text-main/80 mt-1 text-right text-sm">澎湖 - 南寮浮球秘境</figcaption>
 		</figure>
 	</div>
 
 	<div use:melt={$root} class="mb-10 h-[1px] w-full bg-stone-500"></div>
 
 	<div class="flex gap-8 max-sm:flex-col">
-		<div class="sm:flex-grow-[3] sm:basis-0">
+		<div class="sm:flex-grow-3 sm:basis-0">
 			<h2 class="mb-4 text-xl font-semibold">文章列表</h2>
 			<Posts posts={data.posts} />
 		</div>
-		<div class="sm:flex-grow-[2] sm:basis-0">
+		<div class="sm:flex-grow-2 sm:basis-0">
 			<h2 class="mb-4 text-xl font-semibold">類別</h2>
 			<ul class="flex flex-wrap gap-2">
 				{#each categories as category}
 					<li>
-						<a href="/blog/category/{category}" class="bg-accent p-1 text-base">
+						<a href="/blog/category/{category}" class="bg-bg-accent p-1 text-base">
 							&num;{category}
 						</a>
 					</li>

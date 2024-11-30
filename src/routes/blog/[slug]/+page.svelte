@@ -37,7 +37,7 @@
 		<!-- Title -->
 		<hgroup class="mb-4">
 			<h1 class="mb-2 text-3xl font-semibold">{data.meta.title}</h1>
-			<p class="!mb-0 mt-2 !text-base">
+			<p class="mt-2 mb-0! text-base!">
 				<b>Published:</b>
 				{formatDate(published)}
 				<br />
@@ -52,7 +52,7 @@
 				<ul>
 					{#each categories as category}
 						<li class="inline-block text-sm">
-							<a class="bg-accent p-1 !no-underline" href="/blog/category/{category}/">
+							<a class="bg-bg-accent p-1 no-underline!" href="/blog/category/{category}/">
 								&num;{category}
 							</a>
 						</li>
