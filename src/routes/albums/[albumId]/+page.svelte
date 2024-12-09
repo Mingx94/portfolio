@@ -5,6 +5,7 @@
 	import { createDialog, melt } from '@melt-ui/svelte';
 	import type { EmblaCarouselType, EmblaOptionsType } from 'embla-carousel';
 	import emblaCarouselSvelte from 'embla-carousel-svelte';
+	import Icon from '@iconify/svelte';
 
 	let { data } = $props();
 
@@ -85,7 +86,7 @@
 			use:emblaCarouselSvelte={{ options, plugins: [] }}
 			onemblaInit={onInit}
 			use:melt={$content}
-			class="embla fixed left-1/2 top-1/2 z-50 flex -translate-x-1/2 -translate-y-1/2"
+			class="embla fixed top-1/2 left-1/2 z-50 flex -translate-x-1/2 -translate-y-1/2"
 		>
 			<div class="embla__container">
 				{#each data.images as image}
@@ -99,24 +100,22 @@
 					</div>
 				{/each}
 			</div>
-		</div>
 
-		<button
-			class="fixed -left-0 top-1/2 z-50 flex -translate-y-1/2 translate-x-2 rounded-sm bg-zinc-900 p-3 text-white sm:rounded-lg sm:p-3"
-			onclick={() => emblaApi!.scrollPrev()}
-			aria-label="Previous"
-			use:melt={$content}
-		>
-			<span class="i-iconoir-arrow-left m-auto size-8 sm:size-10"></span>
-		</button>
-		<button
-			class="fixed right-0 top-1/2 z-50 flex -translate-x-2 -translate-y-1/2 rounded-sm bg-zinc-900 p-3 text-white sm:rounded-lg sm:p-3"
-			onclick={() => emblaApi!.scrollNext()}
-			aria-label="Next"
-			use:melt={$content}
-		>
-			<span class="i-iconoir-arrow-right m-auto size-8 sm:size-10"></span>
-		</button>
+			<button
+				class="fixed top-1/2 -left-0 z-50 flex -translate-y-1/2 translate-x-2 rounded-xs bg-zinc-900/20 p-3 text-white sm:rounded-lg sm:p-3"
+				onclick={() => emblaApi!.scrollPrev()}
+				aria-label="Previous"
+			>
+				<Icon icon="iconoir:arrow-left" class="m-auto size-8 sm:size-10" aria-hidden="true" />
+			</button>
+			<button
+				class="fixed top-1/2 right-0 z-50 flex -translate-x-2 -translate-y-1/2 rounded-xs bg-zinc-900/20 p-3 text-white sm:rounded-lg sm:p-3"
+				onclick={() => emblaApi!.scrollNext()}
+				aria-label="Next"
+			>
+				<Icon icon="iconoir:arrow-right" class="m-auto size-8 sm:size-10" aria-hidden="true" />
+			</button>
+		</div>
 	</div>
 {/if}
 

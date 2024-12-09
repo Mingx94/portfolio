@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { albumLink, links } from '$lib/site/config';
+	import Icon from '@iconify/svelte';
 	import { createSeparator, melt } from '@melt-ui/svelte';
 
 	const {
@@ -39,7 +40,7 @@
 			{#if !$page.url.pathname.startsWith('/albums')}
 				<li>
 					<a href={albumLink.url} class="flex" title="Albums" aria-label="Albums">
-						<div class="size-[28px] {albumLink.icon}" role="img" aria-label={albumLink.name}></div>
+						<Icon icon={albumLink.icon} class="size-[28px]" aria-hidden="true" />
 					</a>
 				</li>
 			{/if}

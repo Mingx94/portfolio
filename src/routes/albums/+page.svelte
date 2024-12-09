@@ -24,10 +24,11 @@
 
 <section class="site-width px-2 py-6 md:px-4">
 	<ul
-		class="grid w-full grid-cols-[repeat(auto-fill,minmax(280px,30%))] place-content-center gap-6 max-md:!grid-cols-2 md:gap-12"
+		class="*:animate-pop-in *:animate-fill-both grid w-full grid-cols-[repeat(auto-fill,minmax(280px,30%))] place-content-center gap-6
+		[--delay:180ms] max-md:grid-cols-2! md:gap-12"
 	>
 		{#each data.photosets.photoset as album, index}
-			<li style:--stagger={index} class="col-span-1">
+			<li style:--animate-delay="calc(var(--delay) * {index})" class="col-span-1">
 				<a class="flex w-full" href={`/albums/${album.id}`}>
 					<figure class="w-full text-center">
 						<img
@@ -46,12 +47,3 @@
 		{/each}
 	</ul>
 </section>
-
-<style>
-	ul > * {
-		--delay: 180ms;
-		animation: pop-in var(--duration) ease;
-		animation-fill-mode: both;
-		animation-delay: calc(var(--delay) * var(--stagger));
-	}
-</style>

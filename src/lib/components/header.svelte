@@ -1,9 +1,10 @@
 <script lang="ts">
 	import logo from '$lib/assets/logo.svg';
 	import { theme } from '$lib/stores/theme.svelte';
+	import Icon from '@iconify/svelte';
 </script>
 
-<header class="sticky left-0 top-0 isolate z-10 w-full">
+<header class="bg-bg sticky top-0 left-0 isolate z-10 w-full">
 	<div class="site-width flex items-center justify-between p-4 sm:p-8">
 		<a href="/" title="Varitfact" class="group top-[12px] flex items-center gap-[8px]">
 			<img
@@ -22,18 +23,17 @@
 			title="Toggle theme"
 			aria-label="Toggle theme"
 		>
-			<span
-				class={'size-[28px] ' +
-					(theme.preferred === 'light' ? 'i-iconoir-half-moon' : 'i-iconoir-sun-light')}
+			<Icon
+				icon={theme.preferred === 'light' ? 'iconoir:half-moon' : 'iconoir:sun-light'}
+				class="size-[28px]"
 				aria-hidden="true"
-			></span>
+			/>
 		</button>
 	</div>
 </header>
 
 <style>
 	header {
-		background-color: rgb(var(--color-bg));
 		background-image: url('/texture.png');
 	}
 </style>

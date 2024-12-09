@@ -1,78 +1,70 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
+@plugin 'tailwindcss-animated';
+
+[data-theme='light'] {
+	--theme-color-bg: var(--color-green-200);
+	--theme-color-bg-card: var(--color-green-100);
+	--theme-color-bg-accent: var(--color-emerald-400);
+	--theme-color-text: var(--color-zinc-900);
+	--theme-color-text-accent: var(--color-zinc-500);
+}
+
+[data-theme='dark'] {
+	--theme-color-bg: var(--color-zinc-800);
+	--theme-color-bg-card: var(--color-zinc-900);
+	--theme-color-bg-accent: var(--color-zinc-600);
+	--theme-color-text: var(--color-green-100);
+	--theme-color-text-accent: var(--color-emerald-300);
+}
+
+@theme inline {
+	--color-bg: var(--theme-color-bg);
+	--color-bg-card: var(--theme-color-bg-card);
+	--color-bg-accent: var(--theme-color-bg-accent);
+	--color-text: var(--theme-color-text);
+	--color-text-accent: var(--theme-color-text-accent);
+}
+
+@theme inline {
+	@keyframes pop-in {
+		from {
+			opacity: 0.2;
+			transform: translate3d(0, 10px, 0) scale(0.98);
+		}
+		to {
+			opacity: 1;
+			transform: translate3d(0, 0, 0) scale(1);
+		}
+	}
+
+	--animate-pop-in: pop-in 0.8s var(--animate-delay) both;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
 @layer base {
-	:root {
-		--delay: 200ms;
-		--duration: 0.8s;
-	}
-
-	:root {
-		--color-bg: 220, 241, 210;
-		--color-bg-card: 252, 250, 242;
-		--color-bg-accent: 129, 199, 212;
-		--color-text: 12, 12, 12;
-		--color-text-accent: 38, 135, 133;
-	}
-
-	@media (prefers-color-schema: light) {
-		:root:not([data-theme='dark']) {
-			--color-bg: 220, 241, 210;
-			--color-bg-card: 252, 250, 242;
-			--color-bg-accent: 129, 199, 212;
-			--color-text: 12, 12, 12;
-			--color-text-accent: 38, 135, 133;
-		}
-	}
-
-	:root[data-theme='dark'] {
-		--color-bg: 67, 67, 67;
-		--color-bg-card: 28, 28, 28;
-		--color-bg-accent: 68, 138, 155;
-		--color-text: 252, 250, 242;
-		--color-text-accent: 129, 199, 212;
-	}
-
-	@media (prefers-color-scheme: dark) {
-		:root:not([data-theme='light']) {
-			--color-bg: 67, 67, 67;
-			--color-bg-card: 28, 28, 28;
-			--color-bg-accent: 68, 138, 155;
-			--color-text: 252, 250, 242;
-			--color-text-accent: 129, 199, 212;
-		}
-	}
-
-	body {
-		background-image: url('/texture.png');
-	}
-
-	a {
-		@apply hover:text-accent;
+	*,
+	::after,
+	::before,
+	::backdrop,
+	::file-selector-button {
+		border-color: var(--color-gray-200, currentColor);
 	}
 }
 
-@keyframes pop-in {
-	from {
-		opacity: 0;
-		transform: translate3d(0, 6px, 0) scale(0.98);
-	}
-	to {
-		opacity: 1;
-		transform: translate3d(0, 0, 0) scale(1);
-	}
+body {
+	background-image: url('/texture.png');
 }
 
-@keyframes fade-in-up {
-	from {
-		opacity: 0;
-		transform: translateY(8px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
+a {
+	@apply hover:text-text-accent;
 }
 
 @layer component {
@@ -90,7 +82,7 @@
 	}
 
 	header {
-		@apply mb-32 mt-48 text-center;
+		@apply mt-48 mb-32 text-center;
 	}
 
 	h1 {
@@ -98,10 +90,11 @@
 	}
 
 	h2 {
-		@apply mb-8 mt-16;
+		@apply mt-16 mb-8;
 	}
 
 	/* no one has to know 🤫 */
+
 	#table-of-contents + ul a {
 		text-decoration: none;
 		font-weight: inherit;
@@ -118,7 +111,8 @@
 		@apply text-lg;
 	}
 
-	@media (width > theme('screens.lg')) {
+	@media (width >
+theme(--breakpoint-lg)) {
 		& :where(iframe, video, img, pre, .rehype-code-title) {
 			grid-column: gutter-start / gutter-end;
 		}
@@ -174,7 +168,7 @@
 	}
 
 	blockquote {
-		@apply rounded-md p-4 text-lg shadow-sm;
+		@apply rounded-md p-4 text-lg shadow-xs;
 		border: 1px solid var(--post-blockquote-border);
 		border-top: 4px solid var(--clr-primary);
 
