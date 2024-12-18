@@ -1,0 +1,18 @@
+{
+	"name": "og",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+		"cf-typegen": "wrangler types"
+	},
+	"devDependencies": {
+		"@cloudflare/vitest-pool-workers": "^0.5.2",
+		"@cloudflare/workers-types": "^4.20241112.0",
+		"workers-og": "^0.0.25",
+		"typescript": "^5.5.2",
+		"wrangler": "^3.60.3"
+	}
+}

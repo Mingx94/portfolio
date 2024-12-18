@@ -5,8 +5,9 @@ export const siteName = 'Vartifact';
 export const siteTitle = 'Vartifact';
 export const siteDescription = '程式筆記 & 攝影部落格';
 export const siteUrl = dev ? 'http://localhost:5173' : 'https://vartifact.cc';
+export const ogUrl = dev ? 'http://localhost:8787' : 'https://og.vartifact.workers.dev';
 export const twitterHandle = '@mingx94';
-export const siteImage = `${siteUrl}/images/home.jpg`;
+export const siteImage = `${siteUrl}/og.jpg`;
 
 export const links = [
 	{
