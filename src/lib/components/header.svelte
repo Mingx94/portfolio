@@ -1,6 +1,7 @@
 <script lang="ts">
 	import logo from '$lib/assets/logo.svg';
 	import { theme } from '$lib/stores/theme.svelte';
+	import Icon from '@iconify/svelte';
 </script>
 
 <header class="sticky left-0 top-0 isolate z-10 w-full">
@@ -20,13 +21,13 @@
 			onclick={() => theme.change(theme.preferred === 'light' ? 'dark' : 'light')}
 			class="flex transition-colors duration-200"
 			title="Toggle theme"
-			aria-label="Toggle theme"
 		>
-			<span
-				class={'size-[28px] ' +
-					(theme.preferred === 'light' ? 'i-iconoir-half-moon' : 'i-iconoir-sun-light')}
-				aria-hidden="true"
-			></span>
+			<span class="sr-only">Toggle theme</span>
+			<Icon
+				icon={theme.preferred === 'light' ? 'iconoir:sun-light' : 'iconoir:half-moon'}
+				class="size-[28px]"
+				aria-hidden
+			/>
 		</button>
 	</div>
 </header>

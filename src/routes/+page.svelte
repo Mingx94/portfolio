@@ -11,6 +11,7 @@
 		siteUrl,
 		twitterHandle
 	} from '$lib/site/config';
+	import Icon from '@iconify/svelte';
 	import { createSeparator, melt } from '@melt-ui/svelte';
 
 	const {
@@ -66,7 +67,7 @@
 							title={socialLink.name}
 							aria-label={socialLink.name}
 						>
-							<span class="size-[28px] {socialLink.icon}" role="img" aria-hidden="true"></span>
+							<Icon icon={socialLink.icon} class="size-[28px]" aria-hidden />
 						</a>
 					</li>
 				{/each}
@@ -77,7 +78,7 @@
 						title={albumLink.name}
 						aria-label="{albumLink.name}}"
 					>
-						<span class="size-[28px] {albumLink.icon}" role="img" aria-hidden="true"></span>
+						<Icon icon={albumLink.icon} class="size-[28px]" aria-hidden />
 					</a>
 				</li>
 			</ul>
@@ -110,11 +111,3 @@
 		</div>
 	</div>
 </section>
-
-<style>
-	.separator {
-		width: 1px;
-		height: 1.2em;
-		background-color: currentColor;
-	}
-</style>

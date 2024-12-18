@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { albumLink, links } from '$lib/site/config';
+	import Icon from '@iconify/svelte';
 	import { createSeparator, melt } from '@melt-ui/svelte';
 
 	const {
@@ -12,11 +13,7 @@
 	const year = new Date().getFullYear();
 </script>
 
-<footer
-	class="site-width mt-20 px-4 sm:px-8"
-	class:mb-80px={$page.url.pathname === '/resume'}
-	class:md:mb-0={$page.url.pathname === '/resume'}
->
+<footer class="site-width mt-20 px-4 sm:px-8">
 	<div class="mb-4">
 		<div use:melt={$root} class="h-[1px] w-full bg-stone-500"></div>
 	</div>
@@ -30,16 +27,17 @@
 						rel="noopener noreferrer nofollow"
 						class="flex"
 						title={link.name}
-						aria-label={link.name}
 					>
-						<div class="size-[28px] {link.icon}" role="img" aria-label={link.name}></div>
+						<span class="sr-only">{link.name}</span>
+						<Icon icon={link.icon} class="size-[28px]" aria-hidden />
 					</a>
 				</li>
 			{/each}
 			{#if !$page.url.pathname.startsWith('/albums')}
 				<li>
-					<a href={albumLink.url} class="flex" title="Albums" aria-label="Albums">
-						<div class="size-[28px] {albumLink.icon}" role="img" aria-label={albumLink.name}></div>
+					<a href={albumLink.url} class="flex" title={albumLink.name}>
+						<span class="sr-only">{albumLink.name}</span>
+						<Icon icon={albumLink.icon} class="size-[28px]" aria-hidden />
 					</a>
 				</li>
 			{/if}
