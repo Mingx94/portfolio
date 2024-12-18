@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import Icon from '$lib/components/icon.svelte';
 	import { albumLink, links } from '$lib/site/config';
-	import Icon from '@iconify/svelte';
 	import { createSeparator, melt } from '@melt-ui/svelte';
 
 	const {
@@ -27,17 +27,16 @@
 						rel="noopener noreferrer nofollow"
 						class="flex"
 						title={link.name}
+						aria-label={link.name}
 					>
-						<span class="sr-only">{link.name}</span>
-						<Icon icon={link.icon} class="size-[28px]" aria-hidden />
+						<Icon icon={link.icon} class="size-[28px]" />
 					</a>
 				</li>
 			{/each}
 			{#if !$page.url.pathname.startsWith('/albums')}
 				<li>
-					<a href={albumLink.url} class="flex" title={albumLink.name}>
-						<span class="sr-only">{albumLink.name}</span>
-						<Icon icon={albumLink.icon} class="size-[28px]" aria-hidden />
+					<a href={albumLink.url} class="flex" title={albumLink.name} aria-label={albumLink.name}>
+						<Icon icon={albumLink.icon} class="size-[28px]" />
 					</a>
 				</li>
 			{/if}

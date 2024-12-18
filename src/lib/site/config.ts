@@ -13,30 +13,30 @@ export const links = [
 	{
 		name: 'Github',
 		url: 'https://github.com/Mingx94/photo-gallery',
-		icon: 'iconoir:github'
+		icon: 'github'
 	},
 	{
 		name: 'LinkedIn',
 		url: 'https://www.linkedin.com/in/ming-xuan-tsai-821157171/',
-		icon: 'iconoir:linkedin'
+		icon: 'linkedin'
 	},
 	{
 		name: 'Instagram',
 		url: 'https://www.instagram.com/michael.tsai_94/',
-		icon: 'iconoir:instagram'
+		icon: 'instagram'
 	},
 	{
 		name: 'RSS Feed',
 		url: '/rss.xml',
-		icon: 'iconoir:rss-feed-tag'
+		icon: 'rss-feed'
 	}
-];
+] as const;
 
 export const albumLink = {
 	name: '攝影作品',
 	url: '/albums',
-	icon: 'iconoir:camera'
-};
+	icon: 'camera'
+} as const;
 
 export const categories = ['svelte'];
 

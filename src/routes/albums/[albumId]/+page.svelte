@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Icon from '$lib/components/icon.svelte';
 	import Image from '$lib/components/image.svelte';
 	import Masonry from '$lib/components/masonry.svelte';
 	import { siteName, siteUrl, twitterHandle } from '$lib/site/config';
@@ -107,7 +108,7 @@
 			aria-label="Previous"
 			use:melt={$content}
 		>
-			<span class="i-iconoir-arrow-left m-auto size-8 sm:size-10"></span>
+			<Icon icon="arrow-left" class="size-8 sm:size-10" />
 		</button>
 		<button
 			class="fixed right-0 top-1/2 z-50 flex -translate-x-2 -translate-y-1/2 rounded-sm bg-zinc-900 p-3 text-white sm:rounded-lg sm:p-3"
@@ -115,7 +116,7 @@
 			aria-label="Next"
 			use:melt={$content}
 		>
-			<span class="i-iconoir-arrow-right m-auto size-8 sm:size-10"></span>
+			<Icon icon="arrow-right" class="size-8 sm:size-10" />
 		</button>
 	</div>
 {/if}

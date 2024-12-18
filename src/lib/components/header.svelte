@@ -1,7 +1,7 @@
 <script lang="ts">
 	import logo from '$lib/assets/logo.svg';
+	import Icon from '$lib/components/icon.svelte';
 	import { theme } from '$lib/stores/theme.svelte';
-	import Icon from '@iconify/svelte';
 </script>
 
 <header class="sticky left-0 top-0 isolate z-10 w-full">
@@ -19,15 +19,11 @@
 
 		<button
 			onclick={() => theme.change(theme.preferred === 'light' ? 'dark' : 'light')}
-			class="flex transition-colors duration-200"
+			class="flex transition-colors duration-200 [&>svg]:size-[28px]"
 			title="Toggle theme"
+			aria-label="Toggle theme"
 		>
-			<span class="sr-only">Toggle theme</span>
-			<Icon
-				icon={theme.preferred === 'light' ? 'iconoir:sun-light' : 'iconoir:half-moon'}
-				class="size-[28px]"
-				aria-hidden
-			/>
+			<Icon icon={theme.preferred === 'light' ? 'sun-light' : 'half-moon'} class="size-[28px]" />
 		</button>
 	</div>
 </header>

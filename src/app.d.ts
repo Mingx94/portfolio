@@ -1,3 +1,5 @@
+import 'unplugin-icons/types/svelte';
+
 // for information about these interfaces
 declare global {
 	namespace App {

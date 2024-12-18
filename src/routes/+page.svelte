@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Icon from '$lib/components/icon.svelte';
 	import Posts from '$lib/components/posts.svelte';
 	import {
 		albumLink,
@@ -11,7 +12,6 @@
 		siteUrl,
 		twitterHandle
 	} from '$lib/site/config';
-	import Icon from '@iconify/svelte';
 	import { createSeparator, melt } from '@melt-ui/svelte';
 
 	const {
@@ -67,18 +67,13 @@
 							title={socialLink.name}
 							aria-label={socialLink.name}
 						>
-							<Icon icon={socialLink.icon} class="size-[28px]" aria-hidden />
+							<Icon icon={socialLink.icon} class="size-[28px]" />
 						</a>
 					</li>
 				{/each}
 				<li>
-					<a
-						href={albumLink.url}
-						class="flex"
-						title={albumLink.name}
-						aria-label="{albumLink.name}}"
-					>
-						<Icon icon={albumLink.icon} class="size-[28px]" aria-hidden />
+					<a href={albumLink.url} class="flex" title={albumLink.name} aria-label={albumLink.name}>
+						<Icon icon={albumLink.icon} class="size-[28px]" />
 					</a>
 				</li>
 			</ul>
